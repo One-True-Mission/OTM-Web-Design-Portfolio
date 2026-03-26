@@ -417,7 +417,14 @@ section { padding: 7rem 4rem; }
   gap: 1.5rem;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
-#loader.hidden { opacity: 0; visibility: hidden; }
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+#loader.hidden * {
+  animation: none !important;
+}
 .loader-logo {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3rem;
@@ -507,7 +514,7 @@ section { padding: 7rem 4rem; }
 /* WORK / PORTFOLIO */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -583,7 +590,7 @@ section { padding: 7rem 4rem; }
 .services-section { background: var(--dark-2); }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -1012,9 +1019,9 @@ body.light-mode {
 body.light-mode nav { background: rgba(244,242,238,0.9); }
 body.light-mode #loader { background: var(--dark); }
 #theme-toggle {
-  position: fixed; top: 1.35rem; right: 10rem; z-index: 101;
+  position: fixed; bottom: 5.5rem; right: 2rem; z-index: 101;
   width: 36px; height: 36px;
-  background: transparent;
+  background: var(--dark-3);
   border: 1px solid var(--border);
   border-radius: 2px;
   color: var(--text-muted);
@@ -1220,6 +1227,11 @@ body.light-mode #loader { background: var(--dark); }
 .cookie-decline:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
 
 /* RESPONSIVE */
+@media (max-width: 1100px) {
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
   nav { padding: 1.2rem 2rem; }
   .nav-links { display: none; }
@@ -1231,4 +1243,12 @@ body.light-mode #loader { background: var(--dark); }
   .form-row { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 1.2rem; text-align: center; padding: 2rem; }
   .footer-links { display: none; }
+  #cookie-banner { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; }
+}
+
+@media (max-width: 600px) {
+  .work-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
 }
