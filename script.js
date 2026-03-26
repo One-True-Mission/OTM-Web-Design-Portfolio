@@ -1,9 +1,17 @@
-// LOADER
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
-  }, 1500);
-});
+// LOADER - force hide with multiple fallbacks so it never gets stuck
+function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) loader.classList.add('hidden');
+}
+
+// Method 1: on window load
+window.addEventListener('load', () => setTimeout(hideLoader, 800));
+
+// Method 2: DOMContentLoaded fallback
+document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 1500));
+
+// Method 3: hard timeout — no matter what, hide after 3 seconds
+setTimeout(hideLoader, 3000);
 
 // THEME TOGGLE
 function toggleTheme() {
