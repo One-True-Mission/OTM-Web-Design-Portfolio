@@ -775,20 +775,23 @@ section { padding: 7rem 4rem; }
 /* PRICING - SINGLE FLAT RATE */
 .pricing-single {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 1px;
+  grid-template-columns: 380px 1fr;
+  gap: 0;
   background: var(--border);
   border: 1px solid var(--border);
   margin-top: 4rem;
+  align-items: stretch;
 }
 .pricing-single-left {
   background: var(--dark-3);
   padding: 3rem 2.5rem;
-  display: flex; flex-direction: column;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   position: relative;
+  border-right: 1px solid var(--border);
 }
-.pricing-single-left::before {
+.pricing-single-left::after {
   content: 'Flat Rate';
   position: absolute; top: 0; right: 0;
   background: var(--amber);
@@ -804,24 +807,31 @@ section { padding: 7rem 4rem; }
   padding: 3rem 2.5rem;
 }
 .pricing-features-title {
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--silver);
   margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.pricing-features-title::before {
+  content: '';
+  display: block; width: 20px; height: 1px;
+  background: var(--amber);
 }
 .pricing-tier {
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-dim);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 .pricing-price {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 5rem;
+  font-size: 5.5rem;
   line-height: 1;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+  color: var(--text);
 }
 .pricing-price sup {
   font-family: 'DM Sans', sans-serif;
@@ -829,36 +839,43 @@ section { padding: 7rem 4rem; }
   font-weight: 300;
   vertical-align: super;
   margin-right: 0.1rem;
+  color: var(--amber);
 }
 .pricing-desc {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-dim);
-  margin-bottom: 0;
   font-weight: 300;
   line-height: 1.7;
+  margin-bottom: 2rem;
 }
-.pricing-features { list-style: none; margin-bottom: 0; }
+.pricing-features {
+  list-style: none;
+  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
 .pricing-features li {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  padding: 0.6rem 0;
+  font-size: 0.82rem;
+  color: var(--text);
+  padding: 0.7rem 0.5rem 0.7rem 0;
   border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; gap: 0.6rem;
+  display: flex; align-items: center; gap: 0.5rem;
   font-weight: 300;
 }
-.pricing-features li:last-child { border-bottom: none; }
+.pricing-features li:nth-last-child(-n+2) { border-bottom: none; }
 .pricing-features li::before {
   content: '—';
   color: var(--amber);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   flex-shrink: 0;
 }
 .pricing-disclaimer {
-  font-size: 0.75rem;
-  color: var(--text-dim);
+  font-size: 0.73rem;
+  color: var(--text-muted);
   line-height: 1.65;
   font-weight: 300;
-  margin-top: 1.5rem;
+  margin-top: auto;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
   font-style: italic;
@@ -1272,4 +1289,5 @@ body.light-mode #loader { background: var(--dark); }
   .services-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
   .pricing-single { grid-template-columns: 1fr; }
+  .pricing-features { grid-template-columns: 1fr; }
 }
