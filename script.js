@@ -144,11 +144,15 @@ function initBASlider(sliderId, clipId, handleId) {
     handle.style.left = pct + '%';
   }
 
-  slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
+  // Start at 50%
+  clip.style.width = '50%';
+  handle.style.left = '50%';
+
+  slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); e.preventDefault(); });
   window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
   window.addEventListener('mouseup', () => { dragging = false; });
-  slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); });
-  window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); });
+  slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
   window.addEventListener('touchend', () => { dragging = false; });
 }
 
