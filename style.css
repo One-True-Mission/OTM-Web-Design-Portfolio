@@ -190,16 +190,18 @@ nav {
   object-fit: cover; object-position: top;
   display: block;
 }
-.ba-img.after { z-index: 1; }
-.ba-img.before { z-index: 2; }
+.ba-img.before { z-index: 1; }
+.ba-img.after { z-index: 2; }
 .ba-clip {
   position: absolute; inset: 0; z-index: 2;
+  width: 50%;
   overflow: hidden;
 }
 .ba-clip img {
-  position: absolute; inset: 0;
+  position: absolute; top: 0; left: 0;
   width: 100%; height: 100%;
   object-fit: cover; object-position: top;
+  min-width: 200%;
 }
 .ba-handle {
   position: absolute; top: 0; bottom: 0; z-index: 3;
