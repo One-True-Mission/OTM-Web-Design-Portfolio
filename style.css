@@ -772,34 +772,43 @@ section { padding: 7rem 4rem; }
 }
 .carousel-btn:hover { border-color: var(--amber); color: var(--amber); background: var(--amber-glow); }
 
-/* PRICING */
-.pricing-grid {
+/* PRICING - SINGLE FLAT RATE */
+.pricing-single {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr 1.6fr;
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
   margin-top: 4rem;
 }
-.pricing-card {
-  background: var(--dark-2);
-  padding: 2.5rem 2.2rem;
-  transition: background 0.25s;
+.pricing-single-left {
+  background: var(--dark-3);
+  padding: 3rem 2.5rem;
+  display: flex; flex-direction: column;
+  justify-content: flex-start;
   position: relative;
 }
-.pricing-card.featured {
-  background: var(--dark-3);
-}
-.pricing-card.featured::before {
-  content: 'Most Popular';
+.pricing-single-left::before {
+  content: 'Flat Rate';
   position: absolute; top: 0; right: 0;
   background: var(--amber);
-  color: #0A0A0A;
+  color: #fff;
   font-size: 0.6rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.3rem 0.75rem;
+  padding: 0.3rem 0.85rem;
+}
+.pricing-single-right {
+  background: var(--dark-2);
+  padding: 3rem 2.5rem;
+}
+.pricing-features-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
 }
 .pricing-tier {
   font-size: 0.7rem;
@@ -810,37 +819,49 @@ section { padding: 7rem 4rem; }
 }
 .pricing-price {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.5rem;
+  font-size: 5rem;
   line-height: 1;
   margin-bottom: 0.3rem;
 }
 .pricing-price sup {
   font-family: 'DM Sans', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 300;
   vertical-align: super;
   margin-right: 0.1rem;
 }
 .pricing-desc {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  margin-bottom: 2rem;
-  font-weight: 300;
-}
-.pricing-features { list-style: none; margin-bottom: 2rem; }
-.pricing-features li {
   font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 0;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.pricing-features { list-style: none; margin-bottom: 0; }
+.pricing-features li {
+  font-size: 0.85rem;
   color: var(--text-muted);
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
   border-bottom: 1px solid var(--border);
   display: flex; align-items: center; gap: 0.6rem;
   font-weight: 300;
 }
+.pricing-features li:last-child { border-bottom: none; }
 .pricing-features li::before {
   content: '—';
   color: var(--amber);
   font-size: 0.7rem;
   flex-shrink: 0;
+}
+.pricing-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  font-weight: 300;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-style: italic;
 }
 
 /* CONTACT FORM */
@@ -1250,5 +1271,5 @@ body.light-mode #loader { background: var(--dark); }
   .work-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-single { grid-template-columns: 1fr; }
 }
