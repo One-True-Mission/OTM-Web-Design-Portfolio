@@ -183,50 +183,61 @@ nav {
   overflow: hidden;
   cursor: col-resize;
   user-select: none;
+  -webkit-user-select: none;
 }
-.ba-img {
-  position: absolute; inset: 0;
+.ba-img-before,
+.ba-img-after {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%; height: 100%;
-  object-fit: cover; object-position: top;
+  object-fit: cover;
+  object-position: top center;
   display: block;
+  pointer-events: none;
 }
-.ba-img.before { z-index: 1; }
-.ba-img.after { z-index: 2; }
+.ba-img-before { z-index: 1; }
+.ba-img-after  { z-index: 2; }
 .ba-clip {
-  position: absolute; inset: 0; z-index: 2;
+  position: absolute;
+  top: 0; left: 0;
   width: 50%;
+  height: 100%;
   overflow: hidden;
+  z-index: 2;
 }
-.ba-clip img {
-  position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: top;
-  min-width: 200%;
+.ba-clip .ba-img-after {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%; /* overridden by JS with pixel value */
+  object-fit: cover;
+  object-position: top center;
+  max-width: none;
 }
 .ba-handle {
-  position: absolute; top: 0; bottom: 0; z-index: 3;
-  width: 3px; background: #fff;
-  cursor: col-resize;
+  position: absolute;
+  top: 0; bottom: 0;
   left: 50%;
+  width: 3px;
+  background: #fff;
   transform: translateX(-50%);
+  z-index: 3;
+  cursor: col-resize;
 }
-.ba-handle::before {
-  content: '';
-  position: absolute; top: 50%; left: 50%;
+.ba-handle-btn {
+  position: absolute;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   background: #fff;
   border-radius: 50%;
   border: 3px solid var(--amber);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
-}
-.ba-handle::after {
-  content: '◀  ▶';
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 0.55rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem;
   color: var(--amber);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
+  pointer-events: none;
   white-space: nowrap;
 }
 .ba-label {
@@ -237,6 +248,7 @@ nav {
   color: var(--text-muted);
   padding: 0.3rem 0.75rem;
   border-radius: 1px;
+  pointer-events: none;
 }
 .ba-label.before-label { left: 1rem; }
 .ba-label.after-label { right: 1rem; }
