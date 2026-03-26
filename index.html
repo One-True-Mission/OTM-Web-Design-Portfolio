@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTM Web Design | Steven Howell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- Page Loader -->
+<div id="loader">
+  <div class="loader-logo">OTM<span>.</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<!-- Back to Top -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- Theme Toggle -->
+<button id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">☀</button>
+
+<!-- Floating Contact Button -->
+<a href="#contact" id="float-contact">Let's Talk</a>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner">
+  <p>This site uses cookies to improve your experience. By continuing, you agree to our use of cookies. <a href="#">Learn more</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="dismissCookie()">Decline</button>
+    <button class="cookie-accept" onclick="dismissCookie()">Accept</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo-text" id="nav-logo">
+    <img src="assets-logo.png" alt="OTM Web Design" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+    <span id="logo-fallback" style="display:none;">OTM<span style="color:var(--amber);">.</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="highlight-badge">Now Taking Clients · Texas &amp; Beyond</div>
+    <h1 class="hero-title">
+      Websites<br>
+      <span class="outline">That Actually</span><br>
+      <span class="amber">Work.</span>
+    </h1>
+    <p class="hero-sub">
+      Hand-coded, custom-built sites for small businesses who are tired of generic templates.
+      You own the code, forever. No monthly platform fees. No cookie-cutter results.
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">See My Work</a>
+      <a href="#contact" class="btn-ghost">Get a Free Quote</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num" data-target="100" data-suffix="%">100%</div>
+      <div class="stat-label">Custom Code</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="0" data-suffix="">$0</div>
+      <div class="stat-label">Monthly Fees</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">★★★★★</div>
+      <div class="stat-label">Client Rated</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marquee">
+    <div class="marquee-item"><span class="marquee-dot"></span>Custom HTML &amp; CSS</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>You Own the Code</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>No Monthly Platform Fees</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Mobile Optimized</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Fast Load Times</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Built for Small Business</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Contact Forms Included</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Google-Ready</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Custom HTML &amp; CSS</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>You Own the Code</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>No Monthly Platform Fees</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Mobile Optimized</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Fast Load Times</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Built for Small Business</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Contact Forms Included</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Google-Ready</div>
+  </div>
+</div>
+
+<!-- WORK -->
+<section id="work" style="padding-top: 6rem; padding-bottom: 6rem;">
+  <div class="section-label reveal">Portfolio</div>
+  <h2 class="section-title reveal reveal-delay-1">Recent<br>Projects</h2>
+  <p style="font-size:0.9rem; color:var(--text-muted); font-weight:300; max-width:500px; line-height:1.7;" class="reveal reveal-delay-2">Every site is hand-coded from scratch. No templates. No drag-and-drop builders. Just clean, fast, custom web design.</p>
+
+  <div class="work-grid">
+    <div class="work-card reveal">
+      <div class="work-tag">Auto Service · Tomball, TX</div>
+      <div class="work-card-img-wrap">
+        <img src="assets-bachmobile.jpg" alt="Bachmobile German Auto website screenshot" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="work-card-preview"></div>
+      <h3>Bachmobile German Auto</h3>
+      <p>Full single-page site for a German auto specialist in Tomball, TX. Includes services breakdown, review carousel, contact form with vehicle details, and a strong local SEO foundation.</p>
+      <a href="https://bachmobilegerman.com" target="_blank" class="work-link">
+        View Live Site
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <div class="work-card-number">01</div>
+    </div>
+    <div class="work-card reveal reveal-delay-1">
+      <div class="work-tag">Cleaning Service · Texas</div>
+      <div class="work-card-img-wrap">
+        <img src="assets-freshstart.jpg" alt="FreshStart Solutions website screenshot" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="work-card-preview"></div>
+      <h3>FreshStart Solutions</h3>
+      <p>Premium residential cleaning service site with tiered pricing packages, add-on service selection, and a detailed multi-field booking form. Clean, professional, and conversion-focused.</p>
+      <a href="https://fresh-start-solution.com" target="_blank" class="work-link">
+        View Live Site
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <div class="work-card-number">02</div>
+    </div>
+    <div class="work-card reveal reveal-delay-2">
+      <div class="work-tag">Coming Soon</div>
+      <div class="work-card-preview"></div>
+      <h3>Your Business Here</h3>
+      <p>Actively taking on new clients. Whether you're a contractor, restaurant, auto shop, salon, or any other local business: if you need a website that actually converts visitors into customers, let's talk.</p>
+      <a href="#contact" class="work-link">
+        Claim This Spot
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <div class="work-card-number">03</div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER SHOWCASE -->
+<section class="ba-section">
+  <div class="section-label reveal">Redesign Showcase</div>
+  <h2 class="section-title reveal reveal-delay-1">Before<br>&amp; After</h2>
+  <p style="font-size:0.9rem; color:var(--text-muted); font-weight:300; max-width:520px; line-height:1.7;" class="reveal reveal-delay-2">Drag the handle to see the transformation. This is what a custom redesign actually looks like compared to what was there before.</p>
+
+  <!-- Slider 1 -->
+  <div class="ba-wrap reveal reveal-delay-2">
+    <div class="ba-slider" id="baSlider1">
+      <img src="assets-after1.jpg" alt="After redesign 1" class="ba-img after" onerror="this.src=''; this.style.background='#1a1a1a'">
+      <div class="ba-clip" id="baClip1">
+        <img src="assets-before1.jpg" alt="Before redesign 1" onerror="this.src=''; this.style.background='#2a2a2a'">
+      </div>
+      <div class="ba-handle" id="baHandle1"></div>
+      <span class="ba-label before-label">Before</span>
+      <span class="ba-label after-label">After</span>
+    </div>
+    <div class="ba-info">
+      <div class="ba-info-text">
+        <div class="ba-tag">Redesign Showcase 1</div>
+        <h3>Full Site Transformation</h3>
+        <p>A complete redesign from the ground up. Same business, completely different impression. Drag to compare the old site against the new custom-built version.</p>
+      </div>
+      <a href="#contact" class="btn-primary">Get Your Redesign</a>
+    </div>
+  </div>
+
+  <!-- Slider 2 -->
+  <div class="ba-wrap reveal reveal-delay-2" style="margin-top: 1px;">
+    <div class="ba-slider" id="baSlider2">
+      <img src="assets-after2.jpg" alt="After redesign 2" class="ba-img after" onerror="this.src=''; this.style.background='#1a1a1a'">
+      <div class="ba-clip" id="baClip2">
+        <img src="assets-before2.jpg" alt="Before redesign 2" onerror="this.src=''; this.style.background='#2a2a2a'">
+      </div>
+      <div class="ba-handle" id="baHandle2"></div>
+      <span class="ba-label before-label">Before</span>
+      <span class="ba-label after-label">After</span>
+    </div>
+    <div class="ba-info">
+      <div class="ba-info-text">
+        <div class="ba-tag">Redesign Showcase 2</div>
+        <h3>Another Full Transformation</h3>
+        <p>Every business deserves a site that actually represents them. Drag to see exactly what a custom redesign delivers compared to what was there before.</p>
+      </div>
+      <a href="#contact" class="btn-primary">Get Your Redesign</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-section">
+  <div class="section-label reveal">What I Build</div>
+  <h2 class="section-title reveal reveal-delay-1">Services</h2>
+
+  <div class="services-grid">
+    <div class="service-item reveal">
+      <div class="service-icon">◈</div>
+      <h3>Custom Website Design</h3>
+      <p>Hand-coded HTML, CSS, and JavaScript. No templates, no page builders. Every element designed specifically for your business.</p>
+    </div>
+    <div class="service-item reveal reveal-delay-1">
+      <div class="service-icon">◉</div>
+      <h3>Single-Page Sites</h3>
+      <p>Smooth-scrolling, high-converting single-page sites that load fast and look sharp on every device, from phones to 4K monitors.</p>
+    </div>
+    <div class="service-item reveal reveal-delay-2">
+      <div class="service-icon">◑</div>
+      <h3>Contact &amp; Request Forms</h3>
+      <p>Custom forms built for your specific workflow. Service requests, appointment bookings, quote forms: whatever you need.</p>
+    </div>
+    <div class="service-item reveal reveal-delay-3">
+      <div class="service-icon">◐</div>
+      <h3>Mobile Optimization</h3>
+      <p>Your site will look and function perfectly on phones, tablets, and desktops. Not an afterthought; built in from day one.</p>
+    </div>
+    <div class="service-item reveal">
+      <div class="service-icon">◎</div>
+      <h3>Google Business Ready</h3>
+      <p>Clean code structure and local SEO basics built in so Google can find and index your site from the start.</p>
+    </div>
+    <div class="service-item reveal reveal-delay-1">
+      <div class="service-icon">◈</div>
+      <h3>You Own Everything</h3>
+      <p>When the project is done, the files are yours. Host it anywhere. Hand it to any developer. No platform lock-in, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY OTM -->
+<section id="why">
+  <div class="section-label reveal">The Difference</div>
+  <h2 class="section-title reveal reveal-delay-1">Why OTM<br>vs. The Rest</h2>
+
+  <div class="why-grid">
+    <div class="why-list">
+      <div class="why-item reveal">
+        <div class="why-num">01</div>
+        <div class="why-content">
+          <h3>You Own the Code Outright</h3>
+          <p>GoDaddy, Wix, Squarespace: stop paying and your site disappears. With OTM, you get the actual files delivered to you. Host anywhere, forever.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-num">02</div>
+        <div class="why-content">
+          <h3>No Templates. Ever.</h3>
+          <p>Every site is designed from a blank canvas for your specific business. The result looks nothing like your competitor's site.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-num">03</div>
+        <div class="why-content">
+          <h3>Way Below Market Price</h3>
+          <p>Freelance designers charge $2,000 to $8,000 for this quality. OTM delivers the same result at a fraction of the cost for small business owners who deserve better.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-3">
+        <div class="why-num">04</div>
+        <div class="why-content">
+          <h3>You Work Directly with Me</h3>
+          <p>No project managers. No account reps. No outsourcing. You talk directly to the person building your site, every step of the way.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual reveal reveal-delay-2">
+      <div class="compare-title">OTM <span>vs</span> GoDaddy</div>
+      <div class="compare-row">
+        <span class="compare-label">Design Quality</span>
+        <div class="compare-bar-wrap"><div class="compare-bar" style="width:96%"></div></div>
+        <span class="compare-val" style="color:var(--amber)">★★★★★</span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">Customization</span>
+        <div class="compare-bar-wrap"><div class="compare-bar" style="width:100%"></div></div>
+        <span class="compare-val" style="color:var(--amber)">100%</span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">You Own the Code</span>
+        <div class="compare-bar-wrap"><div class="compare-bar" style="width:100%"></div></div>
+        <span class="compare-val" style="color:var(--amber)">YES</span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">Monthly Fees</span>
+        <div class="compare-bar-wrap"><div class="compare-bar low" style="width:0%"></div></div>
+        <span class="compare-val" style="color:var(--text-dim)">$0</span>
+      </div>
+      <hr class="vs-divider">
+      <div class="compare-title" style="color:var(--text-dim)"><span style="color:var(--text-dim)">GoDaddy</span></div>
+      <div class="compare-row">
+        <span class="compare-label">Design Quality</span>
+        <div class="compare-bar-wrap"><div class="compare-bar low" style="width:35%"></div></div>
+        <span class="compare-val" style="color:var(--text-dim)">★★☆☆☆</span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">Customization</span>
+        <div class="compare-bar-wrap"><div class="compare-bar low" style="width:25%"></div></div>
+        <span class="compare-val" style="color:var(--text-dim)">Low</span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">You Own the Code</span>
+        <div class="compare-bar-wrap"><div class="compare-bar low" style="width:0%"></div></div>
+        <span class="compare-val" style="color:var(--text-dim)">NO</span>
+      </div>
+      <div class="compare-row">
+        <span class="compare-label">Monthly Fees</span>
+        <div class="compare-bar-wrap"><div class="compare-bar low" style="width:70%"></div></div>
+        <span class="compare-val" style="color:var(--text-dim)">$20+</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="testimonials-section">
+  <div class="section-label reveal">Social Proof</div>
+  <h2 class="section-title reveal reveal-delay-1">What Clients<br>Are Saying</h2>
+
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Steven built us something we couldn't have gotten anywhere else at this price. Our site looks like we spent five times more. Clients have already commented on how professional it looks."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">MP</div>
+          <div>
+            <div class="author-name">Matthew P.</div>
+            <div class="author-detail">Bachmobile German Auto · Tomball, TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I was using a GoDaddy template for two years and finally made the switch. The difference is night and day. Steven turned it around fast and the whole process was incredibly easy."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">JR</div>
+          <div>
+            <div class="author-name">James R.</div>
+            <div class="author-detail">Local Business Owner · San Antonio, TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"What sold me was that I actually own the files when it's done. No more being held hostage by a platform. Steven knows what he's doing and the price was unbelievably fair."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">KS</div>
+          <div>
+            <div class="author-name">Karen S.</div>
+            <div class="author-detail">Small Business Owner · Houston, TX</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <div class="carousel-dots" id="carouselDots">
+        <button class="carousel-dot active" onclick="goTo(0)"></button>
+        <button class="carousel-dot" onclick="goTo(1)"></button>
+        <button class="carousel-dot" onclick="goTo(2)"></button>
+      </div>
+      <div class="carousel-btns">
+        <button class="carousel-btn" onclick="carouselPrev()">&#8592;</button>
+        <button class="carousel-btn" onclick="carouselNext()">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label reveal">Investment</div>
+  <h2 class="section-title reveal reveal-delay-1">Simple,<br>Honest Pricing</h2>
+  <p style="font-size:0.9rem; color:var(--text-muted); font-weight:300; max-width:480px; line-height:1.7;" class="reveal reveal-delay-2">No hidden fees. No ongoing monthly charges. No surprises. Just a flat rate for a professional website you own outright.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card reveal">
+      <div class="pricing-tier">Starter</div>
+      <div class="pricing-price"><sup>$</sup>299</div>
+      <div class="pricing-desc">One-time · No monthly fees</div>
+      <ul class="pricing-features">
+        <li>Single-page custom site</li>
+        <li>Mobile responsive</li>
+        <li>Contact form</li>
+        <li>You own the files</li>
+        <li>Up to 4 sections</li>
+      </ul>
+      <a href="#contact" class="btn-ghost" style="display:block; text-align:center;">Get Started</a>
+    </div>
+    <div class="pricing-card featured reveal reveal-delay-1">
+      <div class="pricing-tier">Professional</div>
+      <div class="pricing-price"><sup>$</sup>499</div>
+      <div class="pricing-desc">One-time · No monthly fees</div>
+      <ul class="pricing-features">
+        <li>Single-page custom site</li>
+        <li>Mobile responsive</li>
+        <li>Custom request / booking form</li>
+        <li>You own the files</li>
+        <li>Up to 8 sections</li>
+        <li>Review / testimonial section</li>
+        <li>
+          <span class="tooltip-wrap">
+            Google Business optimization
+            <span class="tooltip-icon">?</span>
+            <span class="tooltip-box">Clean code structure and local SEO basics so Google can find and rank your site.</span>
+          </span>
+        </li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="display:block; text-align:center;">Get Started</a>
+    </div>
+    <div class="pricing-card reveal reveal-delay-2">
+      <div class="pricing-tier">Premium</div>
+      <div class="pricing-price"><sup>$</sup>799</div>
+      <div class="pricing-desc">One-time · No monthly fees</div>
+      <ul class="pricing-features">
+        <li>Everything in Professional</li>
+        <li>Unlimited sections</li>
+        <li>
+          <span class="tooltip-wrap">
+            Animations &amp; interactions
+            <span class="tooltip-icon">?</span>
+            <span class="tooltip-box">Scroll animations, hover effects, custom cursor, parallax, and more built into the site.</span>
+          </span>
+        </li>
+        <li>Gallery or portfolio section</li>
+        <li>
+          <span class="tooltip-wrap">
+            Advanced form logic
+            <span class="tooltip-icon">?</span>
+            <span class="tooltip-box">Conditional fields, multi-step forms, and custom validation tailored to your workflow.</span>
+          </span>
+        </li>
+        <li>Priority turnaround</li>
+        <li>
+          <span class="tooltip-wrap">
+            30-day post-launch support
+            <span class="tooltip-icon">?</span>
+            <span class="tooltip-box">One month of free edits and fixes after your site goes live.</span>
+          </span>
+        </li>
+      </ul>
+      <a href="#contact" class="btn-ghost" style="display:block; text-align:center;">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process-section">
+  <div class="section-label reveal">How It Works</div>
+  <h2 class="section-title reveal reveal-delay-1">Simple<br>Process</h2>
+  <p style="font-size:0.9rem; color:var(--text-muted); font-weight:300; max-width:500px; line-height:1.7;" class="reveal reveal-delay-2">No confusing back-and-forth. No mystery. Here is exactly what working with OTM looks like from start to finish.</p>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="process-step-num">01</div>
+      <div class="process-step-tag">Day 1</div>
+      <h3>We Talk</h3>
+      <p>Fill out the request form or send me a message. Tell me about your business, your goals, and what you are looking for. I will respond within 24 hours with a plan and a flat price.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="process-step-num">02</div>
+      <div class="process-step-tag">Days 2-7</div>
+      <h3>I Build</h3>
+      <p>Once we agree on the scope, I get to work. I will share a preview link so you can watch it come together and request any changes along the way.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="process-step-num">03</div>
+      <div class="process-step-tag">Launch Day</div>
+      <h3>You Review</h3>
+      <p>When the site is ready, you review every detail. We tweak anything that needs adjusting until you are completely happy with the result.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="process-step-num">04</div>
+      <div class="process-step-tag">Done</div>
+      <h3>You Own It</h3>
+      <p>The finished files are delivered directly to you. Host it anywhere you choose. No ongoing fees, no platform dependency. It is yours, forever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="section-label reveal">Questions</div>
+  <h2 class="section-title reveal reveal-delay-1">FAQ</h2>
+  <div class="faq-list reveal reveal-delay-2">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How long does it take to build my site?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Most sites are completed within 5 to 7 business days from the time we agree on the scope. Larger or more complex projects may take up to two weeks. I will always give you a realistic timeline upfront before any work begins.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do I need to buy hosting?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Yes, but it is inexpensive and straightforward. Basic web hosting costs around $5 to $10 per month through providers like Namecheap or SiteGround. I can walk you through the setup so you are never on your own. The key difference is that you are paying for hosting, not for the website itself.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What makes OTM different from GoDaddy or Wix?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>With GoDaddy or Wix, you are renting a website. Stop paying and it disappears. With OTM, you receive the actual code files and own them outright. The design is also 100% custom, not a template that hundreds of other businesses are using.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can you update my site after it is built?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Absolutely. I offer post-launch updates at an hourly rate, and the Premium package includes 30 days of support after launch. Since you own the code, you can also hand the files to any developer in the future.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do you work with businesses outside of Texas?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Yes. Everything is done remotely so location is never an issue. I currently work with clients across Texas and take on projects from anywhere in the United States.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What do you need from me to get started?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Just the basics: your business name, what you do, your logo if you have one, any photos you want used, and a general idea of what you are looking for. I will handle the rest and ask questions along the way if I need more details.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-label reveal">Let's Build</div>
+  <h2 class="section-title reveal reveal-delay-1">Let's Build<br>Something.</h2>
+
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <p>Tell me about your business and what you're looking for. I'll get back to you within one business day with a plan and a price. No pressure, no runaround.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">@</div>
+        <span>steven@otmwebdesign.com</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">◎</div>
+        <span>Serving Texas &amp; beyond</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">◷</div>
+        <span>Response within 24 hours</span>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Full Name</label>
+            <input type="text" placeholder="John Smith" required>
+          </div>
+          <div class="form-field">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@business.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(555) 000-0000">
+          </div>
+          <div class="form-field">
+            <label>Business Type</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Auto / Mechanic Shop</option>
+              <option>Restaurant / Food</option>
+              <option>Contractor / Trade</option>
+              <option>Salon / Beauty</option>
+              <option>Retail / Shop</option>
+              <option>Medical / Dental</option>
+              <option>Fitness / Gym</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Package Interest</label>
+          <select>
+            <option value="">Select a package...</option>
+            <option>Starter: $299</option>
+            <option>Professional: $499</option>
+            <option>Premium: $799</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Tell Me About Your Project</label>
+          <textarea rows="4" placeholder="What does your business do? Do you have an existing website? What are your goals?"></textarea>
+        </div>
+        <div class="form-submit-row">
+          <span class="form-note">I'll respond within one business day.</span>
+          <button type="submit" class="form-submit">Send Request &#8594;</button>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <h3>Request Received!</h3>
+        <p>Thanks for reaching out. Steven will be in touch within one business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">OTM<span>.</span></div>
+  <div class="footer-copy">&#169; 2026 OTM Web Design · Steven Howell · Texas</div>
+  <div class="footer-links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
