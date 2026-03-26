@@ -1,17 +1,3 @@
-// LOADER - hide as soon as DOM is ready, don't wait for images
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const loader = document.getElementById('loader');
-    if (loader) loader.classList.add('hidden');
-  }, 1200);
-});
-
-// Hard fallback - force hide after 2 seconds no matter what
-setTimeout(() => {
-  const loader = document.getElementById('loader');
-  if (loader) loader.classList.add('hidden');
-}, 2000);
-
 // THEME TOGGLE
 function toggleTheme() {
   document.body.classList.toggle('light-mode');
