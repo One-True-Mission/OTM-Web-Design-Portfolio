@@ -185,7 +185,16 @@ nav {
   user-select: none;
   -webkit-user-select: none;
 }
-.ba-img-before,
+.ba-img-before {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  pointer-events: none;
+  z-index: 1;
+}
 .ba-img-after {
   position: absolute;
   top: 0; left: 0;
@@ -194,25 +203,8 @@ nav {
   object-position: top center;
   display: block;
   pointer-events: none;
-}
-.ba-img-before { z-index: 1; }
-.ba-img-after  { z-index: 2; }
-.ba-clip {
-  position: absolute;
-  top: 0; left: 0;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
   z-index: 2;
-}
-.ba-clip .ba-img-after {
-  position: absolute;
-  top: 0; left: 0;
-  height: 100%;
-  width: 100%; /* overridden by JS with pixel value */
-  object-fit: cover;
-  object-position: top center;
-  max-width: none;
+  clip-path: inset(0 50% 0 0);
 }
 .ba-handle {
   position: absolute;
