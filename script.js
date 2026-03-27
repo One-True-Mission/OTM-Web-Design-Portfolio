@@ -130,22 +130,22 @@ track.addEventListener('touchend', e => {
 });
 
 // BEFORE / AFTER SLIDERS
-function initBASlider(sliderId, clipId, handleId) {
-  const slider = document.getElementById(sliderId);
-  const clip = document.getElementById(clipId);
-  const handle = document.getElementById(handleId);
-  if (!slider || !clip || !handle) return;
+function initBASlider(sliderId, handleId, afterImgId) {
+  const slider   = document.getElementById(sliderId);
+  const handle   = document.getElementById(handleId);
+  const afterImg = document.getElementById(afterImgId);
+  if (!slider || !handle || !afterImg) return;
+
   let dragging = false;
 
   function setPos(x) {
     const rect = slider.getBoundingClientRect();
-    let pct = Math.min(Math.max((x - rect.left) / rect.width * 100, 2), 98);
-    clip.style.width = pct + '%';
+    let pct = Math.min(Math.max((x - rect.left) / rect.width * 100, 1), 99);
+    afterImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
     handle.style.left = pct + '%';
   }
 
-  // Start at 50%
-  clip.style.width = '50%';
+  afterImg.style.clipPath = 'inset(0 50% 0 0)';
   handle.style.left = '50%';
 
   slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); e.preventDefault(); });
@@ -156,5 +156,5 @@ function initBASlider(sliderId, clipId, handleId) {
   window.addEventListener('touchend', () => { dragging = false; });
 }
 
-initBASlider('baSlider1', 'baClip1', 'baHandle1');
-initBASlider('baSlider2', 'baClip2', 'baHandle2');
+initBASlider('baSlider1', 'baHandle1', 'baAfterImg1');
+initBASlider('baSlider2', 'baHandle2', 'baAfterImg2');
