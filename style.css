@@ -102,7 +102,7 @@ nav {
   padding: 8rem 4rem 4rem;
   position: relative;
   overflow: hidden;
-  background: url('assets/assets-bg-dark.jpg') center center / cover no-repeat;
+  background: url('assets/assets-bg-dark.jpg') center center / cover no-repeat fixed;
 }
 .hero::after {
   content: '';
@@ -1163,7 +1163,7 @@ body.light-mode {
 /* NAV */
 body.light-mode nav { background: rgba(244,242,238,0.95); }
 body.light-mode .hero {
-  background: url('assets/assets-bg-light.jpg') center center / cover no-repeat;
+  background: url('assets/assets-bg-light.jpg') center center / cover no-repeat fixed;
 }
 
 /* HERO — fix "WEBSITES" and outline text visibility */
