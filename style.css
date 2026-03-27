@@ -21,7 +21,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--dark) url('assets/assets-bg-dark.jpg') center top / cover no-repeat fixed;
+  background: var(--dark) url('assets/assets-bg-dark.jpg') center center / cover no-repeat fixed;
   color: var(--text);
   overflow-x: hidden;
   cursor: none;
@@ -1158,15 +1158,14 @@ body.light-mode {
   --text: #1A1A1A;
   --text-muted: #444440;
   --text-dim: #777772;
-  background: #F4F2EE url('assets/assets-bg-light.jpg') center top / cover no-repeat fixed;
+  background: #F4F2EE url('assets/assets-bg-light.jpg') center center / cover no-repeat fixed;
 }
 
 /* NAV */
 body.light-mode nav { background: rgba(244,242,238,0.95); }
 
-/* HERO — fix "WEBSITES" and outline text visibility */
 body.light-mode .hero::after {
-  background: linear-gradient(135deg, rgba(244,242,238,0.92) 0%, rgba(244,242,238,0.78) 60%, rgba(139,26,46,0.08) 100%);
+  background: linear-gradient(135deg, rgba(244,242,238,0.88) 0%, rgba(244,242,238,0.72) 60%, rgba(139,26,46,0.06) 100%);
 }
 body.light-mode .hero-title .outline {
   -webkit-text-stroke: 2px rgba(30,30,30,0.5);
@@ -1463,8 +1462,18 @@ body.light-mode .hero-grid-bg {
 @media (max-width: 900px) {
   nav { padding: 1.2rem 2rem; }
   .nav-links { display: none; }
-  body { background-attachment: scroll; }
-  body.light-mode { background-attachment: scroll; }
+  body {
+    background-attachment: scroll;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+  body.light-mode {
+    background-attachment: scroll;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
   .hero { padding: 7rem 2rem 5rem; min-height: 100svh; }
   .hero-content { min-height: unset; }
   .hero-actions {
