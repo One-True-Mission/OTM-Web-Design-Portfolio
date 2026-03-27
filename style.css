@@ -553,8 +553,36 @@ section { padding: 7rem 4rem; }
 #back-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
 #back-top:hover { background: var(--amber-light); }
 
-/* ANIMATED COUNTERS */
-.stat-num { transition: color 0.3s; }
+/* AMBER TEXT READABILITY - white glow behind all maroon text */
+.hero-title .amber {
+  color: var(--amber);
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 20px rgba(255,255,255,0.25), 0 0 40px rgba(255,255,255,0.12);
+  -webkit-text-stroke: 0.5px rgba(255,255,255,0.15);
+}
+.section-label,
+.work-tag,
+.work-link,
+.work-card-number,
+.ba-tag,
+.stat-label,
+.why-num,
+.process-step-tag,
+.footer-logo span,
+.nav-links a:hover,
+.faq-question:hover,
+.faq-question.open {
+  text-shadow: 0 0 12px rgba(255,255,255,0.2), 0 1px 3px rgba(0,0,0,0.4);
+}
+.btn-primary,
+.nav-cta {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 16px rgba(139,26,46,0.35);
+}
+.section-label::before {
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
 
 /* HERO PARALLAX HINT */
 /* TYPING CURSOR BLINK */
@@ -1209,6 +1237,23 @@ body.light-mode .process-step:hover { background: var(--dark-3); }
 
 /* MARQUEE */
 body.light-mode .marquee-item { color: #444440; }
+
+/* Remove glow shadows in light mode - maroon reads fine on light bg */
+body.light-mode .hero-title .amber,
+body.light-mode .section-label,
+body.light-mode .work-tag,
+body.light-mode .work-link,
+body.light-mode .ba-tag,
+body.light-mode .stat-label,
+body.light-mode .why-num,
+body.light-mode .process-step-tag,
+body.light-mode .footer-logo span,
+body.light-mode .nav-links a:hover,
+body.light-mode .faq-question:hover,
+body.light-mode .faq-question.open { text-shadow: none; }
+body.light-mode .hero-title .amber { -webkit-text-stroke: 0; }
+body.light-mode .btn-primary,
+body.light-mode .nav-cta { box-shadow: 0 2px 12px rgba(139,26,46,0.2); text-shadow: none; }
 
 /* WORK CARDS */
 body.light-mode .work-tag {
