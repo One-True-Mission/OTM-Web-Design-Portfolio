@@ -11,8 +11,8 @@
   --dark-4: rgba(34,34,34,0.96);
   --border: rgba(255,255,255,0.07);
   --text: #ECEAE8;
-  --text-muted: #909090;
-  --text-dim: #555552;
+  --text-muted: #B8B6B4;
+  --text-dim: #888885;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -561,11 +561,39 @@ section { padding: 7rem 4rem; }
   text-shadow: 0 0 20px rgba(255,255,255,0.25), 0 0 40px rgba(255,255,255,0.12);
   -webkit-text-stroke: 0.5px rgba(255,255,255,0.15);
 }
+
+/* BODY TEXT SHADOW - helps all text read over busy background */
+.section-title,
 .section-label,
-.work-tag,
+.hero-sub,
+.work-card h3,
+.work-card p,
 .work-link,
-.work-card-number,
-.ba-tag,
+.why-content h3,
+.why-content p,
+.why-num,
+.process-step h3,
+.process-step p,
+.process-step-tag,
+.process-step-num,
+.ba-info-text h3,
+.ba-info-text p,
+.stat-num,
+.stat-label,
+.testimonial-card blockquote,
+.author-name,
+.pricing-price,
+.pricing-desc,
+.pricing-features li,
+.contact-info p,
+.contact-detail,
+.faq-question,
+.faq-answer p {
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.section-label,
+.work-link,
 .stat-label,
 .why-num,
 .process-step-tag,
@@ -573,8 +601,9 @@ section { padding: 7rem 4rem; }
 .nav-links a:hover,
 .faq-question:hover,
 .faq-question.open {
-  text-shadow: 0 0 12px rgba(255,255,255,0.2), 0 1px 3px rgba(0,0,0,0.4);
+  text-shadow: 0 0 12px rgba(255,255,255,0.2), 0 1px 4px rgba(0,0,0,0.7);
 }
+
 .btn-primary,
 .nav-cta {
   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
@@ -769,10 +798,11 @@ section { padding: 7rem 4rem; }
 .why-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1rem;
-  color: var(--amber);
+  color: #D4A843;
   min-width: 28px;
   padding-top: 0.15rem;
   letter-spacing: 0.05em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 .why-content h3 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.35rem; }
 .why-content p { font-size: 0.85rem; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
@@ -1224,14 +1254,6 @@ body.light-mode .stat-num { color: #1A1A1A; }
 body.light-mode .stat-label { color: var(--amber); }
 
 /* PROCESS STEPS — fix ghost numbers */
-body.light-mode .process-step-num {
-  color: rgba(0,0,0,0.12);
-  -webkit-text-stroke: 1px rgba(0,0,0,0.2);
-}
-body.light-mode .process-step:hover .process-step-num {
-  color: rgba(139,26,46,0.3);
-  -webkit-text-stroke: 1px rgba(139,26,46,0.5);
-}
 body.light-mode .process-step { background: var(--dark-2); }
 body.light-mode .process-step:hover { background: var(--dark-3); }
 
@@ -1250,10 +1272,32 @@ body.light-mode .process-step-tag,
 body.light-mode .footer-logo span,
 body.light-mode .nav-links a:hover,
 body.light-mode .faq-question:hover,
-body.light-mode .faq-question.open { text-shadow: none; }
+body.light-mode .faq-question.open,
+body.light-mode .section-title,
+body.light-mode .work-card h3,
+body.light-mode .work-card p,
+body.light-mode .why-content h3,
+body.light-mode .why-content p,
+body.light-mode .process-step h3,
+body.light-mode .process-step p,
+body.light-mode .process-step-num,
+body.light-mode .stat-num,
+body.light-mode .hero-sub,
+body.light-mode .faq-question,
+body.light-mode .faq-answer p { text-shadow: none; }
 body.light-mode .hero-title .amber { -webkit-text-stroke: 0; }
 body.light-mode .btn-primary,
 body.light-mode .nav-cta { box-shadow: 0 2px 12px rgba(139,26,46,0.2); text-shadow: none; }
+body.light-mode .why-num { color: var(--amber); }
+body.light-mode .process-step-tag { color: var(--amber); border-color: rgba(139,26,46,0.3); }
+body.light-mode .process-step-num {
+  color: rgba(0,0,0,0.12);
+  -webkit-text-stroke: 1px rgba(0,0,0,0.2);
+}
+body.light-mode .process-step:hover .process-step-num {
+  color: rgba(139,26,46,0.3);
+  -webkit-text-stroke: 1px rgba(139,26,46,0.5);
+}
 
 /* WORK CARDS */
 body.light-mode .work-tag {
@@ -1343,28 +1387,29 @@ body.light-mode .hero-grid-bg {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 4rem;
   line-height: 1;
-  color: rgba(200,200,200,0.2);
+  color: rgba(212,168,67,0.5);
+  -webkit-text-stroke: 1px rgba(212,168,67,0.8);
   margin-bottom: 1rem;
-  transition: color 0.3s;
-  -webkit-text-stroke: 1px rgba(200,200,200,0.35);
+  transition: color 0.3s, -webkit-text-stroke 0.3s;
 }
 .process-step:hover .process-step-num {
-  color: rgba(139,26,46,0.5);
-  -webkit-text-stroke: 1px rgba(139,26,46,0.6);
+  color: rgba(212,168,67,0.7);
+  -webkit-text-stroke: 1px rgba(212,168,67,1);
 }
-.process-step h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
-.process-step p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; }
 .process-step-tag {
   display: inline-block;
   font-size: 0.6rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--amber);
-  border: 1px solid rgba(139,26,46,0.3);
+  color: #D4A843;
+  border: 1px solid rgba(212,168,67,0.5);
   padding: 0.2rem 0.5rem;
   border-radius: 1px;
   margin-bottom: 0.8rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
+.process-step h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
+.process-step p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; }
 
 /* FAQ ACCORDION */
 .faq-section { background: var(--dark); }
