@@ -673,15 +673,16 @@ section { padding: 7rem 4rem; }
   position: absolute; bottom: 1.5rem; right: 2rem;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 6rem;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(139,26,46,0.25);
+  color: rgba(139,26,46,0.18);
+  -webkit-text-stroke: 1px rgba(139,26,46,0.5);
   line-height: 1;
   pointer-events: none;
-  transition: -webkit-text-stroke 0.3s, color 0.3s;
+  transition: color 0.3s, -webkit-text-stroke 0.3s;
   letter-spacing: -0.02em;
 }
 .work-card:hover .work-card-number {
-  -webkit-text-stroke: 1px rgba(139,26,46,0.6);
+  color: rgba(139,26,46,0.35);
+  -webkit-text-stroke: 1px rgba(139,26,46,0.8);
 }
 
 /* SERVICES */
@@ -1216,10 +1217,12 @@ body.light-mode .work-tag {
   color: #444440;
 }
 body.light-mode .work-card-number {
-  -webkit-text-stroke: 1px rgba(139,26,46,0.2);
+  color: rgba(139,26,46,0.12);
+  -webkit-text-stroke: 1px rgba(139,26,46,0.35);
 }
 body.light-mode .work-card:hover .work-card-number {
-  -webkit-text-stroke: 1px rgba(139,26,46,0.5);
+  color: rgba(139,26,46,0.25);
+  -webkit-text-stroke: 1px rgba(139,26,46,0.6);
 }
 
 /* COMPARE BARS */
@@ -1461,7 +1464,20 @@ body.light-mode .hero-grid-bg {
   .nav-links { display: none; }
   .hero { padding: 7rem 2rem 5rem; min-height: 100svh; }
   .hero-content { min-height: unset; }
-  .btn-ghost, .btn-primary { font-size: 0.78rem; padding: 0.8rem 1.6rem; }
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .btn-primary, .btn-ghost {
+    width: 280px;
+    text-align: center;
+    font-size: 0.78rem;
+    padding: 0.9rem 1rem;
+    white-space: nowrap;
+    display: block;
+  }
   section { padding: 5rem 2rem; }
   .hero-stats { flex-wrap: nowrap; width: 100%; max-width: 100%; }
   .stat-item { flex: 1; min-width: 0; padding: 1rem 0.8rem; }
