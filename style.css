@@ -1978,3 +1978,105 @@ body.light-mode .ba-info-text p {
   color: #555;
   text-shadow: none !important;
 }
+/* ============================================================
+   OTM LIGHT MODE PATCH 2 — append after patch 1
+   Fixes: nav height, background zoom, section white space
+   ============================================================ */
+
+/* ─────────────────────────────────────────────
+   1. NAV — shrink padding 30% so hero title
+      isn't clipped and nav looks cleaner
+   ───────────────────────────────────────────── */
+body.light-mode nav {
+  padding: 0.75rem 4rem;
+}
+
+/* Also fix the JS-shrunken state on scroll */
+body.light-mode nav[style*="padding"] {
+  padding: 0.6rem 4rem !important;
+}
+
+/* ─────────────────────────────────────────────
+   2. BACKGROUND — show much more of the image
+      Use a smaller background-size so the full
+      image is visible rather than cropped in
+   ───────────────────────────────────────────── */
+body.light-mode {
+  background-size: 75% auto !important;
+  background-position: right top !important;
+  background-attachment: fixed !important;
+}
+
+/* ─────────────────────────────────────────────
+   3. SECTION WHITE SPACE — let the background
+      breathe through by reducing section bg
+      opacity so it doesn't feel like solid
+      blank walls between content blocks
+   ───────────────────────────────────────────── */
+
+/* Reduce the opacity on alternating section backgrounds */
+body.light-mode .services-section,
+body.light-mode .testimonials-section,
+body.light-mode .process-section {
+  background: rgba(236, 234, 230, 0.7);
+}
+
+body.light-mode .ba-section {
+  background: rgba(236, 234, 230, 0.65);
+}
+
+body.light-mode #work,
+body.light-mode #why,
+body.light-mode #pricing,
+body.light-mode #faq {
+  background: rgba(244, 242, 238, 0.6);
+}
+
+body.light-mode .contact-section {
+  background: rgba(236, 234, 230, 0.72);
+}
+
+/* Cards and content boxes stay opaque so text is readable */
+body.light-mode .work-card,
+body.light-mode .service-item,
+body.light-mode .testimonial-card,
+body.light-mode .process-step,
+body.light-mode .why-visual,
+body.light-mode .pricing-single-left,
+body.light-mode .pricing-single-right,
+body.light-mode .faq-list,
+body.light-mode .contact-form,
+body.light-mode .contact-info {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body.light-mode .work-card:hover,
+body.light-mode .service-item:hover,
+body.light-mode .process-step:hover {
+  background: rgba(255, 255, 255, 0.96) !important;
+}
+
+/* FAQ items stay readable */
+body.light-mode .faq-answer {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+/* Carousel wrap gets glass treatment */
+body.light-mode .carousel-wrap {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(139, 26, 46, 0.12);
+}
+
+body.light-mode .carousel-controls {
+  background: rgba(226, 222, 216, 0.9);
+}
+
+/* Why visual card */
+body.light-mode .why-visual {
+  border: 1px solid rgba(139, 26, 46, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
