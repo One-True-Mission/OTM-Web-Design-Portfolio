@@ -2210,3 +2210,42 @@ body:not(.light-mode) .work-link:hover {
   background: rgba(139, 26, 46, 0.95);
   gap: 0.8rem;
 }
+/* ============================================================
+   DARK MODE — Before/After badges to match light mode style
+   ============================================================ */
+
+body:not(.light-mode) .ba-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  padding: 0.5rem 1.3rem;
+  border-radius: 0;
+  top: 1.5rem;
+  transform: none;
+}
+
+/* BEFORE badge — white filled, dark text */
+body:not(.light-mode) .ba-label.before-label {
+  left: 1.5rem;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  border: 2px solid #FFFFFF;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
+  padding-right: 1.8rem;
+  text-shadow: none;
+}
+
+/* AFTER badge — crimson filled, white text */
+body:not(.light-mode) .ba-label.after-label {
+  right: 1.5rem;
+  background: var(--amber);
+  color: #FFFFFF;
+  border: 2px solid var(--amber);
+  box-shadow:
+    -3px 3px 0px rgba(139, 26, 46, 0.5),
+    0 0 16px rgba(139, 26, 46, 0.4);
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
+  padding-left: 1.8rem;
+  text-shadow: none;
+}
