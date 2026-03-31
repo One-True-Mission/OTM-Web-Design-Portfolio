@@ -2249,3 +2249,111 @@ body:not(.light-mode) .ba-label.after-label {
   padding-left: 1.8rem;
   text-shadow: none;
 }
+/* ============================================================
+   DARK MODE — Section opacity so background image shows through
+   ============================================================ */
+
+body:not(.light-mode) .services-section,
+body:not(.light-mode) .testimonials-section,
+body:not(.light-mode) .process-section,
+body:not(.light-mode) .ba-section {
+  background: rgba(17, 17, 17, 0.55);
+}
+
+body:not(.light-mode) #work,
+body:not(.light-mode) #why,
+body:not(.light-mode) #pricing,
+body:not(.light-mode) #faq {
+  background: rgba(10, 10, 10, 0.5);
+}
+
+body:not(.light-mode) .contact-section {
+  background: rgba(17, 17, 17, 0.6);
+}
+
+/* Keep content cards opaque so text stays readable */
+body:not(.light-mode) .work-card {
+  background: rgba(17, 17, 17, 0.88) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body:not(.light-mode) .work-card:hover {
+  background: rgba(24, 24, 24, 0.95) !important;
+}
+
+body:not(.light-mode) .service-item {
+  background: rgba(17, 17, 17, 0.88) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body:not(.light-mode) .service-item:hover {
+  background: rgba(24, 24, 24, 0.96) !important;
+}
+
+body:not(.light-mode) .process-step {
+  background: rgba(17, 17, 17, 0.88) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body:not(.light-mode) .process-step:hover {
+  background: rgba(24, 24, 24, 0.96) !important;
+}
+
+body:not(.light-mode) .testimonial-card {
+  background: rgba(17, 17, 17, 0.88) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+body:not(.light-mode) .carousel-controls {
+  background: rgba(24, 24, 24, 0.92);
+}
+
+body:not(.light-mode) .why-visual {
+  background: rgba(17, 17, 17, 0.88) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body:not(.light-mode) .pricing-single-left {
+  background: rgba(24, 24, 24, 0.92) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body:not(.light-mode) .pricing-single-right {
+  background: rgba(17, 17, 17, 0.88) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body:not(.light-mode) .faq-list {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body:not(.light-mode) .faq-answer {
+  background: rgba(17, 17, 17, 0.92);
+}
+
+body:not(.light-mode) .ba-info {
+  background: rgba(24, 24, 24, 0.88) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+body:not(.light-mode) .contact-form {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body:not(.light-mode) .form-field {
+  background: rgba(24, 24, 24, 0.9) !important;
+}
+
+body:not(.light-mode) .form-submit-row {
+  background: rgba(24, 24, 24, 0.92) !important;
+}
