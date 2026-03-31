@@ -2080,3 +2080,6 @@ body.light-mode .why-visual {
   border: 1px solid rgba(139, 26, 46, 0.15);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
+body.light-mode .hero {
+  padding-top: 5.5rem;
+}
