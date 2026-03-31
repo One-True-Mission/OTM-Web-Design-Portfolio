@@ -2471,3 +2471,50 @@ body.light-mode section + section::before {
     display: none;
   }
 }
+/* ============================================================
+   MOBILE FIXED BACKGROUND — iOS/Android workaround
+   Uses a pseudo-element since background-attachment: fixed
+   is disabled on mobile browsers for performance reasons
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  /* Lock body positioning context */
+  body {
+    position: relative;
+  }
+
+  /* DARK MODE fixed background pseudo-element */
+  body:not(.light-mode)::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #0A0A0A url('assets/assets-bg-dark.jpg') center center / cover no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Remove background from body in dark mode on mobile
+     so the pseudo-element shows through */
+  body:not(.light-mode) {
+    background: transparent !important;
+  }
+
+  /* LIGHT MODE fixed background pseudo-element */
+  body.light-mode::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #F4F2EE url('assets/assets-bg-light.jpg') right top / 75% auto no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Remove background from body in light mode on mobile */
+  body.light-mode {
+    background: transparent !important;
+  }
+
+}
