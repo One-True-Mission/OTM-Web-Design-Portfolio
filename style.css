@@ -2518,3 +2518,32 @@ body.light-mode section + section::before {
   }
 
 }
+/* ============================================================
+   MOBILE LIGHT MODE BACKGROUND — force fix
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  body.light-mode {
+    background-image: none !important;
+    background-color: #F4F2EE !important;
+  }
+
+  body.light-mode::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/assets-bg-light.jpg') !important;
+    background-color: #F4F2EE !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+}
