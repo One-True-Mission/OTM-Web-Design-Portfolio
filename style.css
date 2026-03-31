@@ -2547,3 +2547,20 @@ body.light-mode section + section::before {
   }
 
 }
+/* ============================================================
+   MOBILE BACKGROUND ZOOM OUT — both dark and light
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  body:not(.light-mode)::before {
+    background-size: 280% auto !important;
+    background-position: center top !important;
+  }
+
+  body.light-mode::before {
+    background-size: 280% auto !important;
+    background-position: center top !important;
+  }
+
+}
