@@ -1618,3 +1618,363 @@ body.light-mode .hero-grid-bg {
   .pricing-single { grid-template-columns: 1fr; }
   .pricing-features { grid-template-columns: 1fr; }
 }
+/* ============================================================
+   OTM LIGHT MODE PATCH — applies only inside body.light-mode
+   Drop this at the BOTTOM of your style.css, after all existing
+   light-mode rules. It will override/add without touching dark.
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────────
+   1. BACKGROUND — zoom out so more image shows
+   ───────────────────────────────────────────── */
+body.light-mode {
+  background-size: cover;
+  background-position: center center;
+}
+
+/* ─────────────────────────────────────────────
+   2. TEXT FUZZINESS — nuke all text-shadow on
+      dark text elements in light mode
+   ───────────────────────────────────────────── */
+body.light-mode .section-title,
+body.light-mode .section-label,
+body.light-mode .hero-sub,
+body.light-mode .work-card h3,
+body.light-mode .work-card p,
+body.light-mode .work-link,
+body.light-mode .why-content h3,
+body.light-mode .why-content p,
+body.light-mode .why-num,
+body.light-mode .process-step h3,
+body.light-mode .process-step p,
+body.light-mode .process-step-tag,
+body.light-mode .process-step-num,
+body.light-mode .ba-info-text h3,
+body.light-mode .ba-info-text p,
+body.light-mode .stat-num,
+body.light-mode .stat-label,
+body.light-mode .testimonial-card blockquote,
+body.light-mode .author-name,
+body.light-mode .author-detail,
+body.light-mode .pricing-price,
+body.light-mode .pricing-desc,
+body.light-mode .pricing-features li,
+body.light-mode .pricing-tier,
+body.light-mode .pricing-features-title,
+body.light-mode .pricing-disclaimer,
+body.light-mode .contact-info p,
+body.light-mode .contact-detail,
+body.light-mode .faq-question,
+body.light-mode .faq-answer p,
+body.light-mode .form-field label,
+body.light-mode .form-field input,
+body.light-mode .form-field select,
+body.light-mode .form-field textarea,
+body.light-mode .form-note,
+body.light-mode .compare-label,
+body.light-mode .compare-val,
+body.light-mode .compare-title,
+body.light-mode .service-item h3,
+body.light-mode .service-item p,
+body.light-mode .marquee-item,
+body.light-mode .footer-copy,
+body.light-mode .footer-links a,
+body.light-mode .footer-logo,
+body.light-mode .nav-links a,
+body.light-mode .ba-tag,
+body.light-mode .ba-info-num,
+body.light-mode blockquote,
+body.light-mode .author-detail,
+body.light-mode .stars,
+body.light-mode h3,
+body.light-mode p,
+body.light-mode li,
+body.light-mode label,
+body.light-mode span {
+  text-shadow: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keep amber accent elements crisp too */
+body.light-mode .section-label,
+body.light-mode .work-link,
+body.light-mode .stat-label,
+body.light-mode .process-step-tag,
+body.light-mode .ba-tag,
+body.light-mode .hero-title .amber {
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   3. SECTION GAPS — tighter padding + dividers
+   ───────────────────────────────────────────── */
+body.light-mode section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+/* Decorative divider between sections */
+body.light-mode section + section::before,
+body.light-mode .ba-section + section::before,
+body.light-mode section + .ba-section::before {
+  content: '';
+  display: block;
+  width: calc(100% + 8rem);
+  margin-left: -4rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 26, 46, 0.15) 15%,
+    rgba(139, 26, 46, 0.35) 40%,
+    rgba(139, 26, 46, 0.35) 60%,
+    rgba(139, 26, 46, 0.15) 85%,
+    transparent 100%
+  );
+  margin-bottom: 4.5rem;
+}
+
+/* Diamond accent in the center of each divider */
+body.light-mode section + section::after {
+  content: '◆';
+  display: block;
+  text-align: center;
+  font-size: 0.45rem;
+  color: rgba(139, 26, 46, 0.5);
+  margin-top: -4.8rem;
+  margin-bottom: 4rem;
+  letter-spacing: 0.3em;
+}
+
+/* Specific overrides for sections with their own bg */
+body.light-mode .services-section,
+body.light-mode .testimonials-section,
+body.light-mode .process-section,
+body.light-mode .contact-section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+/* Tighter work section */
+body.light-mode #work {
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   4. BEFORE / AFTER BADGES — bold & dramatic
+   ───────────────────────────────────────────── */
+
+/* Base badge reset */
+body.light-mode .ba-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  padding: 0.5rem 1.3rem;
+  border-radius: 0;
+  top: 1.5rem;
+  transform: none;
+  text-shadow: none !important;
+}
+
+/* BEFORE badge — dark filled, crisp */
+body.light-mode .ba-label.before-label {
+  left: 1.5rem;
+  background: #1A1A1A;
+  color: #FFFFFF;
+  border: 2px solid #1A1A1A;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
+  padding-right: 1.8rem;
+}
+
+/* AFTER badge — crimson filled, punchy */
+body.light-mode .ba-label.after-label {
+  right: 1.5rem;
+  background: var(--amber);
+  color: #FFFFFF;
+  border: 2px solid var(--amber);
+  box-shadow: -3px 3px 0px rgba(139, 26, 46, 0.3);
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
+  padding-left: 1.8rem;
+}
+
+/* ─────────────────────────────────────────────
+   5. DRAG BUTTON — centered, premium, bold
+   ───────────────────────────────────────────── */
+
+/* Remove old generic drag button styling */
+body.light-mode .ba-wrap > div[style*="display:flex"] {
+  display: none !important;
+}
+
+/* The actual drag instruction — shown above slider, centered */
+body.light-mode .ba-wrap {
+  position: relative;
+}
+
+/* Re-style the drag hint that sits above slider */
+body.light-mode div[style*="display:flex"][style*="align-items:center"] {
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+/* The drag indicator pill next to description text */
+body.light-mode div[style*="flex-shrink:0"][style*="display:flex"][style*="align-items:center"] {
+  background: #1A1A1A !important;
+  color: #FFFFFF !important;
+  border: 2px solid #1A1A1A !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.2em !important;
+  padding: 0.55rem 1.4rem !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15) !important;
+  font-family: 'Bebas Neue', sans-serif !important;
+}
+
+/* Handle button itself — redesigned for light mode */
+body.light-mode .ba-handle-btn {
+  width: 56px;
+  height: 56px;
+  background: #1A1A1A;
+  border: 3px solid var(--amber);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  box-shadow:
+    0 0 0 4px rgba(139, 26, 46, 0.2),
+    0 6px 24px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.05em;
+  font-weight: 900;
+}
+
+/* Handle line */
+body.light-mode .ba-handle {
+  background: #1A1A1A;
+  width: 3px;
+}
+
+/* ─────────────────────────────────────────────
+   6. HERO STATS — premium redesign for light
+   ───────────────────────────────────────────── */
+body.light-mode .hero-stats {
+  border: none;
+  background: transparent;
+  gap: 0.75rem;
+  margin-top: 3rem;
+  width: fit-content;
+}
+
+body.light-mode .stat-item {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(139, 26, 46, 0.2);
+  border-top: 3px solid var(--amber);
+  padding: 1.4rem 2.4rem;
+  border-right: none;
+  box-shadow:
+    0 2px 0 rgba(139, 26, 46, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.light-mode .stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 2px 0 rgba(139, 26, 46, 0.2),
+    0 12px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Remove old top pseudo-element — replace with border-top */
+body.light-mode .stat-item::before {
+  display: none;
+}
+
+/* Thin right separator line between items */
+body.light-mode .stat-item::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -0.375rem;
+  height: 60%;
+  width: 1px;
+  background: rgba(139, 26, 46, 0.15);
+}
+
+body.light-mode .stat-item:last-child {
+  border-right: 1px solid rgba(139, 26, 46, 0.2);
+}
+
+body.light-mode .stat-item:last-child::after {
+  display: none;
+}
+
+body.light-mode .stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  color: #1A1A1A;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-shadow: none !important;
+}
+
+body.light-mode .stat-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-top: 0.5rem;
+  font-weight: 600;
+  text-shadow: none !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   7. MARQUEE STRIP — more defined in light mode
+   ───────────────────────────────────────────── */
+body.light-mode .marquee-strip {
+  background: #FFFFFF;
+  border-top: 1px solid rgba(139, 26, 46, 0.15);
+  border-bottom: 1px solid rgba(139, 26, 46, 0.15);
+}
+
+body.light-mode .marquee-item {
+  color: #1A1A1A;
+  font-weight: 500;
+}
+
+body.light-mode .marquee-dot {
+  background: var(--amber);
+}
+
+
+/* ─────────────────────────────────────────────
+   8. BA-INFO BAR — clean card in light mode
+   ───────────────────────────────────────────── */
+body.light-mode .ba-info {
+  background: #FFFFFF;
+  border: 1px solid rgba(139, 26, 46, 0.15);
+  border-top: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .ba-info-num {
+  -webkit-text-stroke: 1px rgba(139, 26, 46, 0.2);
+  text-shadow: none !important;
+}
+
+body.light-mode .ba-info-text h3 {
+  color: #1A1A1A;
+  text-shadow: none !important;
+}
+
+body.light-mode .ba-info-text p {
+  color: #555;
+  text-shadow: none !important;
+}
