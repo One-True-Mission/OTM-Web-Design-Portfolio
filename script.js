@@ -98,11 +98,32 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
-// FORM SUBMIT
+// FORM SUBMIT — Formspree
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  this.style.display = 'none';
-  document.getElementById('formSuccess').classList.add('show');
+  const form = this;
+  const submitBtn = form.querySelector('.form-submit');
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    } else {
+      submitBtn.textContent = 'Send Request →';
+      submitBtn.disabled = false;
+      alert('Something went wrong. Please try again or email stevenhowell27@yahoo.com directly.');
+    }
+  }).catch(() => {
+    submitBtn.textContent = 'Send Request →';
+    submitBtn.disabled = false;
+    alert('Something went wrong. Please try again or email stevenhowell27@yahoo.com directly.');
+  });
 });
 
 // CAROUSEL
