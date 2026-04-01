@@ -556,25 +556,25 @@
     </div>
 
     <div class="reveal reveal-delay-1">
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnjozbnj" method="POST">
         <div class="form-row">
           <div class="form-field">
             <label>Full Name</label>
-            <input type="text" placeholder="John Smith" required>
+            <input type="text" name="full_name" placeholder="John Smith" required>
           </div>
           <div class="form-field">
             <label>Email Address</label>
-            <input type="email" placeholder="john@business.com" required>
+            <input type="email" name="email" placeholder="john@business.com" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
             <label>Phone Number</label>
-            <input type="tel" placeholder="(555) 000-0000">
+            <input type="tel" name="phone" placeholder="(555) 000-0000">
           </div>
           <div class="form-field">
             <label>Business Type</label>
-            <select>
+            <select name="business_type">
               <option value="">Select...</option>
               <option>Auto / Mechanic Shop</option>
               <option>Restaurant / Food</option>
@@ -589,7 +589,7 @@
         </div>
         <div class="form-field">
           <label>Package Interest</label>
-          <select>
+          <select name="package_interest">
             <option value="">Select...</option>
             <option>Standard Site: $500</option>
             <option>Not Sure Yet</option>
@@ -597,7 +597,7 @@
         </div>
         <div class="form-field">
           <label>Tell Me About Your Project</label>
-          <textarea rows="4" placeholder="What does your business do? Do you have an existing website? What are your goals?"></textarea>
+          <textarea rows="4" name="project_details" placeholder="What does your business do? Do you have an existing website? What are your goals?"></textarea>
         </div>
         <div class="form-submit-row">
           <span class="form-note">I'll respond within one business day.</span>
