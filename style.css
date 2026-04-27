@@ -2671,8 +2671,9 @@ body.light-mode section + section::before {
   filter: brightness(0.92) saturate(1.05);
   transition: filter 0.4s ease;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
+  object-position: top center;
+  background: #0a0a0a;
 }
 
 .featured-laptop:hover .laptop-img {
@@ -2704,6 +2705,22 @@ body.light-mode section + section::before {
   display: flex;
   flex-direction: column;
   gap: 0;
+  background: rgba(17, 17, 17, 0.78);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2.5rem 2.5rem 2.8rem;
+  border-radius: 2px;
+  position: relative;
+}
+
+.featured-info::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 60px;
+  background: var(--amber);
 }
 
 .featured-badge {
@@ -2892,8 +2909,9 @@ body.light-mode section + section::before {
   display: block;
   border-radius: 1px;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
+  object-position: top center;
+  background: #0a0a0a;
   filter: brightness(0.9) saturate(1.05);
   transition: filter 0.4s ease;
 }
@@ -2980,6 +2998,12 @@ body.light-mode .work-card-new:hover {
 body.light-mode .featured-badge {
   background: rgba(139, 26, 46, 0.08);
   border-color: rgba(139, 26, 46, 0.4);
+}
+
+body.light-mode .featured-info {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1px solid rgba(139, 26, 46, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 body.light-mode .featured-title,
