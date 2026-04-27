@@ -135,40 +135,6 @@ nav {
 }
 .nav-logo-text span { color: var(--amber); }
 
-/* PORTFOLIO CARD IMAGE */
-.work-card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--border);
-  filter: grayscale(20%);
-  transition: filter 0.4s ease, transform 0.4s ease;
-}
-.work-card:hover .work-card-img {
-  filter: grayscale(0%);
-  transform: scale(1.01);
-}
-.work-card-img-wrap {
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--border);
-  position: relative;
-}
-.work-card-img-wrap img {
-  width: 100%; height: 200px;
-  object-fit: cover; object-position: top;
-  display: block;
-  filter: grayscale(20%);
-  transition: filter 0.4s ease, transform 0.5s ease;
-}
-.work-card:hover .work-card-img-wrap img {
-  filter: grayscale(0%);
-  transform: scale(1.03);
-}
-
 /* BEFORE / AFTER SLIDER */
 .ba-section { background: var(--dark-2); }
 
@@ -566,9 +532,6 @@ section { padding: 7rem 4rem; }
 .section-title,
 .section-label,
 .hero-sub,
-.work-card h3,
-.work-card p,
-.work-link,
 .why-content h3,
 .why-content p,
 .why-num,
@@ -593,7 +556,6 @@ section { padding: 7rem 4rem; }
 }
 
 .section-label,
-.work-link,
 .stat-label,
 .why-num,
 .process-step-tag,
@@ -613,7 +575,6 @@ section { padding: 7rem 4rem; }
   box-shadow: 0 0 8px rgba(255,255,255,0.2);
 }
 
-/* HERO PARALLAX HINT */
 /* TYPING CURSOR BLINK */
 .type-cursor {
   display: inline-block;
@@ -625,19 +586,6 @@ section { padding: 7rem 4rem; }
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-/* WORK CARD ACCENT BAR */
-.work-card-preview {
-  height: 3px;
-  background: var(--amber);
-  opacity: 0.5;
-  margin-bottom: 1.5rem;
-  border-radius: 1px;
-  transition: opacity 0.3s;
-}
-.work-card:hover .work-card-preview {
-  opacity: 1;
-}
-
 /* SECTION DIVIDER LINE */
 .section-divider {
   width: 100%; height: 1px;
@@ -646,36 +594,25 @@ section { padding: 7rem 4rem; }
   margin: 0;
 }
 
-/* HIGHLIGHT BADGE */
+/* ============================================================
+   WORK SECTION — Featured hero + laptop mockups + premium pass
+   ============================================================ */
 
-/* WORK / PORTFOLIO */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  margin-top: 4rem;
+#work {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
-.work-card {
-  background: var(--dark-2);
-  padding: 2.5rem;
-  transition: background 0.3s;
-  position: relative;
-  overflow: hidden;
-  display: flex; flex-direction: column;
+
+.work-intro {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  max-width: 580px;
+  line-height: 1.7;
+  margin-bottom: 4.5rem;
 }
-.work-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--amber);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-.work-card:hover { background: var(--dark-3); }
-.work-card:hover::before { transform: scaleX(1); }
+
+/* shared work-tag (used by both featured and grid cards) */
 .work-tag {
   display: inline-flex;
   align-items: center;
@@ -689,7 +626,6 @@ section { padding: 7rem 4rem; }
   border-left: 2px solid var(--amber);
   padding: 0.35rem 0.75rem;
   border-radius: 1px;
-  margin-bottom: 1.4rem;
   width: fit-content;
   font-weight: 500;
 }
@@ -700,46 +636,569 @@ section { padding: 7rem 4rem; }
   background: var(--amber);
   flex-shrink: 0;
 }
-.work-card h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
+
+/* shared work-link button */
+.work-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: rgba(139, 26, 46, 0.75);
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(139, 26, 46, 0.5);
+  border-radius: 1px;
+  text-decoration: none;
+  text-shadow: none;
+  transition: background 0.2s, gap 0.2s;
+  width: fit-content;
+}
+.work-link:hover {
+  background: rgba(139, 26, 46, 0.95);
+  gap: 0.8rem;
+}
+.work-link svg { width: 14px; height: 14px; }
+
+/* ─── FEATURED HERO PROJECT ─────────────────────────── */
+.work-featured {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+  margin-bottom: 6rem;
+  padding-bottom: 6rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.work-featured::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 1px;
+  background: var(--amber);
+}
+
+/* LAPTOP MOCKUP — featured (large) */
+.featured-laptop {
+  position: relative;
+  perspective: 1500px;
+  cursor: pointer;
+}
+
+.laptop-screen {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 14px 14px 4px 4px;
+  padding: 28px 12px 12px;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.featured-laptop:hover .laptop-screen {
+  transform: translateY(-6px) rotateX(2deg);
+}
+
+.laptop-browser-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 28px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #1f1f1f 100%);
+  border-radius: 14px 14px 0 0;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 7px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.browser-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot-red    { background: #ff5f57; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.15); }
+.dot-yellow { background: #febc2e; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.15); }
+.dot-green  { background: #28c840; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.15); }
+
+.browser-url {
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.65rem;
   letter-spacing: 0.04em;
+  padding: 0.18rem 0.95rem;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  transform: translateX(-22px);
+}
+
+.laptop-img {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
+  filter: brightness(0.92) saturate(1.05);
+  transition: filter 0.4s ease;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  object-position: top center;
+  background: #0a0a0a;
+}
+
+.featured-laptop:hover .laptop-img {
+  filter: brightness(1) saturate(1.1);
+}
+
+.laptop-base {
+  height: 14px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #181818 60%, #0c0c0c 100%);
+  border-radius: 0 0 16px 16px;
+  margin: 0 -22px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.laptop-base::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 6px 6px;
+}
+
+/* FEATURED INFO PANEL */
+.featured-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(17, 17, 17, 0.78);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2.5rem 2.5rem 2.8rem;
+  border-radius: 6px;
+  position: relative;
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  transition: box-shadow 0.5s ease;
+}
+
+.work-featured:hover .featured-info {
+  box-shadow:
+    0 0 0 1px rgba(139, 26, 46, 0.3),
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 0 60px rgba(139, 26, 46, 0.15);
+}
+
+.featured-info::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 60px;
+  background: var(--amber);
+}
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--amber);
+  background: rgba(139, 26, 46, 0.12);
+  border: 1px solid rgba(139, 26, 46, 0.4);
+  padding: 0.4rem 0.85rem;
+  border-radius: 1px;
+  margin-bottom: 1.4rem;
+  width: fit-content;
+}
+
+.featured-badge::before {
+  content: '★';
+  font-size: 0.65rem;
+  color: var(--amber);
+}
+
+/* Featured Header (logo + tag + title) */
+.featured-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured-logo {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.featured-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0.95);
+  transition: filter 0.3s;
+}
+
+.work-featured:hover .featured-logo {
+  background: rgba(139, 26, 46, 0.12);
+  border-color: rgba(139, 26, 46, 0.4);
+  transform: scale(1.04);
+}
+
+.work-featured:hover .featured-logo img {
+  filter: brightness(1.1);
+}
+
+.featured-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.featured-header-text .work-tag {
   margin-bottom: 0.6rem;
+}
+
+.featured-header-text .featured-title {
+  margin-bottom: 0;
+}
+
+.featured-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+  color: var(--text);
+}
+
+.featured-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.featured-meta {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0;
+  margin-bottom: 2.2rem;
+  width: fit-content;
+  border-left: 1px solid var(--border);
+}
+
+.meta-item {
+  padding: 0.7rem 1.4rem;
+  border-right: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.meta-label {
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.meta-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
   line-height: 1;
 }
-.work-card p {
-  font-size: 0.88rem;
+
+.featured-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--amber);
+  padding: 0.85rem 1.6rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, gap 0.2s, transform 0.15s;
+  width: fit-content;
+  border: 1px solid var(--amber);
+}
+
+.featured-link:hover {
+  background: var(--amber-light);
+  gap: 0.9rem;
+  transform: translateY(-2px);
+}
+
+.featured-link svg {
+  width: 14px; height: 14px;
+}
+
+.featured-number {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 6rem;
+  color: rgba(139, 26, 46, 0.45);
+  -webkit-text-stroke: 1.5px rgba(139, 26, 46, 0.85);
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+}
+
+/* ─── SECONDARY PROJECTS GRID ───────────────────────── */
+.work-grid-new {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.work-card-new {
+  background: rgba(17, 17, 17, 0.78);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2rem 1.8rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.4s ease;
+}
+
+.work-card-new::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.work-card-new:hover {
+  background: rgba(24, 24, 24, 0.92);
+  border-color: rgba(139, 26, 46, 0.35);
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(139, 26, 46, 0.35),
+    0 12px 36px rgba(0, 0, 0, 0.4),
+    0 0 48px rgba(139, 26, 46, 0.18);
+}
+
+.work-card-new:hover::before {
+  transform: scaleX(1);
+}
+
+/* MINI LAPTOP MOCKUPS */
+.mini-laptop {
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+
+.mini-screen {
+  background: #1a1a1a;
+  border-radius: 8px 8px 2px 2px;
+  padding: 18px 6px 6px;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.work-card-new:hover .mini-screen {
+  transform: translateY(-3px);
+}
+
+.mini-browser-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 18px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #1f1f1f 100%);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  gap: 4px;
+}
+
+.mini-browser-bar .browser-dot {
+  width: 6px; height: 6px;
+}
+
+.mini-screen img {
+  width: 100%;
+  display: block;
+  border-radius: 1px;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  object-position: top center;
+  background: #0a0a0a;
+  filter: brightness(0.9) saturate(1.05);
+  transition: filter 0.4s ease;
+}
+
+.work-card-new:hover .mini-screen img {
+  filter: brightness(1) saturate(1.1);
+}
+
+.mini-base {
+  height: 8px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #161616 100%);
+  border-radius: 0 0 8px 8px;
+  margin: 0 -12px;
+  position: relative;
+}
+
+.mini-base::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 4px 4px;
+}
+
+/* Card header (logo + tag + title) */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.card-logo {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.card-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0.92);
+  transition: filter 0.3s;
+}
+
+.work-card-new:hover .card-logo {
+  background: rgba(139, 26, 46, 0.12);
+  border-color: rgba(139, 26, 46, 0.4);
+  transform: scale(1.05);
+}
+
+.work-card-new:hover .card-logo img {
+  filter: brightness(1.1);
+}
+
+.card-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-header-text .work-tag {
+  margin-bottom: 0.4rem;
+}
+
+.card-header-text h3 {
+  margin-bottom: 0 !important;
+}
+
+.work-card-new h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.65rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+  margin-top: 0.2rem;
+  line-height: 1.05;
+}
+
+.work-card-new p {
+  font-size: 0.83rem;
   color: var(--text-muted);
   line-height: 1.65;
   font-weight: 300;
   flex: 1;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
 }
-.work-link {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--amber);
-  text-decoration: none;
-  transition: gap 0.2s;
+
+.work-card-new .work-link {
+  align-self: flex-start;
 }
-.work-link:hover { gap: 0.8rem; }
-.work-link svg { width: 14px; height: 14px; }
-.work-card-number {
-  position: absolute; bottom: 1.5rem; right: 2rem;
+
+.work-card-new .work-card-number {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.6rem;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 6rem;
-  color: rgba(139,26,46,0.18);
-  -webkit-text-stroke: 1px rgba(139,26,46,0.5);
+  font-size: 4rem;
+  color: rgba(139, 26, 46, 0.45);
+  -webkit-text-stroke: 1px rgba(139, 26, 46, 0.85);
   line-height: 1;
   pointer-events: none;
   transition: color 0.3s, -webkit-text-stroke 0.3s;
   letter-spacing: -0.02em;
 }
-.work-card:hover .work-card-number {
-  color: rgba(139,26,46,0.35);
-  -webkit-text-stroke: 1px rgba(139,26,46,0.8);
+
+.work-card-new:hover .work-card-number {
+  color: rgba(139, 26, 46, 0.7);
+  -webkit-text-stroke: 1px rgba(139, 26, 46, 1);
 }
 
 /* SERVICES */
@@ -1219,7 +1678,6 @@ body.light-mode {
   background: #F4F2EE url('assets/assets-bg-light.jpg') center center / cover no-repeat fixed;
 }
 
-/* NAV */
 body.light-mode nav { background: rgba(244,242,238,0.95); }
 
 body.light-mode .hero::after {
@@ -1242,7 +1700,6 @@ body.light-mode .btn-ghost:hover {
   border-color: rgba(0,0,0,0.4);
 }
 
-/* STAT CARDS — fix numbers and labels in light mode */
 body.light-mode .hero-stats {
   border-color: rgba(139,26,46,0.4);
 }
@@ -1253,14 +1710,11 @@ body.light-mode .stat-item {
 body.light-mode .stat-num { color: #1A1A1A; }
 body.light-mode .stat-label { color: var(--amber); }
 
-/* PROCESS STEPS — fix ghost numbers */
 body.light-mode .process-step { background: var(--dark-2); }
 body.light-mode .process-step:hover { background: var(--dark-3); }
 
-/* MARQUEE */
 body.light-mode .marquee-item { color: #444440; }
 
-/* Remove glow shadows in light mode - maroon reads fine on light bg */
 body.light-mode .hero-title .amber,
 body.light-mode .section-label,
 body.light-mode .work-tag,
@@ -1274,8 +1728,6 @@ body.light-mode .nav-links a:hover,
 body.light-mode .faq-question:hover,
 body.light-mode .faq-question.open,
 body.light-mode .section-title,
-body.light-mode .work-card h3,
-body.light-mode .work-card p,
 body.light-mode .why-content h3,
 body.light-mode .why-content p,
 body.light-mode .process-step h3,
@@ -1299,25 +1751,8 @@ body.light-mode .process-step:hover .process-step-num {
   -webkit-text-stroke: 1px rgba(139,26,46,0.5);
 }
 
-/* WORK CARDS */
-body.light-mode .work-tag {
-  background: rgba(139,26,46,0.06);
-  border-color: rgba(0,0,0,0.1);
-  color: #444440;
-}
-body.light-mode .work-card-number {
-  color: rgba(139,26,46,0.12);
-  -webkit-text-stroke: 1px rgba(139,26,46,0.35);
-}
-body.light-mode .work-card:hover .work-card-number {
-  color: rgba(139,26,46,0.25);
-  -webkit-text-stroke: 1px rgba(139,26,46,0.6);
-}
-
-/* COMPARE BARS */
 body.light-mode .compare-bar-wrap { background: rgba(0,0,0,0.08); }
 
-/* HERO GRID BG */
 body.light-mode .hero-grid-bg {
   background-image:
     linear-gradient(rgba(139,26,46,0.06) 1px, transparent 1px),
@@ -1337,7 +1772,6 @@ body.light-mode .hero-grid-bg {
 }
 #theme-toggle:hover { border-color: var(--amber); color: var(--amber); }
 
-/* FLOATING CONTACT BUTTON */
 #float-contact {
   position: fixed; bottom: 2rem; left: 2rem; z-index: 100;
   display: flex; align-items: center; gap: 0.6rem;
@@ -1480,7 +1914,6 @@ body.light-mode .hero-grid-bg {
   padding: 0.5rem 0.75rem;
   font-size: 0.72rem;
   color: var(--text-muted);
-  white-space: nowrap;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s;
@@ -1545,8 +1978,15 @@ body.light-mode .hero-grid-bg {
 
 /* RESPONSIVE */
 @media (max-width: 1100px) {
-  .work-grid { grid-template-columns: repeat(2, 1fr); }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .work-grid-new { grid-template-columns: repeat(2, 1fr); }
+  .work-featured {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+  }
+  .featured-info { max-width: 600px; }
 }
 
 @media (max-width: 900px) {
@@ -1611,37 +2051,45 @@ body.light-mode .hero-grid-bg {
   #cookie-banner { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; }
 }
 
+@media (max-width: 700px) {
+  .work-grid-new { grid-template-columns: 1fr; gap: 1.5rem; }
+  .work-featured { gap: 2rem; }
+  .featured-meta { grid-template-columns: repeat(3, 1fr); width: 100%; }
+  .meta-item { padding: 0.6rem 0.8rem; }
+  .meta-value { font-size: 1.1rem; }
+  .laptop-screen {
+    padding: 22px 8px 8px;
+    border-radius: 10px 10px 3px 3px;
+  }
+  .laptop-browser-bar { height: 22px; border-radius: 10px 10px 0 0; }
+  .browser-url { font-size: 0.55rem; padding: 0.12rem 0.6rem; }
+  .browser-dot { width: 8px; height: 8px; }
+  .work-card-new { padding: 1.6rem 1.4rem 1.8rem; }
+  .work-card-new h3 { font-size: 1.45rem; }
+  .featured-logo { width: 56px; height: 56px; }
+  .card-logo { width: 42px; height: 42px; }
+}
+
 @media (max-width: 600px) {
-  .work-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
   .pricing-single { grid-template-columns: 1fr; }
   .pricing-features { grid-template-columns: 1fr; }
 }
+
 /* ============================================================
-   OTM LIGHT MODE PATCH — applies only inside body.light-mode
-   Drop this at the BOTTOM of your style.css, after all existing
-   light-mode rules. It will override/add without touching dark.
+   LIGHT MODE PATCHES — backgrounds, sections, badges, etc.
    ============================================================ */
 
-
-/* ─────────────────────────────────────────────
-   1. BACKGROUND — zoom out so more image shows
-   ───────────────────────────────────────────── */
 body.light-mode {
-  background-size: cover;
-  background-position: center center;
+  background-size: 75% auto !important;
+  background-position: right top !important;
+  background-attachment: fixed !important;
 }
 
-/* ─────────────────────────────────────────────
-   2. TEXT FUZZINESS — nuke all text-shadow on
-      dark text elements in light mode
-   ───────────────────────────────────────────── */
 body.light-mode .section-title,
 body.light-mode .section-label,
 body.light-mode .hero-sub,
-body.light-mode .work-card h3,
-body.light-mode .work-card p,
 body.light-mode .work-link,
 body.light-mode .why-content h3,
 body.light-mode .why-content p,
@@ -1685,7 +2133,6 @@ body.light-mode .nav-links a,
 body.light-mode .ba-tag,
 body.light-mode .ba-info-num,
 body.light-mode blockquote,
-body.light-mode .author-detail,
 body.light-mode .stars,
 body.light-mode h3,
 body.light-mode p,
@@ -1697,7 +2144,6 @@ body.light-mode span {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Keep amber accent elements crisp too */
 body.light-mode .section-label,
 body.light-mode .work-link,
 body.light-mode .stat-label,
@@ -1708,49 +2154,11 @@ body.light-mode .hero-title .amber {
   -webkit-text-stroke: 0 !important;
 }
 
-
-/* ─────────────────────────────────────────────
-   3. SECTION GAPS — tighter padding + dividers
-   ───────────────────────────────────────────── */
 body.light-mode section {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
 }
 
-/* Decorative divider between sections */
-body.light-mode section + section::before,
-body.light-mode .ba-section + section::before,
-body.light-mode section + .ba-section::before {
-  content: '';
-  display: block;
-  width: calc(100% + 8rem);
-  margin-left: -4rem;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(139, 26, 46, 0.15) 15%,
-    rgba(139, 26, 46, 0.35) 40%,
-    rgba(139, 26, 46, 0.35) 60%,
-    rgba(139, 26, 46, 0.15) 85%,
-    transparent 100%
-  );
-  margin-bottom: 4.5rem;
-}
-
-/* Diamond accent in the center of each divider */
-body.light-mode section + section::after {
-  content: '◆';
-  display: block;
-  text-align: center;
-  font-size: 0.45rem;
-  color: rgba(139, 26, 46, 0.5);
-  margin-top: -4.8rem;
-  margin-bottom: 4rem;
-  letter-spacing: 0.3em;
-}
-
-/* Specific overrides for sections with their own bg */
 body.light-mode .services-section,
 body.light-mode .testimonials-section,
 body.light-mode .process-section,
@@ -1759,18 +2167,12 @@ body.light-mode .contact-section {
   padding-bottom: 4.5rem;
 }
 
-/* Tighter work section */
 body.light-mode #work {
   padding-top: 4.5rem !important;
   padding-bottom: 4.5rem !important;
 }
 
-
-/* ─────────────────────────────────────────────
-   4. BEFORE / AFTER BADGES — bold & dramatic
-   ───────────────────────────────────────────── */
-
-/* Base badge reset */
+/* BEFORE / AFTER badges (light) */
 body.light-mode .ba-label {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 0.7rem;
@@ -1782,7 +2184,6 @@ body.light-mode .ba-label {
   text-shadow: none !important;
 }
 
-/* BEFORE badge — dark filled, crisp */
 body.light-mode .ba-label.before-label {
   left: 1.5rem;
   background: #1A1A1A;
@@ -1793,7 +2194,6 @@ body.light-mode .ba-label.before-label {
   padding-right: 1.8rem;
 }
 
-/* AFTER badge — crimson filled, punchy */
 body.light-mode .ba-label.after-label {
   right: 1.5rem;
   background: var(--amber);
@@ -1804,27 +2204,11 @@ body.light-mode .ba-label.after-label {
   padding-left: 1.8rem;
 }
 
-/* ─────────────────────────────────────────────
-   5. DRAG BUTTON — centered, premium, bold
-   ───────────────────────────────────────────── */
-
-/* Remove old generic drag button styling */
-body.light-mode .ba-wrap > div[style*="display:flex"] {
-  display: none !important;
-}
-
-/* The actual drag instruction — shown above slider, centered */
-body.light-mode .ba-wrap {
-  position: relative;
-}
-
-/* Re-style the drag hint that sits above slider */
 body.light-mode div[style*="display:flex"][style*="align-items:center"] {
   justify-content: flex-start;
   gap: 1.5rem;
 }
 
-/* The drag indicator pill next to description text */
 body.light-mode div[style*="flex-shrink:0"][style*="display:flex"][style*="align-items:center"] {
   background: #1A1A1A !important;
   color: #FFFFFF !important;
@@ -1837,7 +2221,6 @@ body.light-mode div[style*="flex-shrink:0"][style*="display:flex"][style*="align
   font-family: 'Bebas Neue', sans-serif !important;
 }
 
-/* Handle button itself — redesigned for light mode */
 body.light-mode .ba-handle-btn {
   width: 56px;
   height: 56px;
@@ -1852,15 +2235,12 @@ body.light-mode .ba-handle-btn {
   font-weight: 900;
 }
 
-/* Handle line */
 body.light-mode .ba-handle {
   background: #1A1A1A;
   width: 3px;
 }
 
-/* ─────────────────────────────────────────────
-   6. HERO STATS — premium redesign for light
-   ───────────────────────────────────────────── */
+/* Hero stats — light premium */
 body.light-mode .hero-stats {
   border: none;
   background: transparent;
@@ -1891,12 +2271,8 @@ body.light-mode .stat-item:hover {
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-/* Remove old top pseudo-element — replace with border-top */
-body.light-mode .stat-item::before {
-  display: none;
-}
+body.light-mode .stat-item::before { display: none; }
 
-/* Thin right separator line between items */
 body.light-mode .stat-item::after {
   content: '';
   position: absolute;
@@ -1911,9 +2287,7 @@ body.light-mode .stat-item:last-child {
   border-right: 1px solid rgba(139, 26, 46, 0.2);
 }
 
-body.light-mode .stat-item:last-child::after {
-  display: none;
-}
+body.light-mode .stat-item:last-child::after { display: none; }
 
 body.light-mode .stat-num {
   font-family: 'Bebas Neue', sans-serif;
@@ -1934,29 +2308,17 @@ body.light-mode .stat-label {
   text-shadow: none !important;
 }
 
-
-/* ─────────────────────────────────────────────
-   7. MARQUEE STRIP — more defined in light mode
-   ───────────────────────────────────────────── */
+/* Marquee strip — light */
 body.light-mode .marquee-strip {
   background: #FFFFFF;
   border-top: 1px solid rgba(139, 26, 46, 0.15);
   border-bottom: 1px solid rgba(139, 26, 46, 0.15);
 }
 
-body.light-mode .marquee-item {
-  color: #1A1A1A;
-  font-weight: 500;
-}
+body.light-mode .marquee-item { color: #1A1A1A; font-weight: 500; }
+body.light-mode .marquee-dot { background: var(--amber); }
 
-body.light-mode .marquee-dot {
-  background: var(--amber);
-}
-
-
-/* ─────────────────────────────────────────────
-   8. BA-INFO BAR — clean card in light mode
-   ───────────────────────────────────────────── */
+/* BA-info bar — light */
 body.light-mode .ba-info {
   background: #FFFFFF;
   border: 1px solid rgba(139, 26, 46, 0.15);
@@ -1978,43 +2340,12 @@ body.light-mode .ba-info-text p {
   color: #555;
   text-shadow: none !important;
 }
-/* ============================================================
-   OTM LIGHT MODE PATCH 2 — append after patch 1
-   Fixes: nav height, background zoom, section white space
-   ============================================================ */
 
-/* ─────────────────────────────────────────────
-   1. NAV — shrink padding 30% so hero title
-      isn't clipped and nav looks cleaner
-   ───────────────────────────────────────────── */
-body.light-mode nav {
-  padding: 0.75rem 4rem;
-}
+/* Nav padding (light) */
+body.light-mode nav { padding: 0.75rem 4rem; }
+body.light-mode nav[style*="padding"] { padding: 0.6rem 4rem !important; }
 
-/* Also fix the JS-shrunken state on scroll */
-body.light-mode nav[style*="padding"] {
-  padding: 0.6rem 4rem !important;
-}
-
-/* ─────────────────────────────────────────────
-   2. BACKGROUND — show much more of the image
-      Use a smaller background-size so the full
-      image is visible rather than cropped in
-   ───────────────────────────────────────────── */
-body.light-mode {
-  background-size: 75% auto !important;
-  background-position: right top !important;
-  background-attachment: fixed !important;
-}
-
-/* ─────────────────────────────────────────────
-   3. SECTION WHITE SPACE — let the background
-      breathe through by reducing section bg
-      opacity so it doesn't feel like solid
-      blank walls between content blocks
-   ───────────────────────────────────────────── */
-
-/* Reduce the opacity on alternating section backgrounds */
+/* Section opacity (light) */
 body.light-mode .services-section,
 body.light-mode .testimonials-section,
 body.light-mode .process-section {
@@ -2036,8 +2367,6 @@ body.light-mode .contact-section {
   background: rgba(236, 234, 230, 0.72);
 }
 
-/* Cards and content boxes stay opaque so text is readable */
-body.light-mode .work-card,
 body.light-mode .service-item,
 body.light-mode .testimonial-card,
 body.light-mode .process-step,
@@ -2052,18 +2381,13 @@ body.light-mode .contact-info {
   -webkit-backdrop-filter: blur(4px);
 }
 
-body.light-mode .work-card:hover,
 body.light-mode .service-item:hover,
 body.light-mode .process-step:hover {
   background: rgba(255, 255, 255, 0.96) !important;
 }
 
-/* FAQ items stay readable */
-body.light-mode .faq-answer {
-  background: rgba(255, 255, 255, 0.75);
-}
+body.light-mode .faq-answer { background: rgba(255, 255, 255, 0.75); }
 
-/* Carousel wrap gets glass treatment */
 body.light-mode .carousel-wrap {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
@@ -2075,24 +2399,17 @@ body.light-mode .carousel-controls {
   background: rgba(226, 222, 216, 0.9);
 }
 
-/* Why visual card */
 body.light-mode .why-visual {
   border: 1px solid rgba(139, 26, 46, 0.15);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
-body.light-mode .hero {
-  padding-top: 5.5rem;
-}
+
+body.light-mode .hero { padding-top: 5.5rem; }
+
 /* ============================================================
-   OTM DARK MODE PATCH — append at very bottom of style.css
-   Fixes: stat bar readability, section label visibility
+   DARK MODE — section opacity + label pill + badge styling
    ============================================================ */
 
-/* ─────────────────────────────────────────────
-   1. HERO STATS — premium dark mode redesign
-   ───────────────────────────────────────────── */
-
-/* Only apply when NOT in light mode */
 body:not(.light-mode) .hero-stats {
   border: 1px solid rgba(139, 26, 46, 0.5);
   background: transparent;
@@ -2117,9 +2434,7 @@ body:not(.light-mode) .stat-item::before {
   box-shadow: 0 0 12px rgba(139, 26, 46, 0.6);
 }
 
-body:not(.light-mode) .stat-item:last-child {
-  border-right: none;
-}
+body:not(.light-mode) .stat-item:last-child { border-right: none; }
 
 body:not(.light-mode) .stat-num {
   font-family: 'Bebas Neue', sans-serif;
@@ -2139,10 +2454,6 @@ body:not(.light-mode) .stat-label {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
-/* ─────────────────────────────────────────────
-   2. SECTION LABELS — pill backdrop so they
-      pop off any background in dark mode
-   ───────────────────────────────────────────── */
 body:not(.light-mode) .section-label {
   display: inline-flex;
   align-items: center;
@@ -2165,7 +2476,6 @@ body:not(.light-mode) .section-label {
   margin-bottom: 1.2rem;
 }
 
-/* Replace the old ::before line with a small diamond */
 body:not(.light-mode) .section-label::before {
   content: '◆';
   display: inline-block;
@@ -2178,7 +2488,6 @@ body:not(.light-mode) .section-label::before {
   flex-shrink: 0;
 }
 
-/* BA-TAG (FreshStart Solutions, Bachmobile tags) */
 body:not(.light-mode) .ba-tag {
   color: #FFFFFF;
   background: rgba(139, 26, 46, 0.8);
@@ -2188,32 +2497,7 @@ body:not(.light-mode) .ba-tag {
   box-shadow: 0 2px 8px rgba(139, 26, 46, 0.3);
 }
 
-/* ─────────────────────────────────────────────
-   3. WORK LINK — "VIEW LIVE SITE" in dark mode
-      gets a backdrop so it reads over images
-   ───────────────────────────────────────────── */
-body:not(.light-mode) .work-link {
-  color: #FFFFFF;
-  background: rgba(139, 26, 46, 0.75);
-  padding: 0.4rem 0.85rem;
-  border: 1px solid rgba(139, 26, 46, 0.5);
-  border-radius: 1px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background 0.2s, gap 0.2s;
-  text-shadow: none;
-  width: fit-content;
-}
-
-body:not(.light-mode) .work-link:hover {
-  background: rgba(139, 26, 46, 0.95);
-  gap: 0.8rem;
-}
-/* ============================================================
-   DARK MODE — Before/After badges to match light mode style
-   ============================================================ */
-
+/* BEFORE / AFTER badges (dark) */
 body:not(.light-mode) .ba-label {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 0.7rem;
@@ -2224,7 +2508,6 @@ body:not(.light-mode) .ba-label {
   transform: none;
 }
 
-/* BEFORE badge — white filled, dark text */
 body:not(.light-mode) .ba-label.before-label {
   left: 1.5rem;
   background: #FFFFFF;
@@ -2236,7 +2519,6 @@ body:not(.light-mode) .ba-label.before-label {
   text-shadow: none;
 }
 
-/* AFTER badge — crimson filled, white text */
 body:not(.light-mode) .ba-label.after-label {
   right: 1.5rem;
   background: var(--amber);
@@ -2249,9 +2531,6 @@ body:not(.light-mode) .ba-label.after-label {
   padding-left: 1.8rem;
   text-shadow: none;
 }
-/* ============================================================
-   DARK MODE — Section opacity so background image shows through
-   ============================================================ */
 
 body:not(.light-mode) .services-section,
 body:not(.light-mode) .testimonials-section,
@@ -2269,17 +2548,6 @@ body:not(.light-mode) #faq {
 
 body:not(.light-mode) .contact-section {
   background: rgba(17, 17, 17, 0.6);
-}
-
-/* Keep content cards opaque so text stays readable */
-body:not(.light-mode) .work-card {
-  background: rgba(17, 17, 17, 0.88) !important;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-body:not(.light-mode) .work-card:hover {
-  background: rgba(24, 24, 24, 0.95) !important;
 }
 
 body:not(.light-mode) .service-item {
@@ -2357,653 +2625,48 @@ body:not(.light-mode) .form-field {
 body:not(.light-mode) .form-submit-row {
   background: rgba(24, 24, 24, 0.92) !important;
 }
+
 /* ============================================================
-   MOBILE FIXES — nav CTA stacking, stat overflow, horizontal scroll
+   LIGHT MODE — work section overrides (logos, glow, cards)
    ============================================================ */
 
-/* ─────────────────────────────────────────────
-   1. NAV CTA — always stacked, never single line
-      Lock it so it never changes on scroll
-   ───────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .nav-cta {
-    white-space: normal !important;
-    text-align: center;
-    line-height: 1.2;
-    padding: 0.45rem 0.9rem;
-    font-size: 0.72rem;
-    max-width: 120px;
-    word-break: break-word;
-  }
-
-  /* Prevent JS scroll handler from overriding nav padding on mobile */
-  nav {
-    padding: 0.75rem 1.2rem !important;
-  }
-}
-
-/* ─────────────────────────────────────────────
-   2. HERO STATS — stop overflowing on mobile
-      for BOTH dark and light mode
-   ───────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .hero-stats {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0 !important;
-    overflow: hidden;
-  }
-
-  .stat-item {
-    flex: 1;
-    min-width: 0 !important;
-    padding: 0.9rem 0.5rem !important;
-    text-align: center;
-  }
-
-  .stat-num {
-    font-size: 1.4rem !important;
-    letter-spacing: 0 !important;
-  }
-
-  .stat-label {
-    font-size: 0.45rem !important;
-    letter-spacing: 0.08em !important;
-  }
-
-  /* Light mode stat cards on mobile */
-  body.light-mode .stat-item {
-    padding: 0.9rem 0.5rem !important;
-    border-right: none !important;
-  }
-
-  body.light-mode .stat-item::after {
-    display: none !important;
-  }
-
-  body.light-mode .stat-item:last-child {
-    border-right: none !important;
-  }
-}
-
-/* ─────────────────────────────────────────────
-   3. LIGHT MODE HORIZONTAL SCROLL — fix the
-      sliver gap on the right side
-   ───────────────────────────────────────────── */
-body.light-mode {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-body.light-mode .hero {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-/* Ensure hero overlay covers full width including any overflow */
-body.light-mode .hero::after {
-  left: -5%;
-  right: -5%;
-  width: 110%;
-}
-
-/* Section divider pseudo-elements can cause overflow — clamp them */
-body.light-mode section + section::before {
-  width: 100% !important;
-  margin-left: 0 !important;
-  left: 0;
-}
-
-/* Prevent any child from creating horizontal scroll */
-@media (max-width: 900px) {
-  body.light-mode section {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-
-  body.light-mode .hero-bg-text {
-    display: none;
-  }
-
-  body:not(.light-mode) .hero-bg-text {
-    display: none;
-  }
-}
-/* ============================================================
-   MOBILE FIXED BACKGROUND — iOS/Android workaround
-   Uses a pseudo-element since background-attachment: fixed
-   is disabled on mobile browsers for performance reasons
-   ============================================================ */
-
-@media (max-width: 900px) {
-
-  /* Lock body positioning context */
-  body {
-    position: relative;
-  }
-
-  /* DARK MODE fixed background pseudo-element */
-  body:not(.light-mode)::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: #0A0A0A url('assets/assets-bg-dark.jpg') center center / cover no-repeat;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  /* Remove background from body in dark mode on mobile
-     so the pseudo-element shows through */
-  body:not(.light-mode) {
-    background: transparent !important;
-  }
-
-  /* LIGHT MODE fixed background pseudo-element */
-  body.light-mode::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: #F4F2EE url('assets/assets-bg-light.jpg') right top / 75% auto no-repeat;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  /* Remove background from body in light mode on mobile */
-  body.light-mode {
-    background: transparent !important;
-  }
-
-}
-/* ============================================================
-   MOBILE LIGHT MODE BACKGROUND — force fix
-   ============================================================ */
-
-@media (max-width: 900px) {
-
-  body.light-mode {
-    background-image: none !important;
-    background-color: #F4F2EE !important;
-  }
-
-  body.light-mode::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('assets/assets-bg-light.jpg') !important;
-    background-color: #F4F2EE !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: scroll !important;
-    z-index: -1;
-    pointer-events: none;
-    will-change: transform;
-  }
-
-}
-/* ============================================================
-   MOBILE BACKGROUND ZOOM OUT — both dark and light
-   ============================================================ */
-
-@media (max-width: 900px) {
-
-  body:not(.light-mode)::before {
-    background-size: 280% auto !important;
-    background-position: center top !important;
-  }
-
-  body.light-mode::before {
-    background-size: 280% auto !important;
-    background-position: center top !important;
-  }
-
-}
-/* ============================================================
-   NEW WORK SECTION — Featured hero + laptop mockups
-   ============================================================ */
-
-#work {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.work-intro {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  font-weight: 300;
-  max-width: 580px;
-  line-height: 1.7;
-  margin-bottom: 4.5rem;
-}
-
-/* ─── FEATURED HERO PROJECT ─────────────────────────── */
-.work-featured {
-  display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: 4.5rem;
-  align-items: center;
-  margin-bottom: 6rem;
-  padding-bottom: 6rem;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-}
-
-.work-featured::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 1px;
-  background: var(--amber);
-}
-
-/* LAPTOP MOCKUP — featured (large) */
-.featured-laptop {
-  position: relative;
-  perspective: 1500px;
-  cursor: pointer;
-}
-
-.laptop-screen {
-  position: relative;
-  background: #1a1a1a;
-  border-radius: 14px 14px 4px 4px;
-  padding: 28px 12px 12px;
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.04),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.featured-laptop:hover .laptop-screen {
-  transform: translateY(-6px) rotateX(2deg);
-}
-
-.laptop-browser-bar {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 28px;
-  background: linear-gradient(180deg, #2a2a2a 0%, #1f1f1f 100%);
-  border-radius: 14px 14px 0 0;
-  display: flex;
-  align-items: center;
-  padding: 0 14px;
-  gap: 7px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.browser-dot {
-  width: 11px; height: 11px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.dot-red    { background: #ff5f57; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.15); }
-.dot-yellow { background: #febc2e; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.15); }
-.dot-green  { background: #28c840; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.15); }
-
-.browser-url {
-  margin-left: auto;
-  margin-right: auto;
-  background: rgba(0, 0, 0, 0.35);
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.65rem;
-  letter-spacing: 0.04em;
-  padding: 0.18rem 0.95rem;
-  border-radius: 4px;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
-  transform: translateX(-22px);
-}
-
-.laptop-img {
-  width: 100%;
-  display: block;
-  border-radius: 2px;
-  filter: brightness(0.92) saturate(1.05);
-  transition: filter 0.4s ease;
-  aspect-ratio: 16 / 10;
-  object-fit: contain;
-  object-position: top center;
-  background: #0a0a0a;
-}
-
-.featured-laptop:hover .laptop-img {
-  filter: brightness(1) saturate(1.1);
-}
-
-.laptop-base {
-  height: 14px;
-  background: linear-gradient(180deg, #2a2a2a 0%, #181818 60%, #0c0c0c 100%);
-  border-radius: 0 0 18px 18px;
-  margin: 0 -22px;
-  position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.laptop-base::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 4px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 0 0 6px 6px;
-}
-
-/* FEATURED INFO PANEL */
-.featured-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  background: rgba(17, 17, 17, 0.78);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 2.5rem 2.5rem 2.8rem;
-  border-radius: 2px;
-  position: relative;
-}
-
-.featured-info::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px;
-  height: 60px;
-  background: var(--amber);
-}
-
-.featured-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  color: var(--amber);
-  background: rgba(139, 26, 46, 0.12);
-  border: 1px solid rgba(139, 26, 46, 0.4);
-  padding: 0.4rem 0.85rem;
-  border-radius: 1px;
-  margin-bottom: 1.4rem;
-  width: fit-content;
-}
-
-.featured-badge::before {
-  content: '★';
-  font-size: 0.65rem;
-  color: var(--amber);
-}
-
-.featured-info .work-tag {
-  margin-bottom: 1.2rem;
-}
-
-.featured-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  letter-spacing: 0.02em;
-  line-height: 1;
-  margin-bottom: 1.2rem;
-  color: var(--text);
-}
-
-.featured-desc {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.75;
-  font-weight: 300;
-  margin-bottom: 2rem;
-  max-width: 480px;
-}
-
-.featured-meta {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 0;
-  margin-bottom: 2.2rem;
-  width: fit-content;
-  border-left: 1px solid var(--border);
-}
-
-.meta-item {
-  padding: 0.7rem 1.4rem;
-  border-right: 1px solid var(--border);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.meta-label {
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-bottom: 0.2rem;
-  font-weight: 500;
-}
-
-.meta-value {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  letter-spacing: 0.04em;
-  color: var(--text);
-  line-height: 1;
-}
-
-.featured-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--amber);
-  padding: 0.85rem 1.6rem;
-  border-radius: 2px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.2s, gap 0.2s, transform 0.15s;
-  width: fit-content;
-  border: 1px solid var(--amber);
-}
-
-.featured-link:hover {
-  background: var(--amber-light);
-  gap: 0.9rem;
-  transform: translateY(-2px);
-}
-
-.featured-link svg {
-  width: 14px; height: 14px;
-}
-
-/* ─── SECONDARY PROJECTS GRID ───────────────────────── */
-.work-grid-new {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.work-card-new {
-  background: rgba(17, 17, 17, 0.78);
-  border: 1px solid var(--border);
-  padding: 2rem 1.8rem 2.2rem;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: background 0.3s, border-color 0.3s, transform 0.3s;
-}
-
-.work-card-new::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--amber);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.work-card-new:hover {
-  background: rgba(24, 24, 24, 0.92);
-  border-color: rgba(139, 26, 46, 0.35);
-  transform: translateY(-4px);
-}
-
-.work-card-new:hover::before {
-  transform: scaleX(1);
-}
-
-/* MINI LAPTOP MOCKUPS */
-.mini-laptop {
-  margin-bottom: 1.6rem;
-  position: relative;
-}
-
-.mini-screen {
-  background: #1a1a1a;
-  border-radius: 8px 8px 2px 2px;
-  padding: 18px 6px 6px;
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
-  position: relative;
-  transition: transform 0.4s ease;
-}
-
-.work-card-new:hover .mini-screen {
-  transform: translateY(-3px);
-}
-
-.mini-browser-bar {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 18px;
-  background: linear-gradient(180deg, #2a2a2a 0%, #1f1f1f 100%);
-  border-radius: 8px 8px 0 0;
-  display: flex;
-  align-items: center;
-  padding: 0 8px;
-  gap: 4px;
-}
-
-.mini-browser-bar .browser-dot {
-  width: 6px; height: 6px;
-}
-
-.mini-screen img {
-  width: 100%;
-  display: block;
-  border-radius: 1px;
-  aspect-ratio: 16 / 10;
-  object-fit: contain;
-  object-position: top center;
-  background: #0a0a0a;
-  filter: brightness(0.9) saturate(1.05);
-  transition: filter 0.4s ease;
-}
-
-.work-card-new:hover .mini-screen img {
-  filter: brightness(1) saturate(1.1);
-}
-
-.mini-base {
-  height: 8px;
-  background: linear-gradient(180deg, #2a2a2a 0%, #161616 100%);
-  border-radius: 0 0 10px 10px;
-  margin: 0 -12px;
-  position: relative;
-}
-
-.mini-base::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 2px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 0 0 4px 4px;
-}
-
-.work-card-new h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.65rem;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.6rem;
-  margin-top: 0.2rem;
-  line-height: 1.05;
-}
-
-.work-card-new p {
-  font-size: 0.83rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-  font-weight: 300;
-  flex: 1;
-  margin-bottom: 1.5rem;
-}
-
-.work-card-new .work-link {
-  align-self: flex-start;
-}
-
-.work-card-new .work-card-number {
-  position: absolute;
-  bottom: 1.2rem;
-  right: 1.6rem;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 4rem;
-  color: rgba(139, 26, 46, 0.14);
-  -webkit-text-stroke: 1px rgba(139, 26, 46, 0.4);
-  line-height: 1;
-  pointer-events: none;
-  transition: color 0.3s, -webkit-text-stroke 0.3s;
-  letter-spacing: -0.02em;
-}
-
-.work-card-new:hover .work-card-number {
-  color: rgba(139, 26, 46, 0.3);
-  -webkit-text-stroke: 1px rgba(139, 26, 46, 0.7);
-}
-
-/* ─── LIGHT MODE ADJUSTMENTS ────────────────────────── */
 body.light-mode .work-card-new {
   background: rgba(255, 255, 255, 0.88) !important;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(139, 26, 46, 0.12);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.02) inset;
 }
 
 body.light-mode .work-card-new:hover {
   background: rgba(255, 255, 255, 0.96) !important;
   border-color: rgba(139, 26, 46, 0.3);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-}
-
-body.light-mode .featured-badge {
-  background: rgba(139, 26, 46, 0.08);
-  border-color: rgba(139, 26, 46, 0.4);
+  box-shadow:
+    0 0 0 1px rgba(139, 26, 46, 0.3),
+    0 12px 32px rgba(139, 26, 46, 0.12),
+    0 0 40px rgba(139, 26, 46, 0.08);
 }
 
 body.light-mode .featured-info {
   background: rgba(255, 255, 255, 0.88) !important;
   border: 1px solid rgba(139, 26, 46, 0.12);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.02) inset;
+}
+
+body.light-mode .work-featured:hover .featured-info {
+  box-shadow:
+    0 0 0 1px rgba(139, 26, 46, 0.3),
+    0 12px 40px rgba(139, 26, 46, 0.1),
+    0 0 50px rgba(139, 26, 46, 0.08);
+}
+
+body.light-mode .featured-badge {
+  background: rgba(139, 26, 46, 0.08);
+  border-color: rgba(139, 26, 46, 0.4);
 }
 
 body.light-mode .featured-title,
@@ -3029,71 +2692,135 @@ body.light-mode .meta-label {
   text-shadow: none !important;
 }
 
-/* ─── RESPONSIVE ────────────────────────────────────── */
-@media (max-width: 1100px) {
-  .work-grid-new {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .work-featured {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    padding-bottom: 4rem;
-    margin-bottom: 4rem;
-  }
-
-  .featured-info {
-    max-width: 600px;
-  }
+body.light-mode .featured-logo,
+body.light-mode .card-logo {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(139, 26, 46, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-@media (max-width: 700px) {
-  .work-grid-new {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+body.light-mode .featured-logo img,
+body.light-mode .card-logo img {
+  filter: brightness(1);
+}
+
+body.light-mode .work-featured:hover .featured-logo,
+body.light-mode .work-card-new:hover .card-logo {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(139, 26, 46, 0.4);
+}
+
+/* ============================================================
+   MOBILE FIXES — nav CTA, stat overflow, horizontal scroll
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .nav-cta {
+    white-space: normal !important;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.72rem;
+    max-width: 120px;
+    word-break: break-word;
   }
 
-  .work-featured {
-    gap: 2rem;
+  nav { padding: 0.75rem 1.2rem !important; }
+
+  .hero-stats {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0 !important;
+    overflow: hidden;
   }
 
-  .featured-meta {
-    grid-template-columns: repeat(3, 1fr);
+  .stat-item {
+    flex: 1;
+    min-width: 0 !important;
+    padding: 0.9rem 0.5rem !important;
+    text-align: center;
+  }
+
+  .stat-num { font-size: 1.4rem !important; letter-spacing: 0 !important; }
+  .stat-label { font-size: 0.45rem !important; letter-spacing: 0.08em !important; }
+
+  body.light-mode .stat-item {
+    padding: 0.9rem 0.5rem !important;
+    border-right: none !important;
+  }
+
+  body.light-mode .stat-item::after { display: none !important; }
+  body.light-mode .stat-item:last-child { border-right: none !important; }
+}
+
+body.light-mode {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body.light-mode .hero {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body.light-mode .hero::after {
+  left: -5%;
+  right: -5%;
+  width: 110%;
+}
+
+@media (max-width: 900px) {
+  body.light-mode section {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body.light-mode .hero-bg-text { display: none; }
+  body:not(.light-mode) .hero-bg-text { display: none; }
+}
+
+/* ============================================================
+   MOBILE FIXED BACKGROUND — iOS/Android workaround
+   ============================================================ */
+
+@media (max-width: 900px) {
+  body { position: relative; }
+
+  body:not(.light-mode)::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #0A0A0A url('assets/assets-bg-dark.jpg') center top / 280% auto no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  body:not(.light-mode) {
+    background: transparent !important;
+  }
+
+  body.light-mode {
+    background-image: none !important;
+    background-color: #F4F2EE !important;
+  }
+
+  body.light-mode::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
     width: 100%;
-  }
-
-  .meta-item {
-    padding: 0.6rem 0.8rem;
-  }
-
-  .meta-value {
-    font-size: 1.1rem;
-  }
-
-  .laptop-screen {
-    padding: 22px 8px 8px;
-    border-radius: 10px 10px 3px 3px;
-  }
-
-  .laptop-browser-bar {
-    height: 22px;
-    border-radius: 10px 10px 0 0;
-  }
-
-  .browser-url {
-    font-size: 0.55rem;
-    padding: 0.12rem 0.6rem;
-  }
-
-  .browser-dot {
-    width: 8px; height: 8px;
-  }
-
-  .work-card-new {
-    padding: 1.6rem 1.4rem 1.8rem;
-  }
-
-  .work-card-new h3 {
-    font-size: 1.45rem;
+    height: 100%;
+    background-image: url('assets/assets-bg-light.jpg') !important;
+    background-color: #F4F2EE !important;
+    background-size: 280% auto !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
   }
 }
