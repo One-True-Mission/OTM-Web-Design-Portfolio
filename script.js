@@ -1,22 +1,56 @@
-// THEME TOGGLE
-function toggleTheme() {
-  document.body.classList.toggle('light-mode');
-  document.getElementById('theme-toggle').textContent =
-    document.body.classList.contains('light-mode') ? '☾' : '☀';
-  localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-}
-if (localStorage.getItem('theme') === 'light') {
-  document.body.classList.add('light-mode');
-  document.getElementById('theme-toggle').textContent = '☾';
+// HAMBURGER NAV
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.classList.toggle('nav-open', isOpen);
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    });
+  });
 }
 
-// COOKIE BANNER
-function dismissCookie() {
-  document.getElementById('cookie-banner').classList.remove('show');
-  localStorage.setItem('cookie-dismissed', '1');
-}
-if (!localStorage.getItem('cookie-dismissed')) {
-  setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 2200);
+// HERO WORD CYCLE
+const cycleWords = ['Work.', 'Convert.', 'Perform.', 'Sell.'];
+let cycleIndex = 0;
+const cycleEl = document.getElementById('wordCycle');
+const accentEl = document.getElementById('heroAccent');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (cycleEl && !reduceMotion) {
+  setInterval(() => {
+    cycleEl.style.transition = 'transform 0.45s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.4s ease';
+    cycleEl.style.transform = 'translateY(-55%)';
+    cycleEl.style.opacity = '0';
+
+    setTimeout(() => {
+      cycleIndex = (cycleIndex + 1) % cycleWords.length;
+      cycleEl.textContent = cycleWords[cycleIndex];
+      cycleEl.style.transition = 'none';
+      cycleEl.style.transform = 'translateY(55%)';
+      void cycleEl.offsetWidth;
+
+      cycleEl.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease 0.05s';
+      cycleEl.style.transform = 'translateY(0)';
+      cycleEl.style.opacity = '1';
+
+      if (accentEl) {
+        accentEl.style.animation = 'none';
+        void accentEl.offsetWidth;
+        accentEl.style.animation = 'accentGrow 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards';
+      }
+    }, 450);
+  }, 4000);
 }
 
 // FAQ ACCORDION
@@ -28,17 +62,17 @@ function toggleFaq(btn) {
   if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
 }
 
-// FLOAT CONTACT + BACK TOP visibility
+// FLOAT CONTACT + BACK TOP visibility + scroll progress
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY;
   const total = document.body.scrollHeight - window.innerHeight;
   document.getElementById('progress-bar').style.width = (scrolled / total * 100) + '%';
   document.getElementById('back-top').classList.toggle('visible', scrolled > 400);
   document.getElementById('float-contact').classList.toggle('visible', scrolled > 400);
-  document.querySelector('nav').style.padding = scrolled > 60 ? '1rem 4rem' : '1.5rem 4rem';
+  document.querySelector('nav').classList.toggle('scrolled', scrolled > 60);
 });
 
-// CURSOR - use CSS transitions instead of RAF loop to avoid infinite loading spinner
+// CURSOR (CSS transitions instead of RAF loop)
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
 
@@ -98,7 +132,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
-// FORM SUBMIT — Formspree
+// FORM SUBMIT (Formspree)
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const form = this;
