@@ -162,27 +162,54 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
 // CAROUSEL
 let current = 0;
-const total = 3;
 const track = document.getElementById('carouselTrack');
 const dots = document.querySelectorAll('.carousel-dot');
-let autoTimer = setInterval(carouselNext, 5000);
+const total = track ? track.children.length : 0;
+let autoTimer = total > 0 ? setInterval(carouselNext, 6000) : null;
 
 function goTo(n) {
+  if (total === 0) return;
   current = (n + total) % total;
   track.style.transform = `translateX(-${current * 100}%)`;
   dots.forEach((d, i) => d.classList.toggle('active', i === current));
   clearInterval(autoTimer);
-  autoTimer = setInterval(carouselNext, 5000);
+  autoTimer = setInterval(carouselNext, 6000);
 }
 function carouselNext() { goTo(current + 1); }
 function carouselPrev() { goTo(current - 1); }
 
 let touchStartX = 0;
-track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
-track.addEventListener('touchend', e => {
-  const dx = e.changedTouches[0].clientX - touchStartX;
-  if (Math.abs(dx) > 40) dx < 0 ? carouselNext() : carouselPrev();
-});
+let didSwipe = false;
+if (track) {
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    didSwipe = false;
+  });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) {
+      didSwipe = true;
+      dx < 0 ? carouselNext() : carouselPrev();
+    }
+  });
+  // Prevent link navigation if user was swiping the carousel
+  track.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+      if (didSwipe) {
+        e.preventDefault();
+        didSwipe = false;
+      }
+    });
+  });
+  // Pause auto-advance while hovering the carousel
+  const carouselWrap = track.closest('.carousel-wrap');
+  if (carouselWrap) {
+    carouselWrap.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    carouselWrap.addEventListener('mouseleave', () => {
+      autoTimer = setInterval(carouselNext, 6000);
+    });
+  }
+}
 
 // BEFORE / AFTER SLIDERS
 function initBASlider(sliderId, handleId, afterImgId) {
