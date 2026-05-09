@@ -952,8 +952,8 @@ section.hero::after { z-index: 1; }
   filter: brightness(0.95) saturate(1.05);
   transition: filter 0.4s ease;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
   background: #0a0a0a;
 }
 .featured-laptop:hover .laptop-img { filter: brightness(1) saturate(1.1); }
@@ -1169,8 +1169,8 @@ section.hero::after { z-index: 1; }
   display: block;
   border-radius: 1px;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
   background: #0a0a0a;
   filter: brightness(0.95);
   transition: filter 0.4s;
