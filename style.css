@@ -262,7 +262,7 @@ nav.scrolled {
   min-height: 100vh;
   min-height: 100dvh;
   display: flex; align-items: center; justify-content: center;
-  padding: 8rem 4rem 4rem;
+  padding: 6rem 4rem 3rem;
   position: relative;
   overflow: hidden;
   background:
@@ -340,7 +340,7 @@ nav.scrolled {
 }
 .hero-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(3.2rem, 7.2vw, 5.6rem);
+  font-size: clamp(3.5rem, 8.2vw, 6.6rem);
   line-height: 0.95;
   letter-spacing: 0.01em;
   margin-bottom: 1.8rem;
@@ -368,10 +368,10 @@ nav.scrolled {
 @keyframes accentGrow { from { width: 0%; } to { width: 70%; } }
 
 .hero-sub {
-  font-size: 1.18rem;
-  line-height: 1.7;
+  font-size: 1.3rem;
+  line-height: 1.65;
   color: var(--ink-text-muted);
-  max-width: 640px;
+  max-width: 700px;
   margin-bottom: 2.8rem;
   font-weight: 300;
 }
@@ -427,7 +427,7 @@ nav.scrolled {
 .stat-item:last-child { border-right: none; }
 .stat-num {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.7rem;
+  font-size: 3rem;
   color: var(--ink-deep);
   line-height: 1;
   letter-spacing: 0.02em;
@@ -654,17 +654,22 @@ nav.scrolled {
 
 section {
   background:
+    /* Top-edge highlight (light catching the metal edge) */
     linear-gradient(180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.18) 3%,
+      rgba(255, 255, 255, 0.05) 10%,
+      transparent 35%,
+      transparent 65%,
+      rgba(0, 0, 0, 0.08) 88%,
+      rgba(0, 0, 0, 0.18) 100%),
+    /* Directional studio light from upper-left */
+    radial-gradient(ellipse 70% 60% at 22% 5%,
       rgba(255, 255, 255, 0.22) 0%,
-      rgba(255, 255, 255, 0.04) 18%,
-      transparent 50%,
-      rgba(0, 0, 0, 0.04) 85%,
-      rgba(0, 0, 0, 0.08) 100%),
-    repeating-linear-gradient(0deg,
-      transparent 0,
-      transparent 1px,
-      rgba(255, 255, 255, 0.025) 1px,
-      rgba(255, 255, 255, 0.025) 2px),
+      transparent 60%),
+    /* Photographic brushed-metal texture */
+    url('assets/card-texture.jpg') center center / cover no-repeat,
+    /* Solid fallback if texture is missing */
     var(--stone);
   color: var(--ink-on-stone);
   border: 1px solid var(--stone-border-strong);
@@ -672,8 +677,10 @@ section {
   outline: 1px solid var(--frame);
   outline-offset: 10px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 1px 0 0 rgba(255, 255, 255, 0.35),
+    inset -1px 0 0 rgba(0, 0, 0, 0.06),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.12),
     0 4px 12px rgba(0, 0, 0, 0.25),
     0 18px 56px rgba(0, 0, 0, 0.45);
   padding: 56px 56px;
@@ -799,17 +806,26 @@ section.hero::after { z-index: 1; }
 .ba-info {
   background:
     linear-gradient(180deg,
-      rgba(255, 255, 255, 0.3) 0%,
-      transparent 22%,
-      transparent 78%,
-      rgba(0, 0, 0, 0.04) 100%),
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.45) 3%,
+      rgba(255, 255, 255, 0.15) 12%,
+      transparent 40%,
+      transparent 70%,
+      rgba(0, 0, 0, 0.06) 90%,
+      rgba(0, 0, 0, 0.16) 100%),
+    radial-gradient(ellipse 55% 50% at 25% 5%,
+      rgba(255, 255, 255, 0.6) 0%,
+      transparent 60%),
     var(--stone-bright);
   border: 1px solid var(--stone-border);
   border-radius: 8px;
   transition: background 0.25s, border-color 0.25s, transform 0.3s, box-shadow 0.3s;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    0 1px 3px rgba(0, 0, 0, 0.06);
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 1px 0 0 rgba(255, 255, 255, 0.4),
+    inset -1px 0 0 rgba(0, 0, 0, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* ============================================================
