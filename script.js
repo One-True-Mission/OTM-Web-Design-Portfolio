@@ -21,11 +21,19 @@ if (navToggle && navLinks) {
 }
 
 // HERO WORD CYCLE
-const cycleWords = ['Work.', 'Convert.', 'Perform.', 'Sell.'];
+const cycleWordsByLang = {
+  en: ['Work.', 'Convert.', 'Perform.', 'Sell.'],
+  es: ['Funcionan.', 'Convierten.', 'Rinden.', 'Venden.']
+};
 let cycleIndex = 0;
 const cycleEl = document.getElementById('wordCycle');
 const accentEl = document.getElementById('heroAccent');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function getCycleWords() {
+  const lang = document.body.dataset.lang || 'en';
+  return cycleWordsByLang[lang] || cycleWordsByLang.en;
+}
 
 if (cycleEl && !reduceMotion) {
   setInterval(() => {
@@ -34,8 +42,9 @@ if (cycleEl && !reduceMotion) {
     cycleEl.style.opacity = '0';
 
     setTimeout(() => {
-      cycleIndex = (cycleIndex + 1) % cycleWords.length;
-      cycleEl.textContent = cycleWords[cycleIndex];
+      const words = getCycleWords();
+      cycleIndex = (cycleIndex + 1) % words.length;
+      cycleEl.textContent = words[cycleIndex];
       cycleEl.style.transition = 'none';
       cycleEl.style.transform = 'translateY(55%)';
       void cycleEl.offsetWidth;
@@ -240,3 +249,82 @@ function initBASlider(sliderId, handleId, afterImgId) {
 
 initBASlider('baSlider1', 'baHandle1', 'baAfterImg1');
 initBASlider('baSlider2', 'baHandle2', 'baAfterImg2');
+
+// LANGUAGE TOGGLE (English / Spanish)
+(function() {
+  const STORAGE_KEY = 'otm-lang';
+  const SUPPORTED = ['en', 'es'];
+
+  function getSavedLang() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved && SUPPORTED.includes(saved)) return saved;
+    } catch (e) { /* private mode etc */ }
+    return 'en';
+  }
+
+  function saveLang(lang) {
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* ignore */ }
+  }
+
+  // Cache English source content from the live DOM on first run, so we can
+  // restore it later without storing duplicate data-en attributes everywhere.
+  let cached = false;
+  function cacheEnglish() {
+    if (cached) return;
+    document.querySelectorAll('[data-es]').forEach(el => {
+      if (!el.dataset.en) el.dataset.en = el.innerHTML;
+    });
+    document.querySelectorAll('[data-es-placeholder]').forEach(el => {
+      if (el.dataset.enPlaceholder === undefined) el.dataset.enPlaceholder = el.placeholder || '';
+    });
+    document.querySelectorAll('[data-es-aria-label]').forEach(el => {
+      if (el.dataset.enAriaLabel === undefined) el.dataset.enAriaLabel = el.getAttribute('aria-label') || '';
+    });
+    cached = true;
+  }
+
+  function applyLanguage(lang) {
+    cacheEnglish();
+    const useEs = (lang === 'es');
+
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const next = useEs ? el.dataset.es : el.dataset.en;
+      if (next !== undefined && el.innerHTML !== next) el.innerHTML = next;
+    });
+    document.querySelectorAll('[data-es-placeholder]').forEach(el => {
+      const next = useEs ? el.dataset.esPlaceholder : el.dataset.enPlaceholder;
+      if (next !== undefined) el.placeholder = next;
+    });
+    document.querySelectorAll('[data-es-aria-label]').forEach(el => {
+      const next = useEs ? el.dataset.esAriaLabel : el.dataset.enAriaLabel;
+      if (next !== undefined) el.setAttribute('aria-label', next);
+    });
+
+    document.documentElement.lang = lang;
+    document.body.dataset.lang = lang;
+    saveLang(lang);
+
+    // Reset hero word cycle so the right language word shows immediately
+    if (typeof cycleEl !== 'undefined' && cycleEl) {
+      cycleIndex = 0;
+      cycleEl.textContent = (typeof getCycleWords === 'function')
+        ? getCycleWords()[0]
+        : cycleEl.textContent;
+    }
+  }
+
+  function toggleLanguage() {
+    const cur = document.body.dataset.lang === 'es' ? 'es' : 'en';
+    applyLanguage(cur === 'en' ? 'es' : 'en');
+  }
+
+  // Apply saved language on load
+  applyLanguage(getSavedLang());
+
+  // Wire up the toggle button
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) {
+    langBtn.addEventListener('click', toggleLanguage);
+  }
+})();
