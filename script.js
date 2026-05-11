@@ -75,10 +75,14 @@ function toggleFaq(btn) {
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY;
   const total = document.body.scrollHeight - window.innerHeight;
-  document.getElementById('progress-bar').style.width = (scrolled / total * 100) + '%';
-  document.getElementById('back-top').classList.toggle('visible', scrolled > 400);
-  document.getElementById('float-contact').classList.toggle('visible', scrolled > 400);
-  document.querySelector('nav').classList.toggle('scrolled', scrolled > 60);
+  const progressBar = document.getElementById('progress-bar');
+  const backTop = document.getElementById('back-top');
+  const floatContact = document.getElementById('float-contact');
+  const navEl = document.querySelector('nav');
+  if (progressBar) progressBar.style.width = (scrolled / total * 100) + '%';
+  if (backTop) backTop.classList.toggle('visible', scrolled > 400);
+  if (floatContact) floatContact.classList.toggle('visible', scrolled > 400);
+  if (navEl) navEl.classList.toggle('scrolled', scrolled > 60);
 });
 
 // CURSOR (CSS transitions instead of RAF loop)
@@ -142,32 +146,35 @@ const counterObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
 // FORM SUBMIT (Formspree)
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = this;
-  const submitBtn = form.querySelector('.form-submit');
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
+const contactFormEl = document.getElementById('contactForm');
+if (contactFormEl) {
+  contactFormEl.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = this;
+    const submitBtn = form.querySelector('.form-submit');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
 
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(response => {
-    if (response.ok) {
-      form.style.display = 'none';
-      document.getElementById('formSuccess').classList.add('show');
-    } else {
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+      } else {
+        submitBtn.textContent = 'Send Request →';
+        submitBtn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      }
+    }).catch(() => {
       submitBtn.textContent = 'Send Request →';
       submitBtn.disabled = false;
-      alert('Something went wrong. Please try again or email stevenhowell27@yahoo.com directly.');
-    }
-  }).catch(() => {
-    submitBtn.textContent = 'Send Request →';
-    submitBtn.disabled = false;
-    alert('Something went wrong. Please try again or email stevenhowell27@yahoo.com directly.');
+      alert('Something went wrong. Please try again.');
+    });
   });
-});
+}
 
 // CAROUSEL
 let current = 0;

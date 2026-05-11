@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | OTM Web Design</title>
+<meta name="description" content="Meet Steven Howell, the founder of OTM Web Design. Texas-based, hand-coding small business websites for one flat fee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="about" data-lang="en">
+
+<div id="progress-bar"></div>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" data-es-aria-label="Volver arriba">↑</button>
+
+<button id="lang-toggle" type="button" aria-label="Toggle language">
+  <span class="lang-globe" aria-hidden="true">⏣</span>
+  <span class="lang-label lang-label-es">¿Habla Español?</span>
+  <span class="lang-label lang-label-en">Speak English?</span>
+</button>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<a href="contact.html" id="float-contact" data-es="Hablemos">Let's Talk</a>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-text" id="nav-logo">
+    <img src="assets/assets-logo.png" alt="OTM Web Design" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+    <span id="logo-fallback" style="display:none;">OTM<span style="color:var(--maroon);">.</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" data-es-aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-es="Inicio">Home</a></li>
+    <li><a href="work.html" data-es="Trabajos">Work</a></li>
+    <li><a href="about.html" class="active" data-es="Acerca de">About</a></li>
+    <li><a href="contact.html" data-es="Contacto">Contact</a></li>
+    <li class="nav-mobile-cta"><a href="contact.html" data-es="Hablemos">Let's Build</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta" data-es="Construyamos Algo">Let's Build Something</a>
+</nav>
+
+<!-- INNER HERO -->
+<section class="hero hero-inner">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-bg-text">OTM</div>
+  <div class="hero-frame" aria-hidden="true">
+    <span class="hero-corner hero-corner-tl"></span>
+    <span class="hero-corner hero-corner-tr"></span>
+    <span class="hero-corner hero-corner-bl"></span>
+    <span class="hero-corner hero-corner-br"></span>
+    <div class="hero-vertical-meta">Founder &nbsp;/&nbsp; Designer &nbsp;/&nbsp; Texas</div>
+  </div>
+  <div class="hero-content hero-content-inner">
+    <div class="hero-eyebrow" data-es="Detrás de OTM">Behind OTM Web Design</div>
+    <h1 class="hero-title hero-title-inner">
+      <span data-es="Un Tejano.">One Texan.</span><br>
+      <span class="amber" data-es="Una Misión.">One Mission.</span>
+    </h1>
+    <p class="hero-sub hero-sub-inner" data-es="Soy la única persona detrás de OTM Web Design. Sin agencia, sin equipo, sin intermediarios. Solo un desarrollador que se preocupa por hacer el trabajo bien y hacerlo accesible.">I'm the only person behind OTM Web Design. No agency, no team, no middlemen. Just one developer who cares about doing the work right and making it accessible.</p>
+  </div>
+</section>
+
+<!-- Hero-to-section bridge -->
+<div class="hero-section-bridge" aria-hidden="true">
+  <span class="hero-bridge-line hero-bridge-line-l"></span>
+  <span class="hero-bridge-diamond"></span>
+  <span class="hero-bridge-line hero-bridge-line-r"></span>
+</div>
+
+<!-- PORTRAIT INTRO -->
+<section class="about-intro">
+  <div class="about-intro-grid">
+    <div class="about-portrait-wrap reveal">
+      <div class="about-portrait-frame">
+        <span class="about-portrait-corner about-portrait-corner-tl"></span>
+        <span class="about-portrait-corner about-portrait-corner-tr"></span>
+        <span class="about-portrait-corner about-portrait-corner-bl"></span>
+        <span class="about-portrait-corner about-portrait-corner-br"></span>
+        <img src="assets/about-steven.jpg" alt="Steven Howell, founder of OTM Web Design" class="about-portrait-img">
+        <div class="about-portrait-overlay"></div>
+      </div>
+      <div class="about-portrait-meta">
+        <div class="about-portrait-name">Steven Howell</div>
+        <div class="about-portrait-role" data-es="Fundador · Diseñador · Desarrollador">Founder · Designer · Developer</div>
+        <div class="about-portrait-location" data-es="Texas · Desde 2025">Texas · Since 2025</div>
+      </div>
+    </div>
+
+    <div class="about-intro-text reveal reveal-delay-1">
+      <div class="section-label" data-es="Conózcame">Get to Know Me</div>
+      <h2 class="about-intro-title" data-es="Hago sitios web<br>para gente real.">I build websites<br>for real people.</h2>
+      <p class="about-intro-lead" data-es="Pequeñas empresas tejanas. Mecánicos, contratistas, panaderos, entrenadores de perros, dueños de tiendas. Gente que pone su nombre y reputación detrás de un negocio todos los días y merece un sitio web que refleje ese cuidado.">Small Texas businesses. Mechanics, contractors, bakers, dog trainers, shop owners. People who put their name and reputation behind a business every day and deserve a website that reflects that care.</p>
+      <p data-es="No soy una agencia. No tengo gerentes de proyecto, representantes de cuenta, ni desarrolladores subcontratados al otro lado del mundo a quienes nunca conocerá. Soy yo, una computadora y mucho café. Usted habla directamente conmigo, de principio a fin.">I'm not an agency. I don't have project managers, account reps, or outsourced developers across the world you'll never meet. It's me, a computer, and a lot of coffee. You talk directly to me, start to finish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE STORY -->
+<section class="about-story">
+  <div class="about-story-inner">
+    <div class="section-label reveal" data-es="La Historia">The Story</div>
+    <h2 class="section-title reveal reveal-delay-1" data-es="Del Lugar<br>de Obra<br>a Su Sitio">From the Job Site<br>to Your Site</h2>
+
+    <div class="about-story-content reveal reveal-delay-2">
+      <p data-es="Tengo una Licenciatura en Administración de Construcción y ocho años en el campo. Cinco en construcción comercial, tres en residencial. Ese periodo me puso al lado de muchos dueños de pequeñas empresas. Contratistas, subcontratistas, empresas familiares operando con presupuestos ajustados.">I've got a Bachelor of Science in Construction Management and eight years on the job. Five in commercial construction, three in residential. That stretch put me alongside a lot of small business owners. Contractors, subcontractors, family operations running on tight budgets.</p>
+
+      <p data-es="Lo que seguía viendo, especialmente con las empresas más pequeñas, era la misma historia. Dueños pagando $80, $100, $150 al mes por sitios web que ni siquiera eran suyos. Atrapados en contratos. Atrapados en plataformas. Sin acceso el segundo que dejaran de pagar.">What I kept seeing, especially with the smaller outfits, was the same story. Owners paying $80, $100, $150 a month for websites they didn't even own. Locked into contracts. Locked into platforms. Locked out the second they stopped paying.</p>
+
+      <p data-es="No me parecía bien. Estamos en 2026. Un sitio web no debería costar $1,500 o más y definitivamente no debería seguirlo con una cuenta mensual durante años. Debería ser una inversión única que usted posee por completo.">It didn't sit right. We're in 2026. A website shouldn't cost $1,500 or more and definitely shouldn't follow you with a monthly bill for years. It should be a one-time investment you own outright.</p>
+
+      <p data-es="Llevo más de cincuenta sitios construidos. Empecé para mí mismo, después para amigos, luego para pequeñas empresas que vieron el trabajo. OTM Web Design es lo que salió de todo eso.">I've built over fifty sites by now. Started for myself, then friends, then small businesses that saw the work. OTM Web Design is what came out of all of it.</p>
+
+      <p data-es="El código que recibe es el código que escribí yo. El precio que cotizo es el precio que paga. Si una solución diferente le sirve mejor a su negocio que lo que ofrezco, se lo diré.">The code you get is the code I wrote. The price I quote is the price you pay. If a different solution serves your business better than what I offer, I'll point you to it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE WAY I WORK -->
+<section class="about-approach">
+  <div class="section-label reveal" data-es="Mi Enfoque">My Approach</div>
+  <h2 class="section-title reveal reveal-delay-1" data-es="La Manera<br>en que Trabajo">The Way<br>I Work</h2>
+
+  <div class="about-approach-grid">
+    <div class="about-approach-item reveal">
+      <div class="about-approach-num">01</div>
+      <h3 data-es="Cada Línea, Codificada a Mano">Every Line, Hand-Coded</h3>
+      <p data-es="Sin plantillas. Sin constructores de páginas. Sin atajos. Cada sitio se escribe desde cero en HTML, CSS y JavaScript reales. Eso significa que su sitio puede hacer cosas que las plantillas no pueden, y se ve completamente distinto al de su competencia.">No templates. No page builders. No shortcuts. Every site is written from scratch in real HTML, CSS, and JavaScript. That means your site can do things templates can't, and it looks completely different from your competition.</p>
+    </div>
+
+    <div class="about-approach-item reveal reveal-delay-1">
+      <div class="about-approach-num">02</div>
+      <h3 data-es="Usted Es Dueño de Todo">You Own Everything</h3>
+      <p data-es="Cuando terminamos, los archivos son suyos. Los hospeda gratis en GitHub Pages, que es lo que hacen la mayoría de mis clientes, o los lleva a donde quiera. Sin dependencia de plataforma. Sin riesgo de proveedor. El sitio web es su activo.">When we're done, the files are yours. You host them free on GitHub Pages, which is what most of my clients do, or move them anywhere you want. No platform lock-in. No vendor risk. The website is your asset.</p>
+    </div>
+
+    <div class="about-approach-item reveal reveal-delay-2">
+      <div class="about-approach-num">03</div>
+      <h3 data-es="Una Tarifa, Sin Sorpresas">One Fee, No Surprises</h3>
+      <p data-es="$500 por un sitio web profesional a la medida, completamente suyo. No hay niveles, no hay ventas adicionales, no hay cuotas recurrentes. Si necesita algo más complejo, le doy el precio antes de empezar. Sin excepciones.">$500 for a professional custom website, completely yours. No tiers, no upsells, no recurring fees. If you need something more complex, I quote you before any work starts. No exceptions.</p>
+    </div>
+
+    <div class="about-approach-item reveal reveal-delay-3">
+      <div class="about-approach-num">04</div>
+      <h3 data-es="Inglés y Español, Ambos Bien Hechos">English and Spanish, Both Done Right</h3>
+      <p data-es="Texas tiene una enorme comunidad bilingüe y servirles bien importa. Construyo sitios en inglés y español con traducciones de nivel nativo, no la basura que Google Translate produce. Si su negocio necesita llegar a clientes hispanohablantes, su sitio puede hablar su idioma.">Texas has a huge bilingual community and serving them well matters. I build sites in English and Spanish with native-level translations, not the slop Google Translate produces. If your business needs to reach Spanish-speaking customers, your site can speak their language.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY $500 -->
+<section class="about-why">
+  <div class="about-why-inner">
+    <div class="section-label reveal" data-es="Por Qué $500">Why $500</div>
+    <h2 class="section-title reveal reveal-delay-1" data-es="$500.<br>Sin Trampa.">$500.<br>No Catch.</h2>
+
+    <div class="about-why-content reveal reveal-delay-2">
+      <p data-es="Los diseñadores independientes cobran de $2,000 a $8,000 por el mismo trabajo. Las agencias cobran de $5,000 a $15,000 y tardan meses en entregar. Yo lo hago en menos de una semana por $500.">Freelance designers charge $2,000 to $8,000 for the same work. Agencies charge $5,000 to $15,000 and take months to deliver. I do it in under a week for $500.</p>
+
+      <p data-es="Un sitio web es una herramienta. Debe ayudar a su negocio a crecer, no convertirse en una cuenta recurrente que lo persiga durante años. Si $500 es lo que se necesita para que un dueño de pequeña empresa tenga el sitio profesional que merece, $500 es lo que cuesta.">A website is a tool. It should help your business grow, not become a recurring bill that follows you for years. If $500 is what it takes to get a small business owner the professional site they deserve, $500 is what it costs.</p>
+
+      <p data-es="Prefiero construir cinco sitios por $500 cada uno que un sitio por $2,500. Más negocios ayudados. Más trabajo enviado. Así pienso al respecto.">I'd rather build five sites for $500 each than one site for $2,500. More businesses helped. More work shipped. That's how I think about it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="about-reviews">
+  <div class="section-label reveal" data-es="Prueba Social">Social Proof</div>
+  <h2 class="section-title reveal reveal-delay-1" data-es="Lo Que Dicen<br>Los Clientes">What Clients<br>Are Saying</h2>
+
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track" id="carouselTrack">
+
+      <a href="https://maps.app.goo.gl/nb4wrZ8T2p2azjK66" target="_blank" rel="noopener" class="review-card-link">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"I run a small business and I was using Wix for my website but was never really happy with how it looked or what I was paying every month. A friend referred me to Steven at OTM Web Design and I'm glad they did. The new site looks way more professional, runs better on mobile, and I'm not stuck with a monthly subscription. Wish I'd made the switch sooner."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JD</div>
+            <div>
+              <div class="author-name">Jordon Davis</div>
+              <div class="author-detail" data-es="Hace una semana &middot; Verificado en Google">A week ago &middot; Verified on Google</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://maps.app.goo.gl/nb4wrZ8T2p2azjK66" target="_blank" rel="noopener" class="review-card-link">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Steven at OTM Designs built my website and made the process simple as a new business owner. He kept me in the loop, the site looks polished on both desktop and mobile, and he got it up and running fast. Would recommend to anyone needing a website."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">TG</div>
+            <div>
+              <div class="author-name">Tyler Goen</div>
+              <div class="author-detail" data-es="Hace una semana &middot; Verificado en Google">A week ago &middot; Verified on Google</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://maps.app.goo.gl/nb4wrZ8T2p2azjK66" target="_blank" rel="noopener" class="review-card-link">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"OTM design was awesome! Very helpful and the finished product was more than I expected!! Will definitely be staying in touch for further business ventures!"</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">CN</div>
+            <div>
+              <div class="author-name">Cody Nelson</div>
+              <div class="author-detail" data-es="Hace 2 semanas &middot; Verificado en Google">2 weeks ago &middot; Verified on Google</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://maps.app.goo.gl/nb4wrZ8T2p2azjK66" target="_blank" rel="noopener" class="review-card-link">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"I couldn't be happier with the experience working with Steven at OTM Design! As someone who had zero web presence before reaching out, I was blown away by how easy and stress-free the whole process was. From the very first conversation, everything was handled smoothly and efficiently..."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JM</div>
+            <div>
+              <div class="author-name">Jonathan Morgan</div>
+              <div class="author-detail" data-es="Hace 2 semanas &middot; Verificado en Google">2 weeks ago &middot; Verified on Google</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://maps.app.goo.gl/nb4wrZ8T2p2azjK66" target="_blank" rel="noopener" class="review-card-link">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Steven made me an incredible looking, professional website for my auto repair business for a FAR lower price than I'd been quoted by other site builders. And you know what? I think the quality of his work is BETTER than what the other guys would have provided..."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MP</div>
+            <div>
+              <div class="author-name">Matt Pockrus</div>
+              <div class="author-detail" data-es="Hace 2 semanas &middot; Verificado en Google">2 weeks ago &middot; Verified on Google</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+    <div class="carousel-controls">
+      <div class="carousel-dots" id="carouselDots">
+        <button class="carousel-dot active" onclick="goTo(0)" aria-label="Slide 1"></button>
+        <button class="carousel-dot" onclick="goTo(1)" aria-label="Slide 2"></button>
+        <button class="carousel-dot" onclick="goTo(2)" aria-label="Slide 3"></button>
+        <button class="carousel-dot" onclick="goTo(3)" aria-label="Slide 4"></button>
+        <button class="carousel-dot" onclick="goTo(4)" aria-label="Slide 5"></button>
+      </div>
+      <div class="carousel-btns">
+        <button class="carousel-btn" onclick="carouselPrev()" aria-label="Previous" data-es-aria-label="Anterior">&#8592;</button>
+        <button class="carousel-btn" onclick="carouselNext()" aria-label="Next" data-es-aria-label="Siguiente">&#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://maps.app.goo.gl/nb4wrZ8T2p2azjK66" target="_blank" rel="noopener" class="reviews-google-cta reveal">
+    <span data-es="Ver Las 5 Reseñas en Google">See all 5 reviews on Google</span>
+    <span class="reviews-google-cta-arrow">&rarr;</span>
+  </a>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-inner">
+    <div class="cta-eyebrow" data-es="Listo Cuando Usted Lo Esté">Ready When You Are</div>
+    <h2 class="cta-title" data-es="Hablemos sobre<br>su negocio.">Let's talk about<br>your business.</h2>
+    <p class="cta-sub" data-es="Reserve una llamada de 30 minutos sin compromiso o envíeme un mensaje. Respondo dentro de un día hábil. Siempre.">Book a 30-minute no-pressure call or send me a message. I respond within one business day. Always.</p>
+    <div class="cta-actions">
+      <a href="contact.html#schedule" class="btn-primary cta-btn" data-es="Reservar una Llamada">Schedule a Call</a>
+      <span class="cta-or" data-es="O">OR</span>
+      <a href="contact.html" class="btn-ghost cta-btn" data-es="Envíe un Mensaje">Send a Message</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">OTM<span>.</span></div>
+  <div class="footer-copy">&#169; 2026 OTM Web Design · Steven Howell · Texas</div>
+  <div class="footer-links">
+    <a href="index.html" data-es="Inicio">Home</a>
+    <a href="work.html" data-es="Trabajos">Work</a>
+    <a href="contact.html" data-es="Contacto">Contact</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

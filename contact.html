@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | OTM Web Design</title>
+<meta name="description" content="Schedule a call or send a message. Custom hand-coded websites for small businesses. One flat fee. No subscriptions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact" data-lang="en">
+
+<div id="progress-bar"></div>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" data-es-aria-label="Volver arriba">↑</button>
+
+<button id="lang-toggle" type="button" aria-label="Toggle language">
+  <span class="lang-globe" aria-hidden="true">⏣</span>
+  <span class="lang-label lang-label-es">¿Habla Español?</span>
+  <span class="lang-label lang-label-en">Speak English?</span>
+</button>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-text" id="nav-logo">
+    <img src="assets/assets-logo.png" alt="OTM Web Design" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+    <span id="logo-fallback" style="display:none;">OTM<span style="color:var(--maroon);">.</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" data-es-aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-es="Inicio">Home</a></li>
+    <li><a href="work.html" data-es="Trabajos">Work</a></li>
+    <li><a href="about.html" data-es="Acerca de">About</a></li>
+    <li><a href="contact.html" class="active" data-es="Contacto">Contact</a></li>
+    <li class="nav-mobile-cta"><a href="#schedule" data-es="Reservar Ahora">Schedule Now</a></li>
+  </ul>
+  <a href="#schedule" class="nav-cta" data-es="Reservar Una Llamada">Schedule a Call</a>
+</nav>
+
+<!-- INNER HERO -->
+<section class="hero hero-inner">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-bg-text">TALK</div>
+  <div class="hero-frame" aria-hidden="true">
+    <span class="hero-corner hero-corner-tl"></span>
+    <span class="hero-corner hero-corner-tr"></span>
+    <span class="hero-corner hero-corner-bl"></span>
+    <span class="hero-corner hero-corner-br"></span>
+    <div class="hero-vertical-meta">Contact &nbsp;/&nbsp; Schedule &nbsp;/&nbsp; Build</div>
+  </div>
+  <div class="hero-content hero-content-inner">
+    <div class="hero-eyebrow" data-es="Hagamos Esto Realidad">Let's Make This Happen</div>
+    <h1 class="hero-title hero-title-inner">
+      <span data-es="Dos Maneras">Two Ways</span><br>
+      <span class="amber" data-es="de Empezar.">to Start.</span>
+    </h1>
+    <p class="hero-sub hero-sub-inner" data-es="Reserve una llamada de 30 minutos para hablar de su proyecto, o envíeme un mensaje y le responderé en un día hábil. Lo que prefiera.">Book a 30-minute call to talk through your project, or send me a message and I'll respond within one business day. Whichever you prefer.</p>
+  </div>
+</section>
+
+<!-- Hero-to-section bridge -->
+<div class="hero-section-bridge" aria-hidden="true">
+  <span class="hero-bridge-line hero-bridge-line-l"></span>
+  <span class="hero-bridge-diamond"></span>
+  <span class="hero-bridge-line hero-bridge-line-r"></span>
+</div>
+
+<!-- CONTACT OPTIONS -->
+<section class="contact-options" id="schedule">
+
+  <!-- SCHEDULE (PRIMARY) -->
+  <div class="contact-option contact-schedule reveal">
+    <div class="contact-option-header">
+      <div class="contact-option-num">01</div>
+      <div class="contact-option-eyebrow" data-es="Recomendado">Recommended</div>
+    </div>
+    <h2 class="contact-option-title" data-es="Reserve una Llamada">Schedule a Call</h2>
+    <p class="contact-option-desc" data-es="30 minutos. Sin compromiso. Hablamos de su negocio, sus metas, y si OTM es la opción correcta para usted. Si no lo soy, le diré honestamente y le señalaré a alguien que sí.">30 minutes. No commitment. We talk through your business, your goals, and whether OTM is the right fit for you. If I'm not, I'll tell you honestly and point you to somebody who is.</p>
+
+    <ul class="contact-schedule-bullets">
+      <li data-es="Llamada por teléfono. Yo le llamo a usted.">Phone call. I call you.</li>
+      <li data-es="Sin presentación de ventas. Solo conversación.">No sales pitch. Just conversation.</li>
+      <li data-es="Vea sobre la marcha si soy la opción correcta.">See on the fly if I'm the right fit.</li>
+    </ul>
+
+    <button type="button" class="btn-primary contact-schedule-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/stevenhowell277/30min'}); return false;">
+      <span data-es="Reservar 30 Minutos Ahora">Book 30 Minutes Now</span>
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </button>
+  </div>
+
+  <!-- OR DIVIDER -->
+  <div class="contact-divider-wrap reveal reveal-delay-1">
+    <span class="contact-divider-line"></span>
+    <span class="contact-divider-text" data-es="O">Or</span>
+    <span class="contact-divider-line"></span>
+  </div>
+
+  <!-- MESSAGE (SECONDARY) -->
+  <div class="contact-option contact-message reveal reveal-delay-1">
+    <div class="contact-option-header">
+      <div class="contact-option-num">02</div>
+      <div class="contact-option-eyebrow" data-es="Por Escrito">In Writing</div>
+    </div>
+    <h2 class="contact-option-title" data-es="Envíe un Mensaje">Send a Message</h2>
+    <p class="contact-option-desc" data-es="Cuénteme sobre su negocio y lo que está buscando. Le responderé dentro de un día hábil con un plan y un precio. Sin presión, sin vueltas.">Tell me about your business and what you're looking for. I'll respond within one business day with a plan and a price. No pressure, no runaround.</p>
+
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnjozbnj" method="POST">
+      <div class="form-row">
+        <div class="form-field">
+          <label data-es="Nombre Completo">Full Name</label>
+          <input type="text" name="full_name" placeholder="John Smith" data-es-placeholder="Juan Pérez" required>
+        </div>
+        <div class="form-field">
+          <label data-es="Correo Electrónico">Email Address</label>
+          <input type="email" name="email" placeholder="john@business.com" data-es-placeholder="juan@negocio.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label data-es="Número de Teléfono">Phone Number</label>
+          <input type="tel" name="phone" placeholder="(555) 000-0000">
+        </div>
+        <div class="form-field">
+          <label data-es="Tipo de Negocio">Business Type</label>
+          <select name="business_type">
+            <option value="" data-es="Seleccionar...">Select...</option>
+            <option data-es="Auto / Taller Mecánico">Auto / Mechanic Shop</option>
+            <option data-es="Restaurante / Comida">Restaurant / Food</option>
+            <option data-es="Contratista / Oficio">Contractor / Trade</option>
+            <option data-es="Salón / Belleza">Salon / Beauty</option>
+            <option data-es="Tienda / Venta al por menor">Retail / Shop</option>
+            <option data-es="Médico / Dental">Medical / Dental</option>
+            <option data-es="Gimnasio / Fitness">Fitness / Gym</option>
+            <option data-es="Otro">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field">
+        <label data-es="Paquete de Interés">Package Interest</label>
+        <select name="package_interest">
+          <option value="" data-es="Seleccionar...">Select...</option>
+          <option data-es="Sitio Estándar: $500">Standard Site: $500</option>
+          <option data-es="No Estoy Seguro">Not Sure Yet</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label data-es="Cuénteme Sobre Su Proyecto">Tell Me About Your Project</label>
+        <textarea rows="4" name="project_details" placeholder="What does your business do? Do you have an existing website? What are your goals?" data-es-placeholder="¿A qué se dedica su negocio? ¿Tiene un sitio web existente? ¿Cuáles son sus metas?"></textarea>
+      </div>
+      <div class="form-submit-row">
+        <span class="form-note" data-es="Le responderé en un día hábil.">I'll respond within one business day.</span>
+        <button type="submit" class="form-submit"><span data-es="Enviar Solicitud">Send Request</span> &#8594;</button>
+      </div>
+    </form>
+    <div class="form-success" id="formSuccess">
+      <h3 data-es="¡Solicitud Recibida!">Request Received!</h3>
+      <p data-es="Gracias por contactarme. Steven se comunicará con usted en un día hábil.">Thanks for reaching out. Steven will be in touch within one business day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU CAN COUNT ON -->
+<section class="contact-promises-section">
+  <div class="contact-promises">
+    <div class="contact-promises-title">
+      <span class="contact-promises-line"></span>
+      <span data-es="Lo Que Puede Esperar">What You Can Count On</span>
+    </div>
+    <ul class="contact-promises-list">
+      <li data-es="Pago único, sin suscripciones">One-time payment, no subscriptions</li>
+      <li data-es="Usted es dueño de cada línea de código">You own every line of code</li>
+      <li data-es="Sin cuotas de hospedaje, sin dependencia de plataforma">No hosting fees, no platform lock-in</li>
+      <li data-es="Hecho a mano en Texas, no con plantillas">Hand-coded in Texas, not templated</li>
+      <li data-es="Garantía de código de por vida incluida">Lifetime code warranty included</li>
+      <li data-es="La mayoría de los sitios listos en 2 a 5 días">Most sites done in 2 to 5 days</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-label reveal" data-es="Preguntas">Questions</div>
+  <h2 class="section-title reveal reveal-delay-1" data-es="Preguntas Frecuentes">FAQ</h2>
+  <div class="faq-list reveal reveal-delay-2">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-es="¿Cuánto tiempo toma construir mi sitio?">How long does it take to build my site?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p data-es="La mayoría de los sitios se completan en 2 a 5 días hábiles desde el momento en que acordamos el alcance. Proyectos más grandes o más complejos pueden tardar hasta dos semanas. Siempre le daré un cronograma realista por adelantado antes de comenzar cualquier trabajo.">Most sites are completed within 2 to 5 business days from the time we agree on the scope. Larger or more complex projects may take up to two weeks. I will always give you a realistic timeline upfront before any work begins.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-es="¿Necesito comprar hospedaje?">Do I need to buy hosting?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p data-es="Su sitio se hospeda completamente gratis a través de GitHub Pages, sin cuotas mensuales de hospedaje en absoluto. El único costo es su nombre de dominio, que registra a través de un proveedor como Namecheap por aproximadamente $10 a $15 al año. Le guiaré por toda la configuración para que nunca esté solo.">Your site is hosted completely free through GitHub Pages, with no monthly hosting fees at all. The only cost is your domain name, which you register through a provider like Namecheap for around $10 to $15 per year. I will walk you through the entire setup so you are never on your own.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-es="¿Qué hace diferente a OTM de GoDaddy o Wix?">What makes OTM different from GoDaddy or Wix?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p data-es="Con GoDaddy o Wix, está rentando un sitio web. Deja de pagar y desaparece. Con OTM, recibe los archivos de código reales y es dueño de ellos por completo. El diseño también es 100% a la medida, no una plantilla que cientos de otros negocios están usando.">With GoDaddy or Wix, you are renting a website. Stop paying and it disappears. With OTM, you receive the actual code files and own them outright. The design is also 100% custom, not a template that hundreds of other businesses are using.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-es="¿Puede actualizar mi sitio después de construirlo?">Can you update my site after it is built?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p data-es="Sí. Después de entregar el código, tiene 30 días para solicitar cualquier cambio en redacción, imágenes, esquemas de color o diseño. Más allá de eso, ofrezco una garantía de código de por vida. Si algo se rompe o falla debido a un defecto en el código, lo arreglaré sin cargo. Respaldo mi trabajo y nunca entregaré un producto defectuoso.">Yes. After the code is delivered, you have 30 days to request any changes to verbiage, images, color schemes, or layout. Beyond that, I offer a Lifetime code warranty. If anything breaks or malfunctions due to a flaw in the code itself, I will fix it at no charge. I stand behind my work and will never hand off a defective product.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-es="¿Trabaja con negocios fuera de Texas?">Do you work with businesses outside of Texas?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p data-es="Sí. Todo se hace de forma remota, así que la ubicación nunca es un problema. Actualmente trabajo con clientes en todo Texas y acepto proyectos de cualquier parte de los Estados Unidos.">Yes. Everything is done remotely so location is never an issue. I currently work with clients across Texas and take on projects from anywhere in the United States.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-es="¿Qué necesita de mí para empezar?">What do you need from me to get started?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p data-es="Solo lo básico: el nombre de su negocio, lo que hace, su logo si lo tiene, cualquier foto que quiera usar, y una idea general de lo que está buscando. Me encargo del resto y haré preguntas en el camino si necesito más detalles.">Just the basics: your business name, what you do, your logo if you have one, any photos you want used, and a general idea of what you are looking for. I will handle the rest and ask questions along the way if I need more details.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">OTM<span>.</span></div>
+  <div class="footer-copy">&#169; 2026 OTM Web Design · Steven Howell · Texas</div>
+  <div class="footer-links">
+    <a href="index.html" data-es="Inicio">Home</a>
+    <a href="work.html" data-es="Trabajos">Work</a>
+    <a href="about.html" data-es="Acerca de">About</a>
+  </div>
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script src="script.js"></script>
+</body>
+</html>

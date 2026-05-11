@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work | OTM Web Design</title>
+<meta name="description" content="Hand-coded websites for small Texas businesses across construction, automotive, service, and hospitality industries. Every site custom built from scratch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="work" data-lang="en">
+
+<div id="progress-bar"></div>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" data-es-aria-label="Volver arriba">↑</button>
+
+<button id="lang-toggle" type="button" aria-label="Toggle language">
+  <span class="lang-globe" aria-hidden="true">⏣</span>
+  <span class="lang-label lang-label-es">¿Habla Español?</span>
+  <span class="lang-label lang-label-en">Speak English?</span>
+</button>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<a href="contact.html" id="float-contact" data-es="Hablemos">Let's Talk</a>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-text" id="nav-logo">
+    <img src="assets/assets-logo.png" alt="OTM Web Design" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+    <span id="logo-fallback" style="display:none;">OTM<span style="color:var(--maroon);">.</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" data-es-aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-es="Inicio">Home</a></li>
+    <li><a href="work.html" class="active" data-es="Trabajos">Work</a></li>
+    <li><a href="about.html" data-es="Acerca de">About</a></li>
+    <li><a href="contact.html" data-es="Contacto">Contact</a></li>
+    <li class="nav-mobile-cta"><a href="contact.html" data-es="Hablemos">Let's Build</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta" data-es="Construyamos Algo">Let's Build Something</a>
+</nav>
+
+<!-- INNER HERO -->
+<section class="hero hero-inner">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-bg-text">WORK</div>
+  <div class="hero-frame" aria-hidden="true">
+    <span class="hero-corner hero-corner-tl"></span>
+    <span class="hero-corner hero-corner-tr"></span>
+    <span class="hero-corner hero-corner-bl"></span>
+    <span class="hero-corner hero-corner-br"></span>
+    <div class="hero-vertical-meta">Portfolio &nbsp;/&nbsp; Vol. 2026 &nbsp;/&nbsp; Texas</div>
+  </div>
+  <div class="hero-content hero-content-inner">
+    <div class="hero-eyebrow" data-es="Portafolio Completo">Complete Portfolio</div>
+    <h1 class="hero-title hero-title-inner">
+      <span data-es="Cada Sitio">Every Site,</span><br>
+      <span class="amber" data-es="Hecho a Mano.">Hand Coded.</span>
+    </h1>
+    <p class="hero-sub hero-sub-inner" data-es="Sitios reales para negocios reales en todo Texas. Construcción, automotriz, servicios, hospitalidad y más. Cada uno codificado desde cero. Sin plantillas, sin atajos, sin excepciones.">Real sites for real businesses across Texas. Construction, automotive, service, hospitality, and more. Every one of them coded from scratch. No templates, no shortcuts, no exceptions.</p>
+  </div>
+</section>
+
+<!-- Hero-to-section bridge -->
+<div class="hero-section-bridge" aria-hidden="true">
+  <span class="hero-bridge-line hero-bridge-line-l"></span>
+  <span class="hero-bridge-diamond"></span>
+  <span class="hero-bridge-line hero-bridge-line-r"></span>
+</div>
+
+<!-- FEATURED WORK -->
+<section id="featured-work">
+  <div class="section-label reveal" data-es="Proyecto Destacado">Featured Project</div>
+  <h2 class="section-title reveal reveal-delay-1" data-es="El Más<br>Reciente">The Latest<br>Build</h2>
+
+  <div class="work-featured reveal reveal-delay-2">
+    <div class="featured-laptop">
+      <div class="laptop-screen">
+        <div class="laptop-browser-bar">
+          <span class="browser-dot dot-red"></span>
+          <span class="browser-dot dot-yellow"></span>
+          <span class="browser-dot dot-green"></span>
+          <span class="browser-url">whiskandtimber.com</span>
+        </div>
+        <img src="assets/assets-whiskandtimber.jpg" alt="Whisk & Timber Artisan Bakery website" class="laptop-img">
+      </div>
+      <div class="laptop-base"></div>
+    </div>
+    <div class="featured-info">
+      <div class="featured-badge" data-es="Trabajo Destacado">Featured Build</div>
+      <div class="featured-header">
+        <div class="featured-logo">
+          <img src="assets/logo-whiskandtimber.png" alt="Whisk & Timber logo">
+        </div>
+        <div class="featured-header-text">
+          <div class="work-tag" data-es="Panadería Artesanal · Jacksonville, TX">Artisan Bakery · Jacksonville, TX</div>
+          <h3 class="featured-title">Whisk &amp; Timber</h3>
+        </div>
+      </div>
+      <p class="featured-desc" data-es="Un sitio multi-página completo para una panadería artesanal del este de Texas, propiedad de Linda Edison. Construido alrededor de catering y pasteles de boda con una paleta editorial suave, navegación a la medida, y páginas dedicadas para el menú, la historia y reservaciones de eventos.">A full multi-page site for an East Texas artisan bakery owned by Linda Edison. Built around catering and wedding cakes with a soft editorial palette, custom navigation, and dedicated pages for the menu, story, and event bookings.</p>
+      <div class="featured-meta">
+        <div class="meta-item">
+          <div class="meta-label" data-es="Páginas">Pages</div>
+          <div class="meta-value">5</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label" data-es="Industria">Industry</div>
+          <div class="meta-value" data-es="Panadería">Bakery</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label" data-es="Tipo">Type</div>
+          <div class="meta-value" data-es="Multi-página">Multi-page</div>
+        </div>
+      </div>
+      <a href="https://whiskandtimber.com" target="_blank" rel="noopener" class="featured-link">
+        <span data-es="Ver Sitio en Vivo">View Live Site</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY: CONSTRUCTION & TRADES -->
+<section class="work-category">
+  <div class="category-header reveal">
+    <div class="category-label">
+      <span class="category-num">01</span>
+      <span class="category-name" data-es="Construcción y Oficios">Construction &amp; Trades</span>
+    </div>
+    <div class="category-count" data-es="3 Proyectos">3 Projects</div>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="work-grid-new">
+    <div class="work-card-new reveal">
+      <div class="mini-laptop">
+        <div class="mini-screen">
+          <div class="mini-browser-bar">
+            <span class="browser-dot dot-red"></span>
+            <span class="browser-dot dot-yellow"></span>
+            <span class="browser-dot dot-green"></span>
+          </div>
+          <img src="assets/assets-joneshomesrepairs.jpg" alt="Jones Home & Repairs website">
+        </div>
+        <div class="mini-base"></div>
+      </div>
+      <div class="card-header">
+        <div class="card-logo">
+          <img src="assets/logo-joneshomesrepairs.png" alt="Jones Home & Repairs logo">
+        </div>
+        <div class="card-header-text">
+          <div class="work-tag" data-es="Contratista · Jacksonville, TX">Contractor · Jacksonville, TX</div>
+          <h3>Jones Home &amp; Repairs</h3>
+        </div>
+      </div>
+      <p data-es="Sitio completo de servicios de contratación que cubre casas a medida, remodelaciones, piscinas, graneros y drenaje pluvial. Incluye cuadrícula de servicios, galerías de proyectos y formulario detallado para cotizaciones.">Full-service contracting site covering custom homes, remodels, pools, barns, and storm drainage. Includes services grid, project galleries, and a detailed quote form.</p>
+      <a href="https://joneshomesrepairs.com" target="_blank" rel="noopener" class="work-link">
+        <span data-es="Ver Sitio en Vivo">View Live Site</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="work-card-new reveal reveal-delay-1">
+      <div class="mini-laptop">
+        <div class="mini-screen">
+          <div class="mini-browser-bar">
+            <span class="browser-dot dot-red"></span>
+            <span class="browser-dot dot-yellow"></span>
+            <span class="browser-dot dot-green"></span>
+          </div>
+          <img src="assets/assets-gesan.jpg" alt="Gesan Construction Services website">
+        </div>
+        <div class="mini-base"></div>
+      </div>
+      <div class="card-header">
+        <div class="card-logo">
+          <img src="assets/logo-gesan.png" alt="Gesan Construction Services logo">
+        </div>
+        <div class="card-header-text">
+          <div class="work-tag" data-es="Construcción · Cedar Creek, TX">Construction · Cedar Creek, TX</div>
+          <h3>Gesan Construction</h3>
+        </div>
+      </div>
+      <p data-es="Sitio bilingüe en inglés y español para una empresa de construcción que atiende al centro de Texas. Incluye desglose de servicios, galería de proyectos completados y formulario de contacto que captura los detalles del proyecto desde el principio.">Bilingual English and Spanish site for a construction company serving Central Texas. Includes services breakdown, completed project gallery, and a contact form that captures project details up front.</p>
+      <a href="https://one-true-mission.github.io/Gesan-Services/" target="_blank" rel="noopener" class="work-link">
+        <span data-es="Ver Sitio en Vivo">View Live Site</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="work-card-new reveal reveal-delay-2">
+      <div class="mini-laptop">
+        <div class="mini-screen">
+          <div class="mini-browser-bar">
+            <span class="browser-dot dot-red"></span>
+            <span class="browser-dot dot-yellow"></span>
+            <span class="browser-dot dot-green"></span>
+          </div>
+          <img src="assets/assets-jvtex.jpg" alt="JV Tex Construction website">
+        </div>
+        <div class="mini-base"></div>
+      </div>
+      <div class="card-header">
+        <div class="card-logo">
+          <img src="assets/logo-jvtex.png" alt="JV Tex Construction logo">
+        </div>
+        <div class="card-header-text">
+          <div class="work-tag" data-es="Construcción · Dale, TX">Construction · Dale, TX</div>
+          <h3>JV Tex Construction</h3>
+        </div>
+      </div>
+      <p data-es="Sitio para JVTEX.CO, una empresa familiar de construcción establecida en 2021 por Jaime A. Viscaino. Diseño limpio con paleta roja, azul y blanca que refleja su orgullo tejano y su enfoque en servicios versátiles de construcción.">Site for JVTEX.CO, a family-owned construction company established in 2021 by Jaime A. Viscaino. Clean design with red, blue, and white palette that reflects Texan pride and a versatile construction services focus.</p>
+      <a href="https://one-true-mission.github.io/Jv-Tex-Construction-services/" target="_blank" rel="noopener" class="work-link">
+        <span data-es="Ver Sitio en Vivo">View Live Site</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY: AUTOMOTIVE -->
+<section class="work-category">
+  <div class="category-header reveal">
+    <div class="category-label">
+      <span class="category-num">02</span>
+      <span class="category-name" data-es="Automotriz">Automotive</span>
+    </div>
+    <div class="category-count" data-es="2 Proyectos">2 Projects</div>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="work-grid-new work-grid-2">
+    <div class="work-card-new reveal">
+      <div class="mini-laptop">
+        <div class="mini-screen">
+          <div class="mini-browser-bar">
+            <span class="browser-dot dot-red"></span>
+            <span class="browser-dot dot-yellow"></span>
+            <span class="browser-dot dot-green"></span>
+          </div>
+          <img src="assets/assets-bachmobile.jpg" alt="Bachmobile German Auto website">
+        </div>
+        <div class="mini-base"></div>
+      </div>
+      <div class="card-header">
+        <div class="card-logo">
+          <img src="assets/logo-bachmobile.png" alt="Bachmobile German Auto logo">
+        </div>
+        <div class="card-header-text">
+          <div class="work-tag" data-es="Servicio Automotriz · Tomball, TX">Auto Service · Tomball, TX</div>
+          <h3>Bachmobile German Auto</h3>
+        </div>
+      </div>
+      <p data-es="Sitio para un especialista en autos alemanes con estética premium oscura y dorada. Incluye desglose de servicios, carrusel animado de reseñas y formulario de contacto diseñado para capturar detalles del vehículo antes de la primera llamada.">Premium dark-and-gold aesthetic for a German auto specialist. Services breakdown, animated review carousel, and a contact form built specifically for capturing vehicle details before the first call.</p>
+      <a href="https://bachmobilegerman.com" target="_blank" rel="noopener" class="work-link">
+        <span data-es="Ver Sitio en Vivo">View Live Site</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="work-card-new reveal reveal-delay-1">
+      <div class="mini-laptop">
+        <div class="mini-screen">
+          <div class="mini-browser-bar">
+            <span class="browser-dot dot-red"></span>
+            <span class="browser-dot dot-yellow"></span>
+            <span class="browser-dot dot-green"></span>
+          </div>
+          <img src="assets/assets-boosthouse.jpg" alt="BoostHouse Motor Works website">
+        </div>
+        <div class="mini-base"></div>
+      </div>
+      <div class="card-header">
+        <div class="card-logo">
+          <img src="assets/logo-boosthouse.png" alt="BoostHouse Motor Works logo">
+        </div>
+        <div class="card-header-text">
+          <div class="work-tag" data-es="Construcción de Motores · Centro de Texas">Engine Builder · Central Texas</div>
+          <h3>BoostHouse Motor Works</h3>
+        </div>
+      </div>
+      <p data-es="Sitio multi-página para un especialista en motores Subaru de alto rendimiento. Paleta cromo, negro y rojo músculo con tipografía industrial, carrusel de paquetes de precios, integración con Calendly y formulario que captura objetivos de potencia del cliente.">Multi-page site for a Subaru performance engine specialist. Chrome, black, and muscle-red palette with industrial typography, pricing package carousel, Calendly integration, and a form that captures horsepower targets.</p>
+      <a href="https://one-true-mission.github.io/BoostHouse-MotorWorks/" target="_blank" rel="noopener" class="work-link">
+        <span data-es="Ver Sitio en Vivo">View Live Site</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY: SERVICE & SPECIALTY -->
+<section class="work-category">
+  <div class="category-header reveal">
+    <div class="category-label">
+      <span class="category-num">03</span>
+      <span class="category-name" data-es="Servicio y Especialidad">Service &amp; Specialty</span>
+    </div>
+    <div class="category-count" data-es="2 Proyectos">2 Projects</div>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="work-grid-new work-grid-2">
+    <div class="work-card-new reveal">
+      <div class="mini-laptop">
+        <div class="mini-screen">
+          <div class="mini-browser-bar">
+            <span class="browser-dot dot-red"></span>
+            <span class="browser-dot dot-yellow"></span>
+            <span class="browser-dot dot-green"></span>
+          </div>
+          <img src="assets/assets-knightpressure.jpg" alt="Knight Pressure Washing website">
+        </div>
+        <div class="mini-base"></div>
+      </div>
+      <div class="card-header">
+        <div class="card-logo">
+          <img src="assets/logo-knightpressure.png" alt="Knight Pressure Washing logo">
+        </div>
+        <div class="card-header-text">
+          <div class="work-tag" data-es="Lavado a Presión · Albany, TX">Pressure Washing · Albany, TX</div>
+          <h3>Knight Pressure Washing</h3>
+        </div>
+      </div>
+      <p data-es="Sitio para un negocio de lavado a presión y detallado propiedad de su operador, atendiendo el condado de Shackelford. Diseño de servicio limpio con desglose de servicios, galería de trabajo reciente, sección de proceso y formulario optimizado para cotizaciones rápidas.">Site for an owner-operated pressure washing and detailing business serving Shackelford County. Clean service design with services breakdown, recent work gallery, process section, and a form built for quick estimates.</p>
+      <a href="https://one-true-mission.github.io/Knight-Pressure-Washing/" target="_blank" rel="noopener" class="work-link">
+        <span data-es="Ver Sitio en Vivo">View Live Site</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="work-card-new reveal reveal-delay-1">
+      <div class="mini-laptop">
+        <div class="mini-screen">
+          <div class="mini-browser-bar">
+            <span class="browser-dot dot-red"></span>
+            <span class="browser-dot dot-yellow"></span>
+            <span class="browser-dot dot-green"></span>
+          </div>
+          <img src="assets/assets-canemarca.jpg" alt="Canem Arca dog training website">
+        </div>
+        <div class="mini-base"></div>
+      </div>
+      <div class="card-header">
+        <div class="card-logo">
+          <img src="assets/logo-canemarca.png" alt="Canem Arca logo">
+        </div>
+        <div class="card-header-text">
+          <div class="work-tag" data-es="Entrenamiento Canino · Leander, TX">Dog Training · Leander, TX</div>
+          <h3>Canem Arca</h3>
+        </div>
+      </div>
+      <p data-es="Sitio multi-página de cinco páginas para un entrenador canino especializado y técnico veterinario. Construido alrededor de programas de entrenamiento, deportes de protección, y cuidado médico de mascotas. Cada página diseñada para servir tanto a dueños de mascotas familiares como a manejadores profesionales.">Five-page multi-page site for a specialized dog trainer and veterinary technician. Built around training programs, protection sports, and medical pet care. Every page designed to serve both family pet owners and professional handlers.</p>
+      <a href="https://one-true-mission.github.io/CANEM-ARCA/" target="_blank" rel="noopener" class="work-link">
+        <span data-es="Ver Sitio en Vivo">View Live Site</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY: HOSPITALITY & RETAIL -->
+<section class="work-category">
+  <div class="category-header reveal">
+    <div class="category-label">
+      <span class="category-num">04</span>
+      <span class="category-name" data-es="Hospitalidad y Venta">Hospitality &amp; Retail</span>
+    </div>
+    <div class="category-count" data-es="1 Proyecto">1 Project</div>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="work-grid-new work-grid-1">
+    <div class="work-card-new reveal">
+      <div class="mini-laptop">
+        <div class="mini-screen">
+          <div class="mini-browser-bar">
+            <span class="browser-dot dot-red"></span>
+            <span class="browser-dot dot-yellow"></span>
+            <span class="browser-dot dot-green"></span>
+          </div>
+          <img src="assets/assets-outdoorgrillsales.jpg" alt="Outdoor Grill Sales website">
+        </div>
+        <div class="mini-base"></div>
+      </div>
+      <div class="card-header">
+        <div class="card-logo">
+          <img src="assets/logo-outdoorgrillsales.png" alt="Outdoor Grill Sales logo">
+        </div>
+        <div class="card-header-text">
+          <div class="work-tag" data-es="Venta y Servicio · Weatherford, TX">Retail &amp; Service · Weatherford, TX</div>
+          <h3>Outdoor Grill Sales</h3>
+        </div>
+      </div>
+      <p data-es="Vendedor familiar de parrillas establecido con más de 18 marcas premium, servicios de reparación e instalaciones completas de cocinas al aire libre. Construcción multi-página con muestra de marcas, carrusel de reseñas de clientes y reservación de citas.">Established family-owned grill retailer with 18+ premium brands carried, expert repair services, and full outdoor kitchen installations. Multi-page build with brand showcase, customer review carousel, and appointment booking.</p>
+      <a href="https://outdoorgrillsales.com" target="_blank" rel="noopener" class="work-link">
+        <span data-es="Ver Sitio en Vivo">View Live Site</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER SHOWCASE -->
+<section class="ba-section">
+  <div class="section-label reveal" data-es="Muestra de Rediseños">Redesign Showcase</div>
+  <h2 class="section-title reveal reveal-delay-1" data-es="Antes<br>y Después">Before<br>&amp; After</h2>
+  <p class="section-intro reveal reveal-delay-2" data-es="Arrastre el control hacia la izquierda o derecha para ver la transformación completa. El mismo negocio. Un resultado completamente diferente.">Drag the handle left or right to see the full transformation. Same business. Completely different result.</p>
+
+  <div class="ba-wrap reveal reveal-delay-2">
+    <div class="ba-slider" id="baSlider1">
+      <img src="assets/assets-after1.jpg" alt="Before" class="ba-img-before">
+      <img src="assets/assets-before1.jpg" alt="After" class="ba-img-after" id="baAfterImg1">
+      <div class="ba-handle" id="baHandle1">
+        <div class="ba-handle-btn">◀▶</div>
+      </div>
+      <span class="ba-label before-label" data-es="Antes">Before</span>
+      <span class="ba-label after-label" data-es="Después">After</span>
+    </div>
+    <div class="ba-info">
+      <div class="ba-info-num">01</div>
+      <div class="ba-info-text">
+        <div class="ba-tag">Bachmobile German Auto</div>
+        <h3 data-es="Transformación Completa del Sitio">Full Site Transformation</h3>
+        <p data-es="El mismo negocio, una impresión completamente diferente. Arrastre para comparar el sitio anterior con la nueva versión hecha a la medida.">Same business, completely different impression. Drag to compare the old site against the new custom-built version.</p>
+      </div>
+      <a href="contact.html" class="btn-primary" data-es="Pida Su Rediseño">Get Your Redesign</a>
+    </div>
+  </div>
+
+  <div class="ba-wrap reveal reveal-delay-2">
+    <div class="ba-slider" id="baSlider2">
+      <img src="assets/assets-after2.jpg" alt="Before" class="ba-img-before">
+      <img src="assets/assets-before2.jpg" alt="After" class="ba-img-after" id="baAfterImg2">
+      <div class="ba-handle" id="baHandle2">
+        <div class="ba-handle-btn">◀▶</div>
+      </div>
+      <span class="ba-label before-label" data-es="Antes">Before</span>
+      <span class="ba-label after-label" data-es="Después">After</span>
+    </div>
+    <div class="ba-info">
+      <div class="ba-info-num">02</div>
+      <div class="ba-info-text">
+        <div class="ba-tag">FreshStart Solutions</div>
+        <h3 data-es="Otra Transformación Total">Another Full Transformation</h3>
+        <p data-es="Cada negocio merece un sitio que de verdad lo represente. Arrastre para ver exactamente lo que entrega un rediseño hecho a la medida.">Every business deserves a site that actually represents them. Drag to see exactly what a custom redesign delivers.</p>
+      </div>
+      <a href="contact.html" class="btn-primary" data-es="Pida Su Rediseño">Get Your Redesign</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-inner">
+    <div class="cta-eyebrow" data-es="¿No Ve Su Industria?">Don't See Your Industry?</div>
+    <h2 class="cta-title" data-es="Si tiene un negocio,<br>puedo construir su sitio.">If you've got a business,<br>I can build the site.</h2>
+    <p class="cta-sub" data-es="No importa la industria. Mecánico, salón, restaurante, comercio, profesional. El diseño se adapta. El estándar se mantiene.">Doesn't matter the industry. Mechanic, salon, restaurant, retail, professional services. The design adapts. The standard stays.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-primary cta-btn" data-es="Empezar Su Proyecto">Start Your Project</a>
+      <span class="cta-or" data-es="O">OR</span>
+      <a href="contact.html#schedule" class="btn-ghost cta-btn" data-es="Reservar una Llamada">Schedule a Call</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">OTM<span>.</span></div>
+  <div class="footer-copy">&#169; 2026 OTM Web Design · Steven Howell · Texas</div>
+  <div class="footer-links">
+    <a href="index.html" data-es="Inicio">Home</a>
+    <a href="about.html" data-es="Acerca de">About</a>
+    <a href="contact.html" data-es="Contacto">Contact</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
