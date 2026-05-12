@@ -179,7 +179,7 @@ let current = 0;
 const track = document.getElementById('carouselTrack');
 const dots = document.querySelectorAll('.carousel-dot');
 const total = track ? track.children.length : 0;
-let autoTimer = total > 0 ? setInterval(carouselNext, 6000) : null;
+let autoTimer = total > 0 ? setInterval(carouselNext, 3900) : null;
 
 function goTo(n) {
   if (total === 0) return;
@@ -187,7 +187,7 @@ function goTo(n) {
   track.style.transform = `translateX(-${current * 100}%)`;
   dots.forEach((d, i) => d.classList.toggle('active', i === current));
   clearInterval(autoTimer);
-  autoTimer = setInterval(carouselNext, 6000);
+  autoTimer = setInterval(carouselNext, 3900);
 }
 function carouselNext() { goTo(current + 1); }
 function carouselPrev() { goTo(current - 1); }
@@ -220,7 +220,7 @@ if (track) {
   if (carouselWrap) {
     carouselWrap.addEventListener('mouseenter', () => clearInterval(autoTimer));
     carouselWrap.addEventListener('mouseleave', () => {
-      autoTimer = setInterval(carouselNext, 6000);
+      autoTimer = setInterval(carouselNext, 3900);
     });
   }
 }
