@@ -85,13 +85,11 @@ window.addEventListener('scroll', () => {
   if (navEl) navEl.classList.toggle('scrolled', scrolled > 60);
 });
 
-// CURSOR (CSS transitions instead of RAF loop)
+// CURSOR (two-tone: white dot + burgundy ring, swap on hover)
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
 
 if (cursor && ring) {
-  ring.style.transition = 'left 0.12s ease-out, top 0.12s ease-out, transform 0.2s, width 0.25s, height 0.25s';
-
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
@@ -99,14 +97,14 @@ if (cursor && ring) {
     ring.style.top = e.clientY + 'px';
   });
 
-  document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
+  document.querySelectorAll('a, button, input, select, textarea, .work-card-new, .work-featured, .review-card-link').forEach(el => {
     el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'translate(-50%,-50%) scale(1.8)';
-      ring.style.transform = 'translate(-50%,-50%) scale(1.4)';
+      cursor.classList.add('cursor-hover');
+      ring.classList.add('cursor-hover');
     });
     el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-      ring.style.transform = 'translate(-50%,-50%) scale(1)';
+      cursor.classList.remove('cursor-hover');
+      ring.classList.remove('cursor-hover');
     });
   });
 }
