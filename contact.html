@@ -157,6 +157,9 @@
         <label data-es="Cuénteme Sobre Su Proyecto">Tell Me About Your Project</label>
         <textarea rows="4" name="project_details" placeholder="What does your business do? Do you have an existing website? What are your goals?" data-es-placeholder="¿A qué se dedica su negocio? ¿Tiene un sitio web existente? ¿Cuáles son sus metas?"></textarea>
       </div>
+      <!-- Honeypot anti-spam field (hidden from humans, bots auto-fill it) -->
+      <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+
       <div class="form-submit-row">
         <span class="form-note" data-es="Le responderé en un día hábil.">I'll respond within one business day.</span>
         <button type="submit" class="form-submit"><span data-es="Enviar Solicitud">Send Request</span> &#8594;</button>
