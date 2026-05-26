@@ -143,36 +143,9 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
-// FORM SUBMIT (Formspree)
-const contactFormEl = document.getElementById('contactForm');
-if (contactFormEl) {
-  contactFormEl.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = this;
-    const submitBtn = form.querySelector('.form-submit');
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        form.style.display = 'none';
-        document.getElementById('formSuccess').classList.add('show');
-      } else {
-        submitBtn.textContent = 'Send Request →';
-        submitBtn.disabled = false;
-        alert('Something went wrong. Please try again.');
-      }
-    }).catch(() => {
-      submitBtn.textContent = 'Send Request →';
-      submitBtn.disabled = false;
-      alert('Something went wrong. Please try again.');
-    });
-  });
-}
+// FORM SUBMIT: native submission (Formspree handles captcha and redirect)
+// The form posts directly to Formspree using the action attribute and _next
+// hidden field on the form itself, so no JavaScript handler is needed here.
 
 // CAROUSEL
 let current = 0;

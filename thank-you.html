@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | OTM Web Design</title>
+<meta name="description" content="Your message has been received. Steven will respond within one business day.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="thank-you" data-lang="en">
+
+<div id="progress-bar"></div>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" data-es-aria-label="Volver arriba">↑</button>
+
+<button id="lang-toggle" type="button" aria-label="Toggle language">
+  <span class="lang-globe" aria-hidden="true">⏣</span>
+  <span class="lang-label lang-label-es">¿Habla Español?</span>
+  <span class="lang-label lang-label-en">Speak English?</span>
+</button>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-text" id="nav-logo">
+    <img src="assets/assets-logo.png" alt="OTM Web Design" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+    <span id="logo-fallback" style="display:none;">OTM<span style="color:var(--maroon);">.</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" data-es-aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-es="Inicio">Home</a></li>
+    <li><a href="work.html" data-es="Trabajos">Work</a></li>
+    <li><a href="about.html" data-es="Acerca de">About</a></li>
+    <li><a href="contact.html" data-es="Contacto">Contact</a></li>
+    <li class="nav-mobile-cta"><a href="contact.html" data-es="Hablemos">Let's Build</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta" data-es="Construyamos Algo">Let's Build Something</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero hero-inner">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-bg-text">DONE</div>
+  <div class="hero-frame" aria-hidden="true">
+    <span class="hero-corner hero-corner-tl"></span>
+    <span class="hero-corner hero-corner-tr"></span>
+    <span class="hero-corner hero-corner-bl"></span>
+    <span class="hero-corner hero-corner-br"></span>
+    <div class="hero-vertical-meta">Received &nbsp;/&nbsp; Confirmed &nbsp;/&nbsp; Texas</div>
+  </div>
+  <div class="hero-content hero-content-inner">
+    <div class="hero-eyebrow" data-es="Solicitud Recibida">Request Received</div>
+    <h1 class="hero-title hero-title-inner">
+      <span data-es="Gracias.">Thanks.</span><br>
+      <span class="amber" data-es="Lo Tengo.">Got It.</span>
+    </h1>
+    <p class="hero-sub hero-sub-inner" data-es="Su mensaje está en mi bandeja de entrada. Le responderé dentro de un día hábil con un plan y un precio. Si es urgente, reserve una llamada o vuelva al inicio.">Your message is in my inbox. I'll respond within one business day with a plan and a price. If it's urgent, schedule a call or head back home.</p>
+    <div class="hero-actions">
+      <a href="index.html" class="btn-primary" data-es="Volver al Inicio">Back to Home</a>
+      <a href="work.html" class="btn-ghost" data-es="Ver Más Trabajos">See More Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- Hero-to-section bridge -->
+<div class="hero-section-bridge" aria-hidden="true">
+  <span class="hero-bridge-line hero-bridge-line-l"></span>
+  <span class="hero-bridge-diamond"></span>
+  <span class="hero-bridge-line hero-bridge-line-r"></span>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">OTM<span>.</span></div>
+  <div class="footer-copy">&#169; 2026 OTM Web Design · Steven Howell · Texas</div>
+  <div class="footer-links">
+    <a href="index.html" data-es="Inicio">Home</a>
+    <a href="work.html" data-es="Trabajos">Work</a>
+    <a href="about.html" data-es="Acerca de">About</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
