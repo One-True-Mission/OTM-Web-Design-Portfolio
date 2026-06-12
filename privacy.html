@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | OTM Web Design</title>
+<meta name="description" content="How OTM Web Design collects, uses, and protects your information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+
+<!-- FAVICON / SITE ICON -->
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#6E1F33">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Page-scoped legal styling (keeps style.css lean) -->
+<style>
+  .legal-content { max-width: 820px; margin: 0 auto; }
+  .legal-content .legal-updated {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-on-stone-muted); font-weight: 800; margin-bottom: 2.2rem;
+    padding-bottom: 1.2rem; border-bottom: 1px solid var(--stone-border);
+  }
+  .legal-content h2 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.55rem; letter-spacing: 0.03em;
+    color: var(--ink-deep); margin: 2.6rem 0 0.8rem; line-height: 1.1;
+  }
+  .legal-content h2:first-of-type { margin-top: 0; }
+  .legal-content h3 {
+    font-size: 0.98rem; font-weight: 700; color: var(--ink-deep); margin: 1.4rem 0 0.5rem;
+  }
+  .legal-content p {
+    font-size: 0.95rem; line-height: 1.75; color: var(--ink-on-stone); margin-bottom: 1rem;
+  }
+  .legal-content ul { margin: 0 0 1.2rem 1.3rem; padding: 0; }
+  .legal-content li {
+    font-size: 0.95rem; line-height: 1.7; color: var(--ink-on-stone);
+    margin-bottom: 0.5rem; padding-left: 0.3rem;
+  }
+  .legal-content a {
+    color: var(--maroon); text-decoration: underline; text-underline-offset: 3px;
+    font-weight: 500;
+  }
+  .legal-content a:hover { color: var(--maroon-light); }
+  .legal-content strong { color: var(--ink-deep); font-weight: 700; }
+</style>
+</head>
+<body data-page="privacy" data-lang="en">
+
+<div id="progress-bar"></div>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" data-es-aria-label="Volver arriba">↑</button>
+
+<button id="lang-toggle" type="button" aria-label="Toggle language">
+  <span class="lang-globe" aria-hidden="true">⏣</span>
+  <span class="lang-label lang-label-es">¿Habla Español?</span>
+  <span class="lang-label lang-label-en">Speak English?</span>
+</button>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<a href="contact.html" id="float-contact" data-es="Hablemos">Let's Talk</a>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-text" id="nav-logo">
+    <img src="assets/assets-logo.png" alt="OTM Web Design" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+    <span id="logo-fallback" style="display:none;">OTM<span style="color:var(--maroon);">.</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" data-es-aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-es="Inicio">Home</a></li>
+    <li><a href="work.html" data-es="Trabajos">Work</a></li>
+    <li><a href="about.html" data-es="Acerca de">About</a></li>
+    <li><a href="contact.html" data-es="Contacto">Contact</a></li>
+    <li class="nav-mobile-cta"><a href="contact.html" data-es="Hablemos">Let's Build</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta" data-es="Construyamos Algo">Let's Build Something</a>
+</nav>
+
+<!-- INNER HERO -->
+<section class="hero hero-inner">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-bg-text">LEGAL</div>
+  <div class="hero-frame" aria-hidden="true">
+    <span class="hero-corner hero-corner-tl"></span>
+    <span class="hero-corner hero-corner-tr"></span>
+    <span class="hero-corner hero-corner-bl"></span>
+    <span class="hero-corner hero-corner-br"></span>
+    <div class="hero-vertical-meta">Privacy &nbsp;/&nbsp; Policy &nbsp;/&nbsp; Texas</div>
+  </div>
+  <div class="hero-content hero-content-inner">
+    <div class="hero-eyebrow">Your Information, Respected</div>
+    <h1 class="hero-title hero-title-inner">
+      <span>Privacy</span><br>
+      <span class="amber">Policy.</span>
+    </h1>
+    <p class="hero-sub hero-sub-inner">A plain-language explanation of what information this site collects, how it is used, and the fact that it is never sold.</p>
+  </div>
+</section>
+
+<!-- Hero-to-section bridge -->
+<div class="hero-section-bridge" aria-hidden="true">
+  <span class="hero-bridge-line hero-bridge-line-l"></span>
+  <span class="hero-bridge-diamond"></span>
+  <span class="hero-bridge-line hero-bridge-line-r"></span>
+</div>
+
+<!-- PRIVACY CONTENT -->
+<section>
+  <div class="section-label">Legal</div>
+  <h2 class="section-title">Privacy Policy</h2>
+
+  <div class="legal-content">
+    <p class="legal-updated">Last updated: June 5, 2026</p>
+
+    <p>OTM Web Design ("OTM," "we," "us," or "I") is a sole proprietorship operated by Steven Howell, based in Kyle, Texas. This Privacy Policy explains what information is collected when you visit this website (otm-designs.com) or contact us through it, how that information is used, and the choices you have. By using this site, you agree to the practices described below.</p>
+
+    <h2>Information We Collect</h2>
+
+    <h3>Information you provide directly</h3>
+    <p>When you fill out the contact form on this site, you may provide the following:</p>
+    <ul>
+      <li>Your full name</li>
+      <li>Your email address</li>
+      <li>Your phone number (optional)</li>
+      <li>Your business type and the package you are interested in</li>
+      <li>Any details you choose to include about your project</li>
+    </ul>
+    <p>You only share this information when you choose to submit the form. If you do not contact us, none of it is collected.</p>
+
+    <h3>Scheduling information</h3>
+    <p>If you book a call, scheduling is handled by Calendly. Any details you enter (such as your name, email, and preferred time) are collected and processed by Calendly under its own privacy policy.</p>
+
+    <h3>Information collected automatically</h3>
+    <p>This site is hosted on GitHub Pages and uses Google Fonts to display text. When your browser loads the site, these providers may automatically receive standard technical information such as your IP address, browser type, and the time of your visit, as part of normal web server operation. We do not use this information to identify you personally.</p>
+
+    <h3>Local storage on your device</h3>
+    <p>This site stores a single preference on your own device: your chosen language (English or Spanish), so the site remembers it on your next visit. This is stored locally in your browser and is never transmitted to us. We do not use advertising cookies, analytics cookies, or any tracking technology.</p>
+
+    <h2>How We Use Your Information</h2>
+    <p>Information you submit is used only to:</p>
+    <ul>
+      <li>Respond to your inquiry and discuss your project</li>
+      <li>Prepare a quote or proposal for work</li>
+      <li>Communicate with you about a project you have requested</li>
+    </ul>
+    <p>We do not use your information to send marketing emails or promotional material unless you have specifically asked us to.</p>
+
+    <h2>How Your Information Is Shared</h2>
+    <p>We do not sell, rent, or trade your personal information. Ever. Your information is only handled by the third-party services that make this site function:</p>
+    <ul>
+      <li><strong>Formspree</strong> processes and delivers your contact form submissions to us.</li>
+      <li><strong>Calendly</strong> processes call bookings if you schedule one.</li>
+      <li><strong>Google Fonts</strong> serves the typefaces used on this site.</li>
+      <li><strong>GitHub Pages</strong> hosts this website.</li>
+    </ul>
+    <p>Each of these providers handles data under its own privacy policy. We may also disclose information if required to do so by law.</p>
+
+    <h2>Data Retention</h2>
+    <p>Contact form submissions are retained only as long as needed to respond to your inquiry and to maintain a record of our communication. You can request that your information be deleted at any time (see "Your Rights and Choices" below).</p>
+
+    <h2>Data Security</h2>
+    <p>This site is served over a secure (HTTPS) connection. While no method of transmission over the internet can be guaranteed to be completely secure, we take reasonable measures to protect the information you share with us.</p>
+
+    <h2>Your Rights and Choices</h2>
+    <p>You may request to access, correct, or delete the personal information you have provided to us. To make a request, contact us through the methods listed at the bottom of this policy. We will respond within a reasonable timeframe.</p>
+
+    <h2>Third-Party Links</h2>
+    <p>This site links to client websites, social media, and third-party tools. We are not responsible for the privacy practices or content of websites we do not operate. We encourage you to review the privacy policy of any site you visit.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>This site is intended for business owners and is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, the "Last updated" date at the top of this page will change. Continued use of the site after an update means you accept the revised policy.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy or about the information we hold, you can reach us through the <a href="contact.html">contact page</a> on this site, or by scheduling a call through the same page.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">OTM<span>.</span></div>
+  <div class="footer-copy">&#169; 2026 OTM Web Design · Steven Howell · Texas</div>
+  <div class="footer-links">
+    <a href="index.html" data-es="Inicio">Home</a>
+    <a href="work.html" data-es="Trabajos">Work</a>
+    <a href="about.html" data-es="Acerca de">About</a>
+    <a href="contact.html" data-es="Contacto">Contact</a>
+    <a href="privacy.html" data-es="Privacidad">Privacy</a>
+    <a href="terms.html" data-es="Términos">Terms</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

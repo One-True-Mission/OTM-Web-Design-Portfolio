@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use | OTM Web Design</title>
+<meta name="description" content="The terms that govern your use of the OTM Web Design website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+
+<!-- FAVICON / SITE ICON -->
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#6E1F33">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Page-scoped legal styling (keeps style.css lean) -->
+<style>
+  .legal-content { max-width: 820px; margin: 0 auto; }
+  .legal-content .legal-updated {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-on-stone-muted); font-weight: 800; margin-bottom: 2.2rem;
+    padding-bottom: 1.2rem; border-bottom: 1px solid var(--stone-border);
+  }
+  .legal-content h2 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.55rem; letter-spacing: 0.03em;
+    color: var(--ink-deep); margin: 2.6rem 0 0.8rem; line-height: 1.1;
+  }
+  .legal-content h2:first-of-type { margin-top: 0; }
+  .legal-content h3 {
+    font-size: 0.98rem; font-weight: 700; color: var(--ink-deep); margin: 1.4rem 0 0.5rem;
+  }
+  .legal-content p {
+    font-size: 0.95rem; line-height: 1.75; color: var(--ink-on-stone); margin-bottom: 1rem;
+  }
+  .legal-content ul { margin: 0 0 1.2rem 1.3rem; padding: 0; }
+  .legal-content li {
+    font-size: 0.95rem; line-height: 1.7; color: var(--ink-on-stone);
+    margin-bottom: 0.5rem; padding-left: 0.3rem;
+  }
+  .legal-content a {
+    color: var(--maroon); text-decoration: underline; text-underline-offset: 3px;
+    font-weight: 500;
+  }
+  .legal-content a:hover { color: var(--maroon-light); }
+  .legal-content strong { color: var(--ink-deep); font-weight: 700; }
+</style>
+</head>
+<body data-page="terms" data-lang="en">
+
+<div id="progress-bar"></div>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" data-es-aria-label="Volver arriba">↑</button>
+
+<button id="lang-toggle" type="button" aria-label="Toggle language">
+  <span class="lang-globe" aria-hidden="true">⏣</span>
+  <span class="lang-label lang-label-es">¿Habla Español?</span>
+  <span class="lang-label lang-label-en">Speak English?</span>
+</button>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<a href="contact.html" id="float-contact" data-es="Hablemos">Let's Talk</a>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-text" id="nav-logo">
+    <img src="assets/assets-logo.png" alt="OTM Web Design" class="nav-logo-img" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline';">
+    <span id="logo-fallback" style="display:none;">OTM<span style="color:var(--maroon);">.</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" data-es-aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-es="Inicio">Home</a></li>
+    <li><a href="work.html" data-es="Trabajos">Work</a></li>
+    <li><a href="about.html" data-es="Acerca de">About</a></li>
+    <li><a href="contact.html" data-es="Contacto">Contact</a></li>
+    <li class="nav-mobile-cta"><a href="contact.html" data-es="Hablemos">Let's Build</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta" data-es="Construyamos Algo">Let's Build Something</a>
+</nav>
+
+<!-- INNER HERO -->
+<section class="hero hero-inner">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-bg-text">TERMS</div>
+  <div class="hero-frame" aria-hidden="true">
+    <span class="hero-corner hero-corner-tl"></span>
+    <span class="hero-corner hero-corner-tr"></span>
+    <span class="hero-corner hero-corner-bl"></span>
+    <span class="hero-corner hero-corner-br"></span>
+    <div class="hero-vertical-meta">Terms &nbsp;/&nbsp; Of Use &nbsp;/&nbsp; Texas</div>
+  </div>
+  <div class="hero-content hero-content-inner">
+    <div class="hero-eyebrow">The Ground Rules</div>
+    <h1 class="hero-title hero-title-inner">
+      <span>Terms</span><br>
+      <span class="amber">of Use.</span>
+    </h1>
+    <p class="hero-sub hero-sub-inner">The simple terms that govern your use of this website. Project work is handled separately under a written agreement.</p>
+  </div>
+</section>
+
+<!-- Hero-to-section bridge -->
+<div class="hero-section-bridge" aria-hidden="true">
+  <span class="hero-bridge-line hero-bridge-line-l"></span>
+  <span class="hero-bridge-diamond"></span>
+  <span class="hero-bridge-line hero-bridge-line-r"></span>
+</div>
+
+<!-- TERMS CONTENT -->
+<section>
+  <div class="section-label">Legal</div>
+  <h2 class="section-title">Terms of Use</h2>
+
+  <div class="legal-content">
+    <p class="legal-updated">Last updated: June 5, 2026</p>
+
+    <p>These Terms of Use ("Terms") govern your access to and use of the OTM Web Design website at otm-designs.com (the "Site"), operated by Steven Howell, a sole proprietor based in Kyle, Texas. By using the Site, you agree to these Terms. If you do not agree, please do not use the Site.</p>
+
+    <h2>About This Site</h2>
+    <p>This Site is a portfolio and informational website for OTM Web Design. It showcases past work, describes services, and provides a way to get in touch. Using this Site does not create a client relationship on its own. Any web design work is performed only under a separate written agreement between you and OTM Web Design.</p>
+
+    <h2>Quotes and Pricing</h2>
+    <p>Any pricing shown on this Site is provided for general information. The price for a specific project may vary based on its scope and complexity. A firm price is provided in writing before any work begins, and the full terms of a project (including payment, ownership, and timeline) are set out in a separate client services agreement, not in these Terms.</p>
+
+    <h2>Intellectual Property</h2>
+    <p>Unless otherwise noted, the design, code, text, graphics, and layout of this Site are owned by OTM Web Design and are protected by copyright and other laws. You may not copy, reproduce, republish, or reuse any part of this Site without written permission.</p>
+    <p>Client logos, business names, and project screenshots shown in the portfolio remain the property of their respective owners and are displayed to illustrate completed work.</p>
+
+    <h2>Acceptable Use</h2>
+    <p>When using this Site, you agree not to:</p>
+    <ul>
+      <li>Submit false, misleading, or fraudulent information through the contact form</li>
+      <li>Use the Site or its forms to send spam, harmful code, or unsolicited material</li>
+      <li>Attempt to interfere with, damage, or gain unauthorized access to the Site</li>
+      <li>Copy or scrape the Site's design or content for reuse</li>
+    </ul>
+
+    <h2>Third-Party Services and Links</h2>
+    <p>This Site uses and links to third-party services, including Calendly for scheduling and Formspree for form delivery, as well as links to client websites and external platforms. OTM Web Design is not responsible for the content, availability, or practices of any third-party service or website.</p>
+
+    <h2>Disclaimer of Warranties</h2>
+    <p>This Site is provided on an "as is" and "as available" basis. While we work to keep the Site accurate and available, we make no warranties that it will be uninterrupted, error-free, or free of harmful components. Your use of the Site is at your own risk.</p>
+
+    <h2>Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, OTM Web Design and Steven Howell will not be liable for any indirect, incidental, or consequential damages arising out of your use of, or inability to use, this Site.</p>
+
+    <h2>Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of Texas, without regard to its conflict-of-law principles. Any dispute relating to the Site will be handled in the courts located in the State of Texas.</p>
+
+    <h2>Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. When we do, the "Last updated" date at the top of this page will change. Continued use of the Site after an update means you accept the revised Terms.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions about these Terms, you can reach us through the <a href="contact.html">contact page</a> on this Site.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">OTM<span>.</span></div>
+  <div class="footer-copy">&#169; 2026 OTM Web Design · Steven Howell · Texas</div>
+  <div class="footer-links">
+    <a href="index.html" data-es="Inicio">Home</a>
+    <a href="work.html" data-es="Trabajos">Work</a>
+    <a href="about.html" data-es="Acerca de">About</a>
+    <a href="contact.html" data-es="Contacto">Contact</a>
+    <a href="privacy.html" data-es="Privacidad">Privacy</a>
+    <a href="terms.html" data-es="Términos">Terms</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

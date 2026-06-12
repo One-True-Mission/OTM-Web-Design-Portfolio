@@ -143,9 +143,49 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
-// FORM SUBMIT: native submission (Formspree handles captcha and redirect)
-// The form posts directly to Formspree using the action attribute and _next
-// hidden field on the form itself, so no JavaScript handler is needed here.
+// FORM SUBMIT: background (AJAX) submission to Formspree, then redirect to our own thank-you page.
+// Formspree's free plan no longer honors the _next redirect field, so instead of letting the
+// browser navigate to Formspree, we send the form quietly with fetch and control the redirect
+// ourselves. Spam is handled by the hidden _gotcha honeypot field + Formspree's built-in filtering.
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = contactForm.querySelector('.form-submit');
+    const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+    const isEs = document.body.dataset.lang === 'es';
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      submitBtn.innerHTML = isEs ? 'Enviando...' : 'Sending...';
+    }
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        window.location.href = 'thank-you.html';
+        return;
+      }
+      throw new Error('Formspree returned a non-OK response');
+    } catch (err) {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.innerHTML = originalBtnHTML;
+      }
+      alert(isEs
+        ? 'Hubo un problema al enviar el formulario. Por favor intente de nuevo o reserve una llamada.'
+        : 'There was a problem sending your message. Please try again, or schedule a call instead.');
+    }
+  });
+}
 
 // CAROUSEL
 let current = 0;

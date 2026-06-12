@@ -11,10 +11,10 @@
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
 <!-- FAVICON / SITE ICON -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#6E1F33">
 
@@ -124,8 +124,9 @@
     <p class="contact-option-desc" data-es="Cuénteme sobre su negocio y lo que está buscando. Le responderé dentro de un día hábil con un plan y un precio. Sin presión, sin vueltas.">Tell me about your business and what you're looking for. I'll respond within one business day with a plan and a price. No pressure, no runaround.</p>
 
     <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnjozbnj" method="POST">
-      <input type="hidden" name="_next" value="https://otm-designs.com/thank-you.html">
       <input type="hidden" name="_subject" value="New OTM Web Design inquiry">
+      <!-- Honeypot spam trap: real visitors never see or fill this. Bots that do get rejected by Formspree. -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none !important;">
       <div class="form-row">
         <div class="form-field">
           <label data-es="Nombre Completo">Full Name</label>
@@ -174,10 +175,6 @@
         <button type="submit" class="form-submit"><span data-es="Enviar Solicitud">Send Request</span> &#8594;</button>
       </div>
     </form>
-    <div class="form-success" id="formSuccess">
-      <h3 data-es="¡Solicitud Recibida!">Request Received!</h3>
-      <p data-es="Gracias por contactarme. Steven se comunicará con usted en un día hábil.">Thanks for reaching out. Steven will be in touch within one business day.</p>
-    </div>
   </div>
 </section>
 
@@ -257,6 +254,8 @@
     <a href="index.html" data-es="Inicio">Home</a>
     <a href="work.html" data-es="Trabajos">Work</a>
     <a href="about.html" data-es="Acerca de">About</a>
+    <a href="privacy.html" data-es="Privacidad">Privacy</a>
+    <a href="terms.html" data-es="Términos">Terms</a>
   </div>
 </footer>
 
